@@ -4,11 +4,10 @@ import ForwardArrow from "../images/forward-arrow.svg";
 import CloseButton from "../images/close-button.svg";
 import FullscreenButton from "../images/fs-button.svg";
 import MinimizeButton from "../images/hide-button.svg";
-import DownloadButton from "../images/download.svg";
 import "./component_styles.css";
 
 const ContentPreviewWindow = ({ images }) => {
-  const [boxSize, setBoxSize] = useState({ width: 910, height: 720 });
+  const [boxSize, setBoxSize] = useState({ width: 880, height: 720 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -140,9 +139,6 @@ const ContentPreviewWindow = ({ images }) => {
                 </div>
                 <div className="window-min-button">
                     <img src={MinimizeButton} alt="Minimize Button" style={{height: "14px"}}/>
-                </div>
-                <div className="window-download-button">
-                    <img src={DownloadButton} alt="Download Button" style={{height: "20px"}}/>
                 </div>
             </div>
         </div>
