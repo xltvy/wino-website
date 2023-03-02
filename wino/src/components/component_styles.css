@@ -655,14 +655,18 @@ p {
 
 .window-fs-button {
     padding: 8px;
+    padding-right: 20px;
     margin-top: 16px;
     cursor: pointer;
 }
 
-.window-min-button {
-    padding: 8px;
-    padding-right: 28px;
-    margin-top: 16px;
+.window-info-button {
+    margin-top: 12px;
+    margin-right: 24px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    padding: 2px 5px;
+    color:rgb(112, 112, 112);
     cursor: pointer;
 }
 
@@ -674,10 +678,34 @@ p {
     display: flex;
 }
 
+.move-previous {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: w-resize;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.move-forward {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: e-resize;
+    background-color: transparent;
+    z-index: 100;
+}
+
 .prev-lower-body-image-container {
-    position: relative; /* optional */
+    position: relative;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%; /* set a fixed height or adjust as per your requirement */
+    height: 100%;
     overflow: hidden;
 }
 
@@ -688,6 +716,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    user-select: none;
 }
 
 .prev-lower-body-footer {

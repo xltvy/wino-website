@@ -3,11 +3,11 @@ import BackArrow from "../images/back-arrow.svg";
 import ForwardArrow from "../images/forward-arrow.svg";
 import CloseButton from "../images/close-button.svg";
 import FullscreenButton from "../images/fs-button.svg";
-import MinimizeButton from "../images/hide-button.svg";
+import DownloadButton from "../images/download.svg";
 import "./component_styles.css";
 
 const ContentPreviewWindow = ({ images }) => {
-  const [boxSize, setBoxSize] = useState({ width: 880, height: 720 });
+  const [boxSize, setBoxSize] = useState({ width: 910, height: 720 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -137,14 +137,19 @@ const ContentPreviewWindow = ({ images }) => {
                 <div className="window-fs-button" onClick={toggleFullscreen}>
                     <img src={FullscreenButton} alt="Fullscreen Button" style={{height: "14px"}}/>
                 </div>
-                <div className="window-min-button">
-                    <img src={MinimizeButton} alt="Minimize Button" style={{height: "14px"}}/>
+                <div className="window-info-button">
+                    Info
                 </div>
             </div>
         </div>
         <div className="prev-lower-body" style={{ height: lowerBodyHeight }}>
             <div className="prev-lower-body-content">
                 <div className="prev-lower-body-image-container">
+                    <div className="on-image-utility-container" style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", alignItems: "center"}}>
+                      <div className="move-previous" onClick={handlePrev}/>
+                      <div/>
+                      <div className="move-forward" onClick={handleNext}/>
+                    </div>
                   <img src={currentImage.src} alt={currentImage.alt} />
                 </div>
             </div>
