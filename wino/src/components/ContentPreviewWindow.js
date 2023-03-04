@@ -6,14 +6,13 @@ import FullscreenButton from "../images/fs-button.svg";
 import DownloadButton from "../images/download.svg";
 import "./component_styles.css";
 
-const ContentPreviewWindow = ({ images }) => {
+const ContentPreviewWindow = ({ images, onFullscreen }) => {
   const [boxSize, setBoxSize] = useState({ width: 910, height: 720 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleMouseDown = (event) => {
     if (
@@ -106,8 +105,8 @@ const ContentPreviewWindow = ({ images }) => {
     );
   };
 
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen);
+  const handleOnFullscreen = () => {
+    onFullscreen(images.indexOf(currentImage));
   };
 
   const currentImage = images[currentImageIndex];
@@ -134,7 +133,7 @@ const ContentPreviewWindow = ({ images }) => {
                 <div className="window-close-button" onClick={handleCloseClick}>
                     <img src={CloseButton} alt="Close Button" style={{height: "14px"}}/>
                 </div>
-                <div className="window-fs-button" onClick={toggleFullscreen}>
+                <div className="window-fs-button" onClick={handleOnFullscreen}>
                     <img src={FullscreenButton} alt="Fullscreen Button" style={{height: "14px"}}/>
                 </div>
                 <div className="window-info-button">
