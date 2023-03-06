@@ -4,7 +4,7 @@ import WinoLogo from '../images/wino-logo.svg';
 import SearchIcon from '../images/search-icon.svg';
 
 
-const TopBar = () => {
+const TopBar = ({onInformationClick}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
@@ -28,6 +28,10 @@ const TopBar = () => {
         setShowContactDropdown(value);
     };
 
+    const handleOnInformationClick = () => {
+        onInformationClick();
+    };
+
     return (
         <div className="top-bar-layout">
             <head>
@@ -40,7 +44,7 @@ const TopBar = () => {
                     <div className="top-bar-left-element">
                         Contact
                         { showContactDropdown && <div className="top-bar-contact-dropdown" onMouseEnter={() => handleContactDropdown(true)}>
-                            <div className="top-bar-dropdown-item">Information</div>
+                            <div className="top-bar-dropdown-item" onClick={handleOnInformationClick}>Information</div>
                             <div className="top-bar-dropdown-separator"/>
                             <a className="top-bar-dropdown-item-a-1" href="mailto:wino@studiowino.com" target="_blank" rel="noreferrer">wino@studiowino.com</a>
                             <a className="top-bar-dropdown-item-a-2" href="tel:+902128070867" target="_blank" rel="noreferrer">+90 212 807 08 67</a>

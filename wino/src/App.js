@@ -16,6 +16,8 @@ function App() {
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isInformationClicked, setIsInformationClicked] = useState(false);
+  const [isImageInformationClicked, setIsImageInformationClicked] = useState(false);
 
   const images = [
     {
@@ -47,20 +49,32 @@ function App() {
     setIsFullscreen(false);
   };
 
+  const handleInformationClick = () => {
+    console.log("Information clicked")
+    setIsInformationClicked(true);
+  };
+
+  const handleInformationClose = () => {
+    setIsInformationClicked(false);
+  };
+
   return (
     <div className="App">
       <div className="desktop-layout" style={{backgroundImage: `url(${DesktopBackground})`}}>
           <div className='desktop-top-layout'>
-            <TopBar/>
+            <TopBar onInformationClick={handleInformationClick}/>
           </div>
           <div className='desktop-bottom-layout'>
-            <div><Folder title={"Projects of Wino"} children={"This is folder 1"}></Folder></div>
-            <div><Folder title={"Folder 2"} children={"This is folder 2"}></Folder></div>
-            <div><Folder title={"Folder 3"} children={"This is folder 3"}></Folder></div>
+            <div className='desktop-elements'>
+              <div><Folder title={"Projects of Wino"} children={"This is folder 1"}></Folder></div>
+              <div><Folder title={"Folder 2"} children={"This is folder 2"}></Folder></div>
+              <div><Folder title={"Folder 3"} children={"This is folder 3"}></Folder></div>
+            </div>
             {/* <TxtFile title={"Information"}/> */}
             <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} />
             <StickyNote/>
           </div>
+          {isInformationClicked && ( <div style={{ zIndex: "9999", top: "100px", position: "absolute" }}><TxtFile title={"Information"} onInformationClose={handleInformationClose} /></div>  )}
           {isFullscreen && (
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
           )}

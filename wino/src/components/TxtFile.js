@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./component_styles.css";
 
-const TxtFile = ({ title }) => {
+const TxtFile = ({ title, onInformationClose }) => {
   const [boxSize, setBoxSize] = useState({ width: 320, height: 400 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
@@ -87,11 +87,16 @@ const TxtFile = ({ title }) => {
     setIsVisible(false);
   };
 
+  const handleOnInformationClose = () => {
+    setIsVisible(false);
+    onInformationClose();
+  };
+
   return (
     <div className="resizable-box" style={boxStyle} onMouseDown={handleMouseDown}>
       <div className="content">
         <div className="text-file-upper-body" style={{ height: upperBodyHeight }}>
-          <div className="close-button" onClick={handleCloseClick}></div>
+          <div className="close-button" onClick={handleOnInformationClose}></div>
           <div className="upper-body-content">
             <div className="upper-body-content-wrapper">
                 <div className="text-file-title">{title}</div>

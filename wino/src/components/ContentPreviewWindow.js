@@ -3,7 +3,6 @@ import BackArrow from "../images/back-arrow.svg";
 import ForwardArrow from "../images/forward-arrow.svg";
 import CloseButton from "../images/close-button.svg";
 import FullscreenButton from "../images/fs-button.svg";
-import DownloadButton from "../images/download.svg";
 import "./component_styles.css";
 
 const ContentPreviewWindow = ({ images, onFullscreen }) => {
