@@ -29,6 +29,7 @@ const TopBar = ({onInformationClick}) => {
     };
 
     const handleOnInformationClick = () => {
+        window.history.pushState(null, null, '/information');
         onInformationClick();
     };
 

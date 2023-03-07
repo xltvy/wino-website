@@ -3,7 +3,7 @@ import Folder from './Folder';
 import TopBar from './TopBar';
 import TxtFile from './TxtFile';
 import StickyNote from './StickyNote';
-import DesktopBackground from '../images/desktop-bg.jpg';
+import DesktopBackground from '../images/background.jpg';
 import ContentPreviewWindow from './ContentPreviewWindow';
 import FullscreenImage from './FullscreenImage';
 import Image1 from '../images/image1.jpg';
@@ -57,7 +57,6 @@ const Desktop = () => {
                 <div><Folder title={"Projects of Wino"} children={"This is folder 1"}></Folder></div>
                 <div><Folder title={"Folder 2"} children={"This is folder 2"}></Folder></div>
                 <div><Folder title={"Folder 3"} children={"This is folder 3"}></Folder></div>
-                {/* <TxtFile title={"Information"}/> */}
                 <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} />
                 <StickyNote/>
             </div>

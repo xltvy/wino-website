@@ -5,13 +5,13 @@ import CloseButton from "../images/close-button.svg";
 import FullscreenButton from "../images/fs-button.svg";
 import "./component_styles.css";
 
-const ContentPreviewWindow = ({ images, onFullscreen }) => {
-  const [boxSize, setBoxSize] = useState({ width: 910, height: 720 });
+const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick }) => {
+  const [boxSize, setBoxSize] = useState({ width: Math.max(690, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
 
   const handleMouseDown = (event) => {
     if (
@@ -88,10 +88,6 @@ const ContentPreviewWindow = ({ images, onFullscreen }) => {
     display: isVisible ? "block" : "none",
   };
 
-  const handleCloseClick = () => {
-    setIsVisible(false);
-  };
-
   const handlePrev = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
@@ -106,6 +102,16 @@ const ContentPreviewWindow = ({ images, onFullscreen }) => {
 
   const handleOnFullscreen = () => {
     onFullscreen(images.indexOf(currentImage));
+  };
+
+  const handleOnClose = () => {
+    setIsVisible(false);
+    onClose();
+  };
+
+  const handleOnInformationClick = () => {
+    console.log("Info Clicked");
+    onInformationClick();
   };
 
   const currentImage = images[currentImageIndex];
@@ -129,13 +135,13 @@ const ContentPreviewWindow = ({ images, onFullscreen }) => {
                 </div>
             </div>
             <div className="prev-window-utility-buttons">
-                <div className="window-close-button" onClick={handleCloseClick}>
+                <div className="window-close-button" onClick={handleOnClose}>
                     <img src={CloseButton} alt="Close Button" style={{height: "14px"}}/>
                 </div>
                 <div className="window-fs-button" onClick={handleOnFullscreen}>
                     <img src={FullscreenButton} alt="Fullscreen Button" style={{height: "14px"}}/>
                 </div>
-                <div className="window-info-button">
+                <div className="window-info-button" onClick={handleOnInformationClick}>
                     Info
                 </div>
             </div>
