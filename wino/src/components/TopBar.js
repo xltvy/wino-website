@@ -4,7 +4,7 @@ import WinoLogo from '../images/wino-logo.svg';
 import SearchIcon from '../images/search-icon.svg';
 
 
-const TopBar = ({onInformationClick}) => {
+const TopBar = ({onInformationClick, onSearchClick}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
@@ -29,8 +29,13 @@ const TopBar = ({onInformationClick}) => {
     };
 
     const handleOnInformationClick = () => {
-        window.history.pushState(null, null, '/information');
+        // window.history.pushState(null, null, '/information');
         onInformationClick();
+    };
+
+    const handleOnSearchClick = () => {
+        console.log('search click')
+        onSearchClick();
     };
 
     return (
@@ -66,7 +71,7 @@ const TopBar = ({onInformationClick}) => {
             <div className="top-bar-right">
                 <div className="top-bar-right-item">Legal</div>
                 <div className="top-bar-right-item">
-                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon"/>
+                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" onClick={handleOnSearchClick}/>
                 </div>
                 <div className="top-bar-right-item-dt">
                     {formattedDate}

@@ -8,6 +8,7 @@ import DesktopBackground from './images/background.jpg';
 import ContentPreviewWindow from './components/ContentPreviewWindow';
 import FullscreenImage from './components/FullscreenImage';
 import DesktopImage from './components/DesktopImage';
+import SearchBar from './components/SearchBar';
 import Image1 from './images/image1.jpg';
 import Image2 from './images/image2.jpg';
 import Image3 from './images/image3.jpg';
@@ -96,7 +97,7 @@ function App() {
     <div className="App">
       <div className="desktop-layout" style={{backgroundImage: `url(${DesktopBackground})`}}>
           <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick}/>
+            <TopBar onInformationClick={handleInformationClick} onSearchClick={handleSearchClick}/>
           </div>
           <div className='desktop-bottom-layout'>
             <div className='desktop-elements'>
@@ -130,6 +131,9 @@ function App() {
           )}
           {isFullscreen && (
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
+          )}
+          {isSearchClicked && (
+            <SearchBar onSearchClose={handleSearchClose}/>
           )}
         </div>
     </div>
