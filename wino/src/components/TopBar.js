@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './component_styles.css'
 import WinoLogo from '../images/wino-logo.svg';
 import SearchIcon from '../images/search-icon.svg';
+import UtilityDots from '../images/utility-dots.svg';
 
 
 const TopBar = ({onInformationClick, onSearchClick}) => {
@@ -78,6 +79,9 @@ const TopBar = ({onInformationClick, onSearchClick}) => {
                 </div>
                 <div className="top-bar-right-item-dt">
                     {formattedTime}
+                </div>
+                <div className="top-bar-utility-button">
+                    <img className='top-bar-utility-dots' src={UtilityDots} alt="Utility Dots"/>
                 </div>
             </div>
         </div>

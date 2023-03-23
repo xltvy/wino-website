@@ -364,6 +364,10 @@
     cursor: pointer;
 }
 
+.top-bar-utility-button {
+    display: none;
+}
+
 .folder-layout {
     max-width: max-content;
     max-height: max-content;
@@ -880,4 +884,8 @@ p {
     font-weight: 400;
     color: rgb(141, 141, 141);
     padding-right: 5px;
+}
+
+.mobile-search-container {
+    display: none;
 }

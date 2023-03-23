@@ -13,6 +13,8 @@ import Image1 from './images/image1.jpg';
 import Image2 from './images/image2.jpg';
 import Image3 from './images/image3.jpg';
 import Desktop from './components/Desktop';
+import './components/component_styles.css';
+import './components/responsive_styles.css';
 
 function App() {
 
@@ -98,6 +100,9 @@ function App() {
       <div className="desktop-layout" style={{backgroundImage: `url(${DesktopBackground})`}}>
           <div className='desktop-top-layout'>
             <TopBar onInformationClick={handleInformationClick} onSearchClick={handleSearchClick}/>
+          </div>
+          <div className='mobile-search-container'>
+            <SearchBar onSearchClose={handleSearchClose}/>
           </div>
           <div className='desktop-bottom-layout'>
             <div className='desktop-elements'>
