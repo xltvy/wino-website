@@ -4,7 +4,7 @@ import WinoLogo from '../images/wino-logo.svg';
 import SearchIcon from '../images/search-icon.svg';
 
 
-const TopBar = () => {
+const TopBar = ({onInformationClick, onSearchClick}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
@@ -28,6 +28,16 @@ const TopBar = () => {
         setShowContactDropdown(value);
     };
 
+    const handleOnInformationClick = () => {
+        // window.history.pushState(null, null, '/information');
+        onInformationClick();
+    };
+
+    const handleOnSearchClick = () => {
+        console.log('search click')
+        onSearchClick();
+    };
+
     return (
         <div className="top-bar-layout">
             <head>
@@ -40,7 +50,7 @@ const TopBar = () => {
                     <div className="top-bar-left-element">
                         Contact
                         { showContactDropdown && <div className="top-bar-contact-dropdown" onMouseEnter={() => handleContactDropdown(true)}>
-                            <div className="top-bar-dropdown-item">Information</div>
+                            <div className="top-bar-dropdown-item" onClick={handleOnInformationClick}>Information</div>
                             <div className="top-bar-dropdown-separator"/>
                             <a className="top-bar-dropdown-item-a-1" href="mailto:wino@studiowino.com" target="_blank" rel="noreferrer">wino@studiowino.com</a>
                             <a className="top-bar-dropdown-item-a-2" href="tel:+902128070867" target="_blank" rel="noreferrer">+90 212 807 08 67</a>
@@ -61,7 +71,7 @@ const TopBar = () => {
             <div className="top-bar-right">
                 <div className="top-bar-right-item">Legal</div>
                 <div className="top-bar-right-item">
-                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon"/>
+                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" onClick={handleOnSearchClick}/>
                 </div>
                 <div className="top-bar-right-item-dt">
                     {formattedDate}

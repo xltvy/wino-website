@@ -4,9 +4,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: lavender;
-    overflow: auto;
+    overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -22,7 +23,45 @@
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     position: relative;
+    z-index: 100;
+}
+
+.desktop-bottom-layout {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 80px 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     z-index: 1;
+}
+
+.desktop-elements {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.desktop-folders {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.desktop-images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .desktop-top-layout::before {
@@ -106,7 +145,7 @@
     background-color: rgba(255, 255, 255, 0.781);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 1000;
 }
 
 .top-bar-social-dropdown {
@@ -123,7 +162,7 @@
     background-color: rgba(255, 255, 255, 0.781);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 1000;
 }
 
 .top-bar-dropdown-item {
@@ -378,7 +417,6 @@
     flex-direction: column;
     align-items: center;
     top: 100px;
-    left: 100px;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     border-radius: 5px;
@@ -507,7 +545,7 @@ p {
     border-radius: 5px;
     position: absolute;
     top: 80px;
-    right: 80px;
+    right: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -655,14 +693,18 @@ p {
 
 .window-fs-button {
     padding: 8px;
+    padding-right: 20px;
     margin-top: 16px;
     cursor: pointer;
 }
 
-.window-min-button {
-    padding: 8px;
-    padding-right: 28px;
-    margin-top: 16px;
+.window-info-button {
+    margin-top: 12px;
+    margin-right: 24px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    padding: 2px 5px;
+    color:rgb(112, 112, 112);
     cursor: pointer;
 }
 
@@ -674,10 +716,34 @@ p {
     display: flex;
 }
 
+.move-previous {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: w-resize;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.move-forward {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: e-resize;
+    background-color: transparent;
+    z-index: 100;
+}
+
 .prev-lower-body-image-container {
-    position: relative; /* optional */
+    position: relative;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%; /* set a fixed height or adjust as per your requirement */
+    height: 100%;
     overflow: hidden;
 }
 
@@ -688,6 +754,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    user-select: none;
 }
 
 .prev-lower-body-footer {
@@ -701,21 +768,116 @@ p {
     padding: 20px;
 }
 
+/* FullscreenImage.js component styles below: */
+
 .fullscreen-image-container {
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 9999;
+    z-index: 9000;
     background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+  
+.fullscreen-image-container img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.exit-fullscreen-button {
+    position: fixed;
+    font-size: 0.8rem;
+    color:rgb(45, 45, 45);
+    background-color: white;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    padding: 7px;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* DesktopImage.js component styles below: */
+
+.desktop-image-icon {
+    max-width: 80px;
+    max-height: 80px;
+    border: 2px solid white;
+    margin: 5px;
+    filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+    cursor: pointer;
+}
+
+.desktop-image-icon.clicked {
+    border: 2px solid #5998f7;
+}
+
+/* SearchBar.js component styles below: */
+
+.search-bar {
+    width: 600px;
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 10px;
+    padding: 0px 8px;
+    border: 1px solid #c6c6c6;
+    filter: drop-shadow(-8px 8px 8px rgba(0, 0, 0, 0.248));
+    z-index: 9999;
+}
+
+.search-bar-icon {
+    height: 20px;
+    padding: 14px;
+}
+
+.input-area-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  
-  .fullscreen-image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.search-bar-input {
+    width: 50%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(49, 49, 49);
+    font-size: 1.3rem;
+    font-weight: lighter;
+    padding-left: 0;
+}
+
+.search-bar-input::placeholder {
+    color: #b3b3b3;
+    font-weight: lighter;
+}
+
+.search-bar-input::-ms-input-placeholder {
+    color: #b3b3b3;
+    font-weight: lighter;
+}
+
+.search-bar-status-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+}
+
+.search-result-count {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+    padding-right: 5px;
+}
