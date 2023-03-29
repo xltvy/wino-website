@@ -23,8 +23,8 @@ import Image4 from './images/luna_merdin.jpg';
 import Image5 from './images/ankh.jpg';
 import Image6 from './images/fred.jpg';
 import Image7 from './images/pinoli.jpg';
-import Desktop from './components/Desktop';
 import DesktopElement from './components/DesktopElement';
+import MobileElement from './components/MobileElement';
 import './components/component_styles.css';
 import './components/responsive_styles.css';
 
@@ -275,54 +275,13 @@ function App() {
                   </div>
                 </a>
               </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' src={Image1} alt="Petra Coffee"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Petra Coffee.jpg</div>
-                </div>
-              </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' src={Image2} alt="Mercy Born"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Mercy Born.jpg</div>
-                </div>
-              </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' src={Image3} alt="Luna Merdin"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Luna Merdin.jpg</div>
-                </div>
-              </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' style={{maxWidth: "90px"}} src={Image4} alt="Ankh"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Ankh.jpg</div>
-                </div>
-              </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' src={Image5} alt="Fred Coffee"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Fred Coffee.jpg</div>
-                </div>
-              </div>
-              <div className='mobile-element'>
-                <div className='mobile-element-image-container'>
-                  <img className='mobile-desktop-image' style={{maxWidth: "72px"}} src={Image6} alt="Pinoli"/>
-                </div>
-                <div className='mobile-element-title-container'>
-                  <div className='desktop-element-title'>Pinoli.jpg</div>
-                </div>
-              </div>
+              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt}/>
+              <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt}/>
+              <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt}/>
+              <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt}/>
+              <MobileElement imageIndex={4} title={images[4].title} imageSrc={images[4].src} imageAlt={images[4].alt}/>
+              <MobileElement imageIndex={5} title={images[5].title} imageSrc={images[5].src} imageAlt={images[5].alt}/>
+              <MobileElement imageIndex={6} title={images[6].title} imageSrc={images[6].src} imageAlt={images[6].alt}/>
             </div>
           </div>
           <div className='desktop-bottom-layout'>
@@ -357,7 +316,7 @@ function App() {
           )}
           {isMobileInformationClicked && (
             <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
-              <MobileInformation onInformationClose={handleMobileInformationClose} />
+              <MobileInformation title={"Information"} content={informationContent} onInformationClose={handleMobileInformationClose} />
             </div>
           )}
           {isImageClicked && (

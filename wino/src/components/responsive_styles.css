@@ -228,7 +228,7 @@
     }
 
     .mobile-desktop-image {
-        max-width: 62px;
+        max-width: 70px;
         max-height: 66px;
         border: 2px solid white;
         filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
