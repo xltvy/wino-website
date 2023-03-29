@@ -310,4 +310,57 @@
         text-decoration: none;
     }
 
+    .prev-upper-body {
+        display: flex;
+        border-top-left-radius: unset;
+        border-top-right-radius: unset;
+        margin-bottom: unset;
+    }
+
+    .prev-window-utility-buttons {
+        padding-right: 6px;
+    }
+
+    .prev-window-title {
+        margin-top: unset;
+        padding: 1rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .prev-window-title-label {
+        margin-top: unset;
+        font-size: 1.2rem;
+    }
+
+    .window-close-button {
+        margin-top: unset;
+        padding-top: 10px;
+    }
+
+    .window-fs-button {
+        margin-top: unset;
+        padding-top: 10px;
+    }
+
+    .prev-upper-body-content {
+        padding-top: 8px;
+    }
+
+    .prev-lower-body-image-container {
+        display: flex;
+    }
+
+    .prev-lower-body {
+        width: 100%;
+        position: relative;
+        height: calc(100% - 10rem);
+    }
+
+    .prev-lower-body-footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+
 }

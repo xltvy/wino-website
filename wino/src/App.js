@@ -12,6 +12,7 @@ import DesktopImage from './components/DesktopImage';
 import DesktopVideo from './components/DesktopVideo';
 import SearchBar from './components/SearchBar';
 import MobileInformation from './components/MobileInformation';
+import MobileContentPreviewWindow from './components/MobileContentPreviewWindow';
 import Video1 from './images/desktop-film.mp4';
 import Video2 from './images/desktop-film-reversed.mp4';
 import ContactIcon from './icons/ContactIconFinal.js';
@@ -49,6 +50,7 @@ function App() {
   const [clickedImageIndex, setClickedImageIndex] = useState(null);
   const [isImageInformationClicked, setIsImageInformationClicked] = useState(false);
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
+  const [isMobileImageClicked, setIsMobileImageClicked] = useState(true);
   const [desktopSource] = useState(DesktopBackground);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(1);
@@ -175,6 +177,10 @@ function App() {
 
   const handleImageClose = () => {
     setIsImageClicked(false);
+  };
+
+  const handleMobileImageClose = () => {
+    setIsMobileImageClicked(false);
   };
 
   const handleImageInformationClick = () => {
@@ -322,6 +328,12 @@ function App() {
           {isImageClicked && (
             <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", zIndex: "2000"}}>
               <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} />
+            </div>
+          )}
+          {isMobileImageClicked && (
+            <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              {/* <MobileContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={} currentIndex={1} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} /> */}
+              <MobileContentPreviewWindow images={images} />
             </div>
           )}
           {isImageInformationClicked && (
