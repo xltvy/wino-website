@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CloseIcon from "../icons/CloseIcon.js";
-import Logo from "../images/wino-logo2.png";
 import "./component_styles.css";
 import "./responsive_styles.css";
 
@@ -28,7 +27,9 @@ const MobileInformation = ({title, content, onInformationClose }) => {
             <div className="text-file-lower-body">
                 <div className="lower-body-content">
                     <div className="lower-body-content-wrapper">
-                        {content}
+                        <div className="info-text-wrapper">
+                            {content}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -49,8 +49,9 @@ function App() {
   const [isImageClicked, setIsImageClicked] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(null);
   const [isImageInformationClicked, setIsImageInformationClicked] = useState(false);
+  const [isMobileImageInformationClicked, setIsMobileImageInformationClicked] = useState(false);
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
-  const [isMobileImageClicked, setIsMobileImageClicked] = useState(true);
+  const [isMobileImageClicked, setIsMobileImageClicked] = useState(false);
   const [desktopSource] = useState(DesktopBackground);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(1);
@@ -169,10 +170,13 @@ function App() {
   };
 
   const handleImageClick = (index) => {
-    console.log("Image clicked")
     setIsImageClicked(true);
     setClickedImageIndex(index);
-    console.log("Clicked image index: " + clickedImageIndex);
+  };
+
+  const handleMobileImageClick = (index) => {
+    setClickedImageIndex(index);
+    setIsMobileImageClicked(true);
   };
 
   const handleImageClose = () => {
@@ -184,15 +188,20 @@ function App() {
   };
 
   const handleImageInformationClick = () => {
-    console.log("Image information clicked");
-    console.log("Clicked image alt: " + images[clickedImageIndex].alt);
     setIsImageInformationClicked(true);
+  };
+
+  const handleMobileImageInformationClick = () => {
+    console.log("Mobile image information clicked and cliced image index is: " + clickedImageIndex);
+    setIsMobileImageInformationClicked(true);
+  };
+
+  const handleMobileImageInformationClose = () => {
+    setIsMobileImageInformationClicked(false);
   };
 
   const handleViewedImageChange = (idx) => {
     setClickedImageIndex(idx);
-    console.log("app seen image index: " + idx);
-    console.log("current index on app: " + clickedImageIndex);
   }
 
   const handleImageInformationClose = () => {
@@ -281,13 +290,13 @@ function App() {
                   </div>
                 </a>
               </div>
-              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt}/>
-              <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt}/>
-              <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt}/>
-              <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt}/>
-              <MobileElement imageIndex={4} title={images[4].title} imageSrc={images[4].src} imageAlt={images[4].alt}/>
-              <MobileElement imageIndex={5} title={images[5].title} imageSrc={images[5].src} imageAlt={images[5].alt}/>
-              <MobileElement imageIndex={6} title={images[6].title} imageSrc={images[6].src} imageAlt={images[6].alt}/>
+              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={4} title={images[4].title} imageSrc={images[4].src} imageAlt={images[4].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={5} title={images[5].title} imageSrc={images[5].src} imageAlt={images[5].alt} onImageClick={handleMobileImageClick}/>
+              <MobileElement imageIndex={6} title={images[6].title} imageSrc={images[6].src} imageAlt={images[6].alt} onImageClick={handleMobileImageClick}/>
             </div>
           </div>
           <div className='desktop-bottom-layout'>
@@ -333,12 +342,17 @@ function App() {
           {isMobileImageClicked && (
             <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
               {/* <MobileContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={} currentIndex={1} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} /> */}
-              <MobileContentPreviewWindow images={images} />
+              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} onViewedImageChange={handleViewedImageChange}/>
             </div>
           )}
           {isImageInformationClicked && (
             <div style={{ zIndex: "3000", top: "100px", left: "100vh", position: "absolute" }}>
               <TxtFile title={images[clickedImageIndex].title} content={images[clickedImageIndex].content} onInformationClose={handleImageInformationClose} />
+            </div>
+          )}
+          {isMobileImageInformationClicked && (
+            <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileInformation title={images[clickedImageIndex].title} content={images[clickedImageIndex].content} onInformationClose={handleMobileImageInformationClose} />
             </div>
           )}
           {isFullscreen && (
