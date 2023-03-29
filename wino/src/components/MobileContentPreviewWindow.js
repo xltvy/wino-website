@@ -73,7 +73,7 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                                                             ref={videoRef}
                                                             title={image.title}
                                                             className="prev-window-video"
-                                                            src="https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1"
+                                                            src={image.src}
                                                             width="100%"
                                                             height="100%"
                                                             frameborder="0"

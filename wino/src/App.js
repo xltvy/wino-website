@@ -71,7 +71,7 @@ function App() {
   const images = [
     {
       id: 1,
-      src: "https://player.vimeo.com/video/794071012?h=0fcbbb3720&background=1&title=0&byline=0&portrait=0&playsinline=1&muted=1&controls=0&loop=1",
+      src: "https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
       alt: "Nike x Sneaks Up Air Force 1",
       title: "AF1xSUP_MOVIE",
       content: nikeContent,

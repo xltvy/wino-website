@@ -95,7 +95,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-    if (currentImageIndex == 0) {
+    if (currentImageIndex === 0) {
       onViewedImageChange(images.length - 1);
     } else {
       onViewedImageChange(currentImageIndex - 1);
@@ -106,7 +106,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-    if (currentImageIndex == images.length - 1) {
+    if (currentImageIndex === images.length - 1) {
       onViewedImageChange(0);
     } else {
       onViewedImageChange(currentImageIndex + 1);
@@ -175,8 +175,9 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
                   {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} />}
                   {currentImage.isVideo && <iframe
                                               ref={videoRef}
+                                              title={currentImage.alt}
                                               className="prev-window-video"
-                                              src="https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1"
+                                              src={currentImage.src}
                                               width="100%"
                                               height="100%"
                                               frameborder="0"
