@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Folder from './components/Folder';
 import TopBar from './components/TopBar';
 import TxtFile from './components/TxtFile';
@@ -242,11 +241,16 @@ function App() {
 };
 
   useEffect(() => {
+    const video1 = video1Ref.current;
+    const video2 = video2Ref.current;
+    const handleEnded = () => {};
+
+    video1.addEventListener('ended', handleEnded);
+    video2.addEventListener('ended', handleEnded);
+
     return () => {
-      const video1 = video1Ref.current;
-      const video2 = video2Ref.current;
-      video1.removeEventListener('ended', () => {});
-      video2.removeEventListener('ended', () => {});
+      video1.removeEventListener('ended', handleEnded);
+      video2.removeEventListener('ended', handleEnded);
     };
   }, []);
   
@@ -342,7 +346,7 @@ function App() {
           {isMobileImageClicked && (
             <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
               {/* <MobileContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={} currentIndex={1} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} /> */}
-              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} onViewedImageChange={handleViewedImageChange}/>
+              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} onViewedImageChange={handleViewedImageChange} onFullscreen={handleFullscreenClick}/>
             </div>
           )}
           {isImageInformationClicked && (

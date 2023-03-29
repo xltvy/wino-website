@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CloseIcon from "../icons/CloseIcon.js";
 import "./component_styles.css";
 import "./responsive_styles.css";
 
 const MobileInformation = ({title, content, onInformationClose }) => {
-    const [isVisible, setIsVisible] = useState(true);
 
     const handleOnInformationClose = () => {
-        setIsVisible(false);
         onInformationClose();
     };
 

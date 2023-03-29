@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import CloseIcon from "../icons/CloseIcon.js";
 import FullscreenIcon from "../icons/FullscreenIcon.js";
@@ -8,8 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformationClick, onViewedImageChange }) => {
-    const [isVisible, setIsVisible] = useState(true);
+const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformationClick, onViewedImageChange, onFullscreen }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
 
 
@@ -18,7 +17,6 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
 
     const handleOnClose = () => {
         console.log("close clicked");
-        setIsVisible(false);
         onClose();
     };
 
@@ -31,6 +29,15 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
         onInformationClick();
     };
 
+    const handleOnFullscreen = () => {
+        console.log("fullscreen clicked");
+        if (currentImage.isVideo) {
+            videoRef.current.requestFullscreen();
+        } else {
+            onFullscreen(currentImageIndex);
+        }
+    };
+
     return (
         <div className="content">
             <div className="prev-upper-body">
@@ -41,7 +48,7 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                         <div className="window-close-button" onClick={handleOnClose}>
                             <CloseIcon height="14px" style={{cursor: "pointer"}}/>
                         </div>
-                        <div className="window-fs-button">
+                        <div className="window-fs-button" onClick={handleOnFullscreen}>
                             <FullscreenIcon height="14px" style={{cursor: "pointer"}}/>
                         </div>
                     </div>
@@ -64,6 +71,7 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                                 {!image.isVideo && <img src={image.src} alt={image.alt} className="mobile-prev-image" />}
                                 {image.isVideo && <iframe
                                                             ref={videoRef}
+                                                            title={image.title}
                                                             className="prev-window-video"
                                                             src="https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1"
                                                             width="100%"

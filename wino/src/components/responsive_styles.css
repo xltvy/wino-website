@@ -436,4 +436,24 @@
         width: 0px;
      }
 
+     .fullscreen-image-container img {
+        height: 100% !important;
+        width: auto !important;
+        max-height: initial !important;
+        max-width: initial !important;
+        overflow-y: hidden;
+
+     }
+
+     .fullscreen-image-container::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+        opacity: 0;
+        height: 10px;
+    }
+
+    .fullscreen-image-container::-webkit-scrollbar-thumb {
+        background-color: #FFFFFF;
+      }
+
 }

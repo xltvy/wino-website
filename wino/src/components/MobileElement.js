@@ -4,7 +4,7 @@ import './responsive_styles.css'
 
 const MobileElement = ({imageIndex, title, imageSrc, imageAlt, onImageClick}) => {
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(imageIndex);
+    const [currentImageIndex] = useState(imageIndex);
     
     const handleOnImageClick = () => {
         onImageClick(currentImageIndex);
