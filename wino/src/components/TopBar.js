@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './component_styles.css'
-import WinoLogo from '../images/wino-logo.svg';
+import Switch from "react-switch";
+import WinoLogo from "../icons/WinoLogo2.js";
 import SearchIcon from '../images/search-icon.svg';
+import UtilityDots from '../icons/UtilityDots.js';
+import ContactOutline from '../icons/ContactOutline.js';
+import InfoOutline from '../icons/InfoOutline.js';
 
 
-const TopBar = ({onInformationClick, onSearchClick}) => {
+const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, onDesktopFilmToggle}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
+    const [showMobileDropdown, setShowMobileDropdown] = useState(false);
     const [dateTime, setDateTime] = useState(new Date());
+    const [isAnimationChecked, setIsAnimationChecked] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const formattedDate = dateTime.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric', month: 'short' });
     const formattedTime = dateTime.toLocaleTimeString('en-US', { hour12: false, hour: 'numeric', minute: 'numeric' });
@@ -28,9 +35,17 @@ const TopBar = ({onInformationClick, onSearchClick}) => {
         setShowContactDropdown(value);
     };
 
+    const handleMobileDropdown = () => {
+        console.log("mobile click");
+        setShowMobileDropdown(!showMobileDropdown);
+    };
+
     const handleOnInformationClick = () => {
-        // window.history.pushState(null, null, '/information');
         onInformationClick();
+    };
+
+    const handleOnMobileInformationClick = () => {
+        onMobileInformationClick();
     };
 
     const handleOnSearchClick = () => {
@@ -38,13 +53,29 @@ const TopBar = ({onInformationClick, onSearchClick}) => {
         onSearchClick();
     };
 
+    const handleOnDesktopFilmToggle = () => {
+        setIsAnimationChecked(!isAnimationChecked);
+        onDesktopFilmToggle();
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+          setIsMobile(window.innerWidth < 978); // adjust the breakpoint as needed
+        };
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+
     return (
         <div className="top-bar-layout">
             <head>
                 <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css"/>
             </head>
             <div className="top-bar-left">
-                <img className='top-bar-logo' src={WinoLogo} alt="Wino Logo"/>
+                <div className='icon-container'>
+                    <WinoLogo className="wino-logo" />
+                </div>
                 <label className='top-bar-label'>Studio Wino</label>
                 <div className="top-bar-left-item" onMouseEnter={() => handleContactDropdown(true)} onMouseLeave={() => handleContactDropdown(false)}>
                     <div className="top-bar-left-element">
@@ -79,6 +110,40 @@ const TopBar = ({onInformationClick, onSearchClick}) => {
                 <div className="top-bar-right-item-dt">
                     {formattedTime}
                 </div>
+                <div className='top-bar-animation-button-container'>
+                    {!isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={18} width={30} onColor={"#4cd964"}/>)}
+                    {isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={24} width={40} onColor={"#4cd964"}/>)}
+                </div>
+                <div className="top-bar-utility-button" onClick={handleMobileDropdown}>
+                    <UtilityDots className='top-bar-utility-dots'/>
+                </div>
+                {showMobileDropdown && (<div className='top-bar-utility-dropdown'>
+                    <div className='top-bar-utility-dropdown-container'>
+                        <nav>
+                            <ul className='mobile-dropdown-ul'>
+                                <li className='mobile-dropdown-item' role="button" onClick={handleOnMobileInformationClick}>
+                                    <InfoOutline fill="#29a3ff" height="20px" style={{paddingRight: "0.4rem"}}/>
+                                    <a className="mobile-dropdown-item-a">Information</a>
+                                </li>
+                                <li className='mobile-dropdown-item' role="button">
+                                    <ContactOutline fill="#29a3ff" height="14px" style={{paddingRight: "0.3rem"}}/>
+                                    <a className="mobile-dropdown-item-a" href="mailto:wino@studiowino.com" target="_blank" rel="noreferrer"> Contact</a>
+                                </li>
+                            </ul>
+                            <ul className='mobile-dropdown-ul' style={{border: "unset"}}>
+                                <li className='mobile-dropdown-item'>
+                                    <a href='https://www.instagram.com/studiowino/' target="_blank" rel="noreferrer" style={{textDecoration: "none", color: "black"}}>Instagram</a>
+                                </li>
+                                <li className='mobile-dropdown-item'>
+                                    <a href='https://www.behance.net/studiowinodotcom' target="_blank" rel="noreferrer" style={{textDecoration: "none", color: "black"}}>Behance</a>
+                                </li>
+                                <li className='mobile-dropdown-item'>
+                                    <a href='https://www.linkedin.com/company/studiowino/' target="_blank" rel="noreferrer" style={{textDecoration: "none", color: "black"}}>LinkedIn</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>)}
             </div>
         </div>
     );

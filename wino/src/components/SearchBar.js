@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./component_styles.css";
-import SearchIcon from "../images/search-icon-grey.svg";
+import SearchIcon from "../icons/SearchIcon.js";
 
 const SearchBar = ({onSearchClose}) => {
 
@@ -27,7 +27,9 @@ const SearchBar = ({onSearchClose}) => {
             <div className="search-bar-input-area">
                 <div className="input-area-content-wrapper">
                     <div className="input-area-content">
-                        <img className='search-bar-icon' src={SearchIcon} alt="Search Icon"/>
+                        <div className="icon-container">
+                            <SearchIcon className="search-bar-icon" fill="#000" />
+                        </div>
                         <input type="text" className="search-bar-input" placeholder="Search" />
                         <div className="search-bar-status-area">
                             <div className="search-result-count">

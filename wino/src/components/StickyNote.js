@@ -12,12 +12,9 @@ const StickyNote = () => {
                 </div>
                 <div className="sticky-note-lower">
                     <div className="sticky-note-body">
-                        <h3 className='sticky-note-header' style={{margin: "0px", padding: "0px"}}>PETRA COFFEE</h3>
-                        <p className='sticky-note-text' style={{marginTop: "10px", padding: "0px"}}>-</p>
-                        <p className='sticky-note-text' style={{margin: "0px", padding: "0px"}}>Gayrettepe, Hossohbet street</p>
-                        <p className='sticky-note-text' style={{margin: "0px", padding: "0px"}}>34349</p>
-                        <p className='sticky-note-text' style={{margin: "0px", padding: "0px"}}>Beşiktaş/İstanbul</p>
-                        <a className='sticky-note-link' href='https://www.studiowino.com' style={{margin: "0px", padding: "0px"}}>Read more</a>
+                        <p className='sticky-note-important'>The website is coming soon!</p>
+                        <p className='sticky-note-text'>WINO is an award-winning creative studio inspired by human-centered outcomes. Here, visual communication strategies, campaigns, graphic design and industrial products are created by us, for all.</p>
+                        
                     </div>
                 </div>
             </div>

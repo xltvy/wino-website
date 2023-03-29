@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import CloseIcon from "../icons/CloseIcon.js";
 import "./component_styles.css";
 
-const TxtFile = ({ title, onInformationClose }) => {
+const TxtFile = ({ title, content, onInformationClose }) => {
   const [boxSize, setBoxSize] = useState({ width: 320, height: 400 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
@@ -96,7 +97,9 @@ const TxtFile = ({ title, onInformationClose }) => {
     <div className="resizable-box" style={boxStyle} onMouseDown={handleMouseDown}>
       <div className="content">
         <div className="text-file-upper-body" style={{ height: upperBodyHeight }}>
-          <div className="close-button" onClick={handleOnInformationClose}></div>
+          <div className="close-button" onClick={handleOnInformationClose}>
+            <CloseIcon height="12px"/>
+          </div>
           <div className="upper-body-content">
             <div className="upper-body-content-wrapper">
                 <div className="text-file-title">{title}</div>
@@ -107,15 +110,7 @@ const TxtFile = ({ title, onInformationClose }) => {
         <div className="text-file-lower-body" style={{ height: lowerBodyHeight }}>
             <div className="lower-body-content">
                 <div className="lower-body-content-wrapper">
-                    <h3 style={{paddingTop: "0px"}}>CONTACT</h3>
-                    <p>For any inquires, please contact:</p>
-                    <p> <a style={{color: "black"}} href="mailto:wino@studiowino.com">wino@studiowino.com</a> </p>
-                    <p>T: +90 212 807 08 67</p>
-                    <p>IG: <a style={{color: "black"}} href='https://www.instagram.com/studiowino/' target="_blank" rel="noreferrer">@studiowino</a> </p>
-                    <h3>ABOUT</h3>
-                    <p>Studio Wino is a dynamic creative studio located in Istanbul, Turkey. They specialize in a wide range of creative services including branding, art direction, graphic design, web design, and visual communication. Their team consists of talented designers and creatives who are dedicated to crafting innovative and effective solutions for their clients. </p>
-                    <p style={{paddingTop: "8px"}}>Studio Wino takes a collaborative approach to their work, taking the time to understand their clients' needs and objectives in order to deliver tailor-made solutions that are both creative and practical. They have worked with a diverse range of clients across various industries, including fashion, food, hospitality, and technology. Studio Wino's unique blend of creativity and strategic thinking has earned them a reputation as one of the top creative studios in Istanbul.</p>
-                    <h3>PROJECTS</h3>
+                    {content}
                 </div>
             </div>
         </div>
