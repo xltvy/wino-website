@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
 import CloseIcon from "../icons/CloseIcon.js";
 import FullscreenIcon from "../icons/FullscreenIcon.js";
 import "./component_styles.css";
@@ -40,6 +41,25 @@ const MobileContentPreviewWindow = ({ images }) => {
     //         prevIndex === images.length - 1 ? 0 : prevIndex + 1
     //     );
     // };
+
+    const handleSwipe = (delta) => {
+        if (delta < 0) {
+            // Swipe right - move to the next image
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+        } else if (delta > 0) {
+            // Swipe left - move to the previous image
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === 0 ? images.length - 1 : prevIndex - 1
+            );
+        }
+    };
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handleSwipe(-1),
+        onSwipedRight: () => handleSwipe(1),
+    });
     
 
     return (
@@ -60,7 +80,7 @@ const MobileContentPreviewWindow = ({ images }) => {
             </div>
             <div className="prev-lower-body">
                 <div className="prev-lower-body-content">
-                    <div className="prev-lower-body-image-container" >
+                    <div className="prev-lower-body-image-container" {...handlers}>
                       {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} />}
                       {currentImage.isVideo && <iframe
                                                   ref={videoRef}

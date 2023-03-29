@@ -12,6 +12,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        position: fixed;
     }
 
     .desktop-top-layout {
@@ -317,6 +318,10 @@
         margin-bottom: unset;
     }
 
+    .content {
+        position: fixed;
+    }
+
     .prev-window-utility-buttons {
         padding-right: 6px;
     }
@@ -360,7 +365,7 @@
         position: absolute;
         bottom: 0px;
         width: 100%;
-        padding: 1rem 1.5rem;
+        padding: 0rem 0rem 1.5rem 1rem;
     }
 
 }
