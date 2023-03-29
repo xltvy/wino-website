@@ -141,9 +141,7 @@
     }
 
     .sticky-note-layout {
-        position: unset;
-        top: unset;
-        bottom: unset;
+        display: none;
     }
 
     .desktop-elements {
@@ -455,5 +453,20 @@
     .fullscreen-image-container::-webkit-scrollbar-thumb {
         background-color: #FFFFFF;
       }
+
+    .mobile-sticky-note-layout {
+        position: unset;
+        top: unset;
+        bottom: unset;
+        width: 230px;
+        height: 170px;
+        background-color: #FEEB3D;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+    }
 
 }

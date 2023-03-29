@@ -12,6 +12,7 @@ import DesktopVideo from './components/DesktopVideo';
 import SearchBar from './components/SearchBar';
 import MobileInformation from './components/MobileInformation';
 import MobileContentPreviewWindow from './components/MobileContentPreviewWindow';
+import MobileStickyNote from './components/MobileStickyNote';
 import Video1 from './images/desktop-film.mp4';
 import Video2 from './images/desktop-film-reversed.mp4';
 import ContactIcon from './icons/ContactIconFinal.js';
@@ -327,6 +328,7 @@ function App() {
               </div>
             </div>
             <StickyNote/>
+            <MobileStickyNote/>
           </div>
           {isInformationClicked && (
             <div style={{ zIndex: "1000", top: "100px", left: "40vh", position: "absolute" }}>
