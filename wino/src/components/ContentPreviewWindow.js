@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
-import BackArrow from "../images/back-arrow.svg";
-import ForwardArrow from "../images/forward-arrow.svg";
-import CloseButton from "../images/close-button.svg";
-import FullscreenButton from "../images/fs-button.svg";
+import React, { useState, useEffect, useRef } from "react";
+import LeftArrow from "../icons/LeftArrow.js";
+import RightArrow from "../icons/RightArrow.js";
+import CloseIcon from "../icons/CloseIcon.js";
+import FullscreenIcon from "../icons/FullscreenIcon.js";
 import "./component_styles.css";
 
-const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick }) => {
+const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick, onViewedImageChange }) => {
   const [boxSize, setBoxSize] = useState({ width: Math.max(690, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
+
+  const videoRef = useRef(null);
+  const currentImage = images[currentImageIndex];
 
   const handleMouseDown = (event) => {
     if (
@@ -92,16 +95,31 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+    if (currentImageIndex == 0) {
+      onViewedImageChange(images.length - 1);
+    } else {
+      onViewedImageChange(currentImageIndex - 1);
+    }
   };
 
   const handleNext = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+    if (currentImageIndex == images.length - 1) {
+      onViewedImageChange(0);
+    } else {
+      onViewedImageChange(currentImageIndex + 1);
+    }
   };
 
   const handleOnFullscreen = () => {
-    onFullscreen(images.indexOf(currentImage));
+    if (currentImage.isVideo) {
+      const video = videoRef.current;
+      video.requestFullscreen();
+    } else {
+      onFullscreen(images.indexOf(currentImage));
+    }
   };
 
   const handleOnClose = () => {
@@ -114,7 +132,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     onInformationClick();
   };
 
-  const currentImage = images[currentImageIndex];
+  
 
   return (
     <div className="resizable-box" style={boxStyle} onMouseDown={handleMouseDown}>
@@ -122,10 +140,10 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
         <div className="prev-upper-body" style={{ height: upperBodyHeight }}>
             <div className="prev-explore-buttons">
                 <div className="prev-back-button">
-                    <img style={{height: "20px", cursor: "pointer"}} onClick={handlePrev} src={BackArrow} alt="Back Arrow"/>
+                    <LeftArrow onClick={handlePrev} fill="#717171" height="20px" style={{cursor: "pointer"}}/>
                 </div>
                 <div className="prev-forward-button">
-                    <img style={{height: "20px", cursor: "pointer"}} onClick={handleNext} src={ForwardArrow} alt="Forward Arrow"/>
+                    <RightArrow onClick={handleNext} fill="#717171" height="20px" style={{cursor: "pointer"}}/>
                 </div>
             </div>
             <div className="prev-upper-body-content">
@@ -136,10 +154,10 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
             </div>
             <div className="prev-window-utility-buttons">
                 <div className="window-close-button" onClick={handleOnClose}>
-                    <img src={CloseButton} alt="Close Button" style={{height: "14px"}}/>
+                    <CloseIcon height="14px" style={{cursor: "pointer"}}/>
                 </div>
                 <div className="window-fs-button" onClick={handleOnFullscreen}>
-                    <img src={FullscreenButton} alt="Fullscreen Button" style={{height: "14px"}}/>
+                    <FullscreenIcon height="14px" style={{cursor: "pointer"}}/>
                 </div>
                 <div className="window-info-button" onClick={handleOnInformationClick}>
                     Info
@@ -154,7 +172,17 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
                       <div/>
                       <div className="move-forward" onClick={handleNext}/>
                     </div>
-                  <img src={currentImage.src} alt={currentImage.alt} />
+                  {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} />}
+                  {currentImage.isVideo && <iframe
+                                              ref={videoRef}
+                                              className="prev-window-video"
+                                              src="https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1"
+                                              width="100%"
+                                              height="100%"
+                                              frameborder="0"
+                                              allow="autoplay; fullscreen; picture-in-picture"
+                                              allowfullscreen>
+                                          </iframe>}
                 </div>
             </div>
             <div className="prev-lower-body-footer">

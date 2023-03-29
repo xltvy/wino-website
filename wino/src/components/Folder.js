@@ -50,7 +50,7 @@ const Folder = ({ title }) => {
         <Draggable>
             <div className="folder-layout" ref={folderRef}>
                 <img className="folder-icon no-drag" src={imageSrc} alt="Folder Icon" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}/>
-                <div className={`folder-title${clicked ? ' clicked' : ''}`}>{title}</div>
+                <div className={`desktop-element-title${clicked ? ' clicked' : ''}`}>{title}</div>
                 {/* {open && <div className="folder__content">{children}</div>} */}
             </div>
         </Draggable>
