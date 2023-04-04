@@ -260,10 +260,10 @@ function App() {
     <div className="App">
       <div className="desktop-layout" style={{backgroundImage: `url(${desktopSource})`}} >
           <div className="desktop-film-container">
-            <video ref={video1Ref} className='desktop-film' poster={DesktopBackground} autoPlay={false} loop={false} muted style={{ display: currentVideo === 1 ? 'block' : 'none' }}>
+            <video ref={video1Ref} className='desktop-film' poster={DesktopBackground} autoplay={false} loop={false} muted={true} style={{ display: currentVideo === 1 ? 'block' : 'none' }}>
               <source src={Video1} type="video/mp4" />
             </video>
-            <video ref={video2Ref} className='desktop-film' poster={DesktopEmptyBackground} autoPlay={false} loop={false} muted style={{ display: currentVideo === 2 ? 'block' : 'none' }}>
+            <video ref={video2Ref} className='desktop-film' poster={DesktopEmptyBackground} autoplay={false} loop={false} muted={true} style={{ display: currentVideo === 2 ? 'block' : 'none' }}>
               <source src={Video2} type="video/mp4" />
             </video>
           </div>
