@@ -58,6 +58,10 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
         onDesktopFilmToggle();
     };
 
+    const handleReload = () => {
+        window.location.reload();
+    };
+
     useEffect(() => {
         const handleResize = () => {
           setIsMobile(window.innerWidth < 978); // adjust the breakpoint as needed
@@ -74,7 +78,7 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
             </head>
             <div className="top-bar-left">
                 <div className='icon-container'>
-                    <WinoLogo className="wino-logo" />
+                    <WinoLogo className="wino-logo" onClick={handleReload}/>
                 </div>
                 <label className='top-bar-label'>Studio Wino</label>
                 <div className="top-bar-left-item" onMouseEnter={() => handleContactDropdown(true)} onMouseLeave={() => handleContactDropdown(false)}>
