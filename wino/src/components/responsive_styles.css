@@ -8,11 +8,11 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        position: fixed;
     }
 
     .desktop-top-layout {
@@ -179,7 +179,7 @@
         width: fit-content;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -216,7 +216,7 @@
     }
 
     .mobile-element {
-        width: 33.3%;
+        width: 30%;
         height: 120px;
         min-width: max-content;
         display: flex;
@@ -321,30 +321,40 @@
     }
 
     .prev-window-utility-buttons {
-        padding-right: 6px;
+        padding-right: 0px;
     }
 
     .prev-window-title {
         margin-top: unset;
         padding: 1rem 1rem;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgb(112, 112, 112);
     }
 
     .prev-window-title-label {
-        width: 100%;
         margin-top: unset;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: unset;
+        color: black;
+        min-width: max-content;
+        text-align: unset;
     }
 
     .window-close-button {
         margin-top: unset;
-        padding-top: 10px;
         z-index: 9990;
+        padding-top: 12px;
+        padding-right: 0px;
+        padding-left: 8px;
+        padding-bottom: 8px;
     }
 
     .window-fs-button {
         margin-top: unset;
-        padding-top: 10px;
+        padding-top: 12px;
+        padding-right: 1rem;
         z-index: 9990;
     }
 
@@ -467,6 +477,10 @@
         align-items: center;
         justify-content: center;
         filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+    }
+
+    .prev-lower-body-footer {
+        font-size: 0.7rem;
     }
 
 }
