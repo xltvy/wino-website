@@ -4,7 +4,9 @@ import Logo from "../../images/client_logos/petra-logo.png";
 const PetraContent = () => {
     return (
         <>
-            <img src={Logo} alt="Petra Logo" style={{ width: "100%", height: "auto", paddingTop: "8px" }} />
+            <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
+                <img src={Logo} alt="Petra Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+            </div>
             <p>As Studio Wino we had designed a new brand identity system and updated packaging for the Istanbul based Petra Roasting Co.</p>
             <p style={{ paddingTop: "8px" }}>Coffee is not just coffee. It is either ones favorite routine in the morning or that 10-20 mins “me-time” that you get to enjoy with a product that has traveled maybe thousand miles to be in your palm or your kitchen counter. That is the driving idea we always fell back on when we were designing these packages. </p>
             <p style={{ paddingTop: "8px" }}>Merging every case we face throughout our research process, historic awareness and brand perception, the design approach in Petra Roasting Co. coffee packages feeds from ‘Bauhaus Art Movement’ representing the belief that a new life will be designed and identified as the era of modernization.</p>

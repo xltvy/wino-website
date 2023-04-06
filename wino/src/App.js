@@ -15,15 +15,17 @@ import MobileContentPreviewWindow from './components/MobileContentPreviewWindow'
 import MobileStickyNote from './components/MobileStickyNote';
 import ContactIcon from './icons/ContactIconFinal.js';
 import InformationIcon from './icons/InformationIcon.js';
+
 import Video1 from './images/desktop-film.mp4';
 import Video2 from './images/desktop-film-reversed.mp4';
-import Image1 from './images/nike.jpg';
-import Image2 from './images/petra.jpg';
-import Image3 from './images/mercy_born.jpg';
-import Image4 from './images/luna_merdin.jpg';
-import Image5 from './images/ankh.jpg';
-import Image6 from './images/fred.jpg';
-import Image7 from './images/pinoli.jpg';
+import Image1 from './images/client_desktop_images/nike.jpg';
+import Image2 from './images/client_desktop_images/petra.jpg';
+import Image3 from './images/client_desktop_images/mercy_born.gif';
+import Image4 from './images/client_desktop_images/luna_merdin.jpg';
+import Image5 from './images/client_desktop_images/ankh.jpg';
+import Image6 from './images/client_desktop_images/fred.jpg';
+import Image7 from './images/client_desktop_images/pinoli.jpg';
+
 import DesktopElement from './components/DesktopElement';
 import MobileElement from './components/MobileElement';
 import './components/component_styles.css';
@@ -313,18 +315,18 @@ function App() {
                 <div className="desktop-element" onDoubleClick={handleContactDoubleClick}>
                   <DesktopElement title="Contact" iconSrc={<ContactIcon className='contact-icon' height="38px" style={{borderRadius: "3px"}}/>}/>
                 </div>
+                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={1} imageSrc={images[1].src} title={images[1].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={4} imageSrc={images[4].src} title={images[4].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={5} imageSrc={images[5].src} title={images[5].title} onImageClick={handleImageClick}/></div>
                 <div style={{display: "none"}}><Folder title={"Projects of Wino"} children={"This is folder 1"}></Folder></div>
                 <div style={{display: "none"}}><Folder title={"Folder 2"} children={"This is folder 2"}></Folder></div>
                 <div style={{display: "none"}}><Folder title={"Folder 3"} children={"This is folder 3"}></Folder></div>
               </div>
               <div className='desktop-images'>
-                <div style={{padding: "5px 0px"}}><DesktopVideo imageIndex={0} imageSrc={Image1} videoIframe={nikeVideo} onImageClick={handleImageClick} title={images[0].title}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={1} imageSrc={images[1].src} title={images[1].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={2} imageSrc={images[2].src} title={images[2].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={3} imageSrc={images[3].src} title={images[3].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={4} imageSrc={images[4].src} title={images[4].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={5} imageSrc={images[5].src} title={images[5].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px"}}><DesktopImage imageIndex={6} imageSrc={images[6].src} title={images[6].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopVideo imageIndex={0} imageSrc={Image1} videoIframe={nikeVideo} onImageClick={handleImageClick} title={images[0].title}/></div>
+                <div style={{padding: "5px 0px", position: "relative", bottom: "100px", left: "215px"}}><DesktopImage imageIndex={2} imageSrc={images[2].src} title={images[2].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopImage imageIndex={3} imageSrc={images[3].src} title={images[3].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "260px", left: "255px"}}><DesktopImage imageIndex={6} imageSrc={images[6].src} title={images[6].title} onImageClick={handleImageClick}/></div>
               </div>
             </div>
             <StickyNote/>

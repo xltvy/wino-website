@@ -4,7 +4,9 @@ import Logo from "../../images/client_logos/pinoli-logo.png";
 const PinoliContent = () => {
     return (
         <>
-            <img src={Logo} alt="Pinoli Logo" style={{ width: "100%", height: "auto", paddingTop: "8px" }} />
+            <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
+                <img src={Logo} alt="Pinoli Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+            </div>
             <p>SOPHISTICATED BLOWN GLASS STRATEGY:</p>
             <p style={{ paddingTop: "8px" }}>BRAND IDENTITY, VISUAL IDENTITY, PACKAGING DATE: 2021</p>
             <p style={{ paddingTop: "8px" }}>Pinoli transcends the limits of the modern world with the fluidity of glass. Today's world imposes an imperfect desire for perfection on everything and everyone. The originality of our soul is stuck in standard patterns. Pinoli designs go beyond limits and become a welcomed guest in your home, room, and table. As the glass flows in the oven like a river, we blow soul into it with each breath. We want it to be its own, not to fit into the molds, not to resemble anyone else. This is how unique designs of Pinoli come to life. It reflects its own soul every time it meets the light. The life we ​​are used to seeing everything in a certain form and order, Pinoli breaks monotony with its designs. And it reminds everyone of the truth who sees it and touches.</p>

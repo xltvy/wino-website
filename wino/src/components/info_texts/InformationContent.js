@@ -4,7 +4,9 @@ import Logo from "../../images/wino-logo2.png";
 const InformationContent = () => {
     return (
         <>
-            <img src={Logo} alt="Wino Logo" style={{ width: "100%", height: "auto", paddingTop: "8px" }} />
+            <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
+                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+            </div>
             <h3>CONTACT</h3>
             <p>For any inquires, please contact:</p>
             <p> <a style={{ color: "black" }} href="mailto:wino@studiowino.com">wino@studiowino.com</a> </p>
