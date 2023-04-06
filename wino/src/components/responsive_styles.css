@@ -75,17 +75,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
         border-radius: 100px;
         margin-left: 12px;
     }
 
     .top-bar-utility-dots {
         display: block;
-        max-width: 14px;
+        max-width: 20px;
         position: relative;
     }
 
@@ -481,6 +479,13 @@
 
     .prev-lower-body-footer {
         font-size: 0.7rem;
+    }
+
+    .react-switch-handle {
+        height: 18px !important;
+        width: 18px !important;
+        top: 3px !important;
+        left: 2px;
     }
 
 }
