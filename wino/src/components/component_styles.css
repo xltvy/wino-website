@@ -1042,3 +1042,10 @@ p {
 .mobile-sticky-note-layout {
     display: none;
 }
+
+.react-switch-handle {
+    height: 14px !important;
+    width: 14px !important;
+    top: 2px !important;
+    left: 1px;
+}
