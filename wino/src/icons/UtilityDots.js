@@ -2,8 +2,8 @@ import * as React from "react";
 const SvgUtilityDots = (props) => (
   <svg
     fill="#fff"
-    height={800}
-    width={800}
+    height={40}
+    width={40}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32.055 32.055"
     xmlSpace="preserve"
