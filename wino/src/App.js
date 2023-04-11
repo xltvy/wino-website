@@ -336,6 +336,9 @@ function App() {
             </div>
             <StickyNote/>
             <MobileStickyNote/>
+            <div className='desktop-music'>
+              <iframe title="pink_floyd" width="500" height="166" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/114678480&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
           </div>
           {isInformationClicked && (
             <div style={{ zIndex: "1000", top: "100px", left: "40vh", position: "absolute" }}>
