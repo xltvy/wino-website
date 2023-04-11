@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Folder from './components/Folder';
 import TopBar from './components/TopBar';
 import TxtFile from './components/TxtFile';
 import StickyNote from './components/StickyNote';
-import DesktopBackground from './images/desktop-bg.png';
-import DesktopEmptyBackground from './images/desktop-empty-bg.png';
+// import DesktopBackground from './images/desktop-bg.png';
+// import DesktopEmptyBackground from './images/desktop-empty-bg.png';
 import ContentPreviewWindow from './components/ContentPreviewWindow';
 import FullscreenImage from './components/FullscreenImage';
 import DesktopImage from './components/DesktopImage';
@@ -16,8 +16,11 @@ import MobileStickyNote from './components/MobileStickyNote';
 import ContactIcon from './icons/ContactIconFinal.js';
 import InformationIcon from './icons/InformationIcon.js';
 
-import Video1 from './images/desktop-film.mp4';
-import Video2 from './images/desktop-film-reversed.mp4';
+// import Video1 from './images/desktop-film.mp4';
+// import Video2 from './images/desktop-film-reversed.mp4';
+
+import BaseBackground from './images/background.jpg';
+
 import Image1 from './images/client_desktop_images/nike.jpg';
 import Image2 from './images/client_desktop_images/petra.jpg';
 import Image3 from './images/client_desktop_images/mercy_born.gif';
@@ -54,11 +57,11 @@ function App() {
   const [isMobileImageInformationClicked, setIsMobileImageInformationClicked] = useState(false);
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
   const [isMobileImageClicked, setIsMobileImageClicked] = useState(false);
-  const [desktopSource] = useState(DesktopBackground);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState(1);
-  const video1Ref = useRef(null);
-  const video2Ref = useRef(null);
+  // const [desktopSource] = useState(DesktopBackground);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const [currentVideo, setCurrentVideo] = useState(1);
+  // const video1Ref = useRef(null);
+  // const video2Ref = useRef(null);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -210,67 +213,69 @@ function App() {
     setIsImageInformationClicked(false);
   };
 
-  const handleDesktopFilmToggle = () => {
-    const video1 = video1Ref.current;
-    const video2 = video2Ref.current;
+//   const handleDesktopFilmToggle = () => {
+//     const video1 = video1Ref.current;
+//     const video2 = video2Ref.current;
 
-    if (currentVideo === 1) {
-      setCurrentVideo(1);
-      video2.style.display = 'none';
-      video1.style.display = 'block';
-      video1.play();
-      video1.addEventListener('ended', () => {
-        console.log("Video 2 loaded");
-        video2.load();
-        video1.style.display = 'none';
-        video2.style.display = 'block';
-        setCurrentVideo(2);
-      });
-    } else {
-      setCurrentVideo(2);
-      video1.style.display = 'none';
-      video2.style.display = 'block';
-      video2.play();
-      video2.addEventListener('ended', () => {
-        console.log("Video 1 loaded");
-        video1.load();
-        video2.style.display = 'none';
-        video1.style.display = 'block';
-        setCurrentVideo(1);
-      });
-    }
+//     if (currentVideo === 1) {
+//       setCurrentVideo(1);
+//       video2.style.display = 'none';
+//       video1.style.display = 'block';
+//       video1.play();
+//       video1.addEventListener('ended', () => {
+//         console.log("Video 2 loaded");
+//         video2.load();
+//         video1.style.display = 'none';
+//         video2.style.display = 'block';
+//         setCurrentVideo(2);
+//       });
+//     } else {
+//       setCurrentVideo(2);
+//       video1.style.display = 'none';
+//       video2.style.display = 'block';
+//       video2.play();
+//       video2.addEventListener('ended', () => {
+//         console.log("Video 1 loaded");
+//         video1.load();
+//         video2.style.display = 'none';
+//         video1.style.display = 'block';
+//         setCurrentVideo(1);
+//       });
+//     }
 
-    setIsPlaying(!isPlaying);
-};
+//     setIsPlaying(!isPlaying);
+// };
 
-  useEffect(() => {
-    const video1 = video1Ref.current;
-    const video2 = video2Ref.current;
-    const handleEnded = () => {};
+  // useEffect(() => {
+  //   const video1 = video1Ref.current;
+  //   const video2 = video2Ref.current;
+  //   const handleEnded = () => {};
 
-    video1.addEventListener('ended', handleEnded);
-    video2.addEventListener('ended', handleEnded);
+  //   video1.addEventListener('ended', handleEnded);
+  //   video2.addEventListener('ended', handleEnded);
 
-    return () => {
-      video1.removeEventListener('ended', handleEnded);
-      video2.removeEventListener('ended', handleEnded);
-    };
-  }, []);
+  //   return () => {
+  //     video1.removeEventListener('ended', handleEnded);
+  //     video2.removeEventListener('ended', handleEnded);
+  //   };
+  // }, []);
   
+  //<div className="desktop-layout" style={{backgroundImage: `url(${desktopSource})`}} >
+  //<TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick} onDesktopFilmToggle={handleDesktopFilmToggle}/>
 
   return (
     <div className="App">
-      <div className="desktop-layout" style={{backgroundImage: `url(${desktopSource})`}} >
-          <div className="desktop-film-container">
+      <div className="desktop-layout" style={{backgroundImage: `url(${BaseBackground})`}} >
+          {/* <div className="desktop-film-container">
             <video ref={video1Ref} className='desktop-film' poster={DesktopBackground} autoPlay={false} loop={false} muted={true} playsinline="true" disablePictureInPicture="true" preload='auto' type="video/mp4" style={{ display: currentVideo === 1 ? 'block' : 'none' }}>
               <source src={Video1} type="video/mp4" />
             </video>
             <video ref={video2Ref} className='desktop-film' poster={DesktopEmptyBackground} autoPlay={false} loop={false} muted={true} playsinline="true" disablePictureInPicture="true" preload='auto' type="video/mp4" style={{ display: currentVideo === 2 ? 'block' : 'none' }}>
               <source src={Video2} type="video/mp4" />
             </video>
-          </div>
+          </div> */}
           <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick} onDesktopFilmToggle={handleDesktopFilmToggle}/>
+            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick}/>
           </div>
           <div className='mobile-search-container'>
             <SearchBar onSearchClose={handleSearchClose}/>
