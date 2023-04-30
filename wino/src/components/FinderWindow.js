@@ -6,6 +6,9 @@ import Draggable from 'react-draggable';
 import CloseIcon from "../icons/CloseIcon.js";
 import ContactOutline from '../icons/ContactOutline.js';
 import InfoOutline from '../icons/InfoOutline.js';
+import FolderOutline from '../icons/FolderOutline.js';
+import FolderAlt from '../icons/FolderAlt.js';
+import RightArrow from "../icons/RightArrow.js";
 
 const FinderWindow = ({onClose}) => {
   const [selectedFolder, setSelectedFolder] = useState('');
@@ -47,13 +50,16 @@ const FinderWindow = ({onClose}) => {
                 <div className="sidebar-title">Favorites</div>
                 <div className="parent-sidebar-folders">
                     {folders.map((folder) => (
-                    <div
-                        key={folder.name}
-                        className={`folder-item ${selectedFolder === folder.name ? 'selected' : ''}`}
-                        onClick={() => handleFolderClick(folder.name)}
-                    >
-                        {folder.name}
-                    </div>
+                        <div
+                            key={folder.name}
+                            className={`sidebar-folder-item-wrapper ${selectedFolder === folder.name ? 'selected' : ''}`}
+                            onClick={() => handleFolderClick(folder.name)}
+                        >
+                            <FolderOutline fill="#29a3ff" height="14px" style={{paddingRight: "0.7rem"}}/>
+                            <div className="folder-item">
+                                {folder.name}
+                            </div>
+                        </div>
                     ))}
                 </div>
                 <div className="parent-sidebar-contact">
@@ -67,29 +73,42 @@ const FinderWindow = ({onClose}) => {
                     </div>
                 </div>
             </div>
-            <div className="sub-sidebar">
-                {selectedFolder &&
-                folders
-                    .find((folder) => folder.name === selectedFolder)
-                    .subFolders.map((subFolder) => (
-                    <div
-                        key={subFolder}
-                        className={`subfolder-item ${selectedSubFolder === subFolder ? 'selected' : ''}`}
-                        onClick={() => handleSubFolderClick(subFolder)}
-                    >
-                        {subFolder}
+            <div className="finder-right-side">
+                <div className="finder-right-side-top">
+                    Dummy Text
+                </div>
+                <div className="finder-right-side-bottom">
+                    <div className="sub-sidebar">
+                        {selectedFolder &&
+                        folders
+                            .find((folder) => folder.name === selectedFolder)
+                            .subFolders.map((subFolder) => (
+                                <div
+                                    key={subFolder}
+                                    className={`sub-sidebar-folder-item-wrapper ${selectedSubFolder === subFolder ? 'selected' : ''}`}
+                                    onClick={() => handleSubFolderClick(subFolder)}
+                                >
+                                <div className="folder-content">
+                                    <FolderAlt fill="#29a3ff" height="15px" style={{paddingRight: "0.7rem"}}/>
+                                    <div className="folder-item">
+                                        {subFolder}
+                                    </div>
+                                </div>
+                                <RightArrow fill="#717171" height="6px"/>
+                                </div>
+                            ))}
                     </div>
-                    ))}
-            </div>
-            <div className="main-finder-area">
-                {selectedSubFolder &&
-                folders
-                    .find((folder) => folder.name === selectedFolder)
-                    .files.map((file) => (
-                    <div key={file} className="file-item">
-                        {file}
+                    <div className="main-finder-area">
+                        {selectedSubFolder &&
+                        folders
+                            .find((folder) => folder.name === selectedFolder)
+                            .files.map((file) => (
+                            <div key={file} className="file-item">
+                                {file}
+                            </div>
+                            ))}
                     </div>
-                    ))}
+                </div>
             </div>
         </div>
     </Draggable>

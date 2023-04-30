@@ -1088,6 +1088,38 @@ p {
     flex-grow: 1;
   }
 
+  .sidebar-folder-item-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 0.3rem;
+    background-color: transparent;
+  }
+
+  .sub-sidebar-folder-item-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 0.3rem;
+    background-color: transparent;
+  }
+
+  .folder-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-folder-item-wrapper.selected {
+    background-color: rgb(187, 206, 211);
+  }
+
+  .sub-sidebar-folder-item-wrapper.selected {
+    background-color: rgb(234, 237, 237);
+  }
+
   .parent-sidebar-contact {
     display: flex;
     flex-direction: column;
@@ -1108,10 +1140,14 @@ p {
   }
 
   .sub-sidebar {
+    display: flex;
+    flex-direction: column;
     width: 200px;
     background-color: #f8f8f8;
-    border-right: 1px solid #ccc;
     padding: 10px;
+    overflow-y: scroll;
+    border-right: 0.1rem solid rgb(242, 242, 242);
+    transition: border-color 0.3s ease-in-out 0s;
   }
   
   .folder-item,
@@ -1119,7 +1155,6 @@ p {
     font-size: 0.8rem;
     font-weight: 500;
     cursor: pointer;
-    padding: 5px;
   }
   
   .folder-item.selected,
@@ -1148,4 +1183,26 @@ p {
 
 .file-item:hover {
   background-color: #eee;
+}
+
+.finder-right-side {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.finder-right-side-top {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(250, 251, 251);
+    border-bottom: 1px solid rgb(242, 242, 242);
+    transition: all 0.3s ease-in-out 0s;
+    border-top-right-radius: 0.5rem;
+    cursor: grab;
+}
+
+.finder-right-side-bottom {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
