@@ -13,6 +13,8 @@ import SearchBar from './components/SearchBar';
 import MobileInformation from './components/MobileInformation';
 import MobileContentPreviewWindow from './components/MobileContentPreviewWindow';
 import MobileStickyNote from './components/MobileStickyNote';
+import FinderWindow from './components/FinderWindow';
+
 import ContactIcon from './icons/ContactIconFinal.js';
 import InformationIcon from './icons/InformationIcon.js';
 
@@ -374,6 +376,9 @@ function App() {
           {isSearchClicked && (
             <SearchBar onSearchClose={handleSearchClose}/>
           )}
+          <div style={{ zIndex: "9999", top: "100px", left: "200px", right: "0", bottom: "0", position: "absolute" }}>
+            <FinderWindow />
+          </div>
         </div>
     </div>
   );
