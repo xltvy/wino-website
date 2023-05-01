@@ -10,8 +10,10 @@ const InformationContent = () => {
             <h3>CONTACT</h3>
             <p>For any inquires, please contact:</p>
             <p> <a style={{ color: "black" }} href="mailto:wino@studiowino.com">wino@studiowino.com</a> </p>
+            <p/>
             <p>T: +90 212 807 08 67</p>
             <p>IG: <a style={{ color: "black" }} href='https://www.instagram.com/studiowino/' target="_blank" rel="noreferrer">@studiowino</a> </p>
+            <p/>
             <h3>ABOUT</h3>
             <p>WINO is an award-winning creative studio inspired by human-centered outcomes.</p>
             <p style={{ paddingTop: "8px" }}>Here, visual communication strategies, graphic design and industrial products are created by us, for everybody.</p>

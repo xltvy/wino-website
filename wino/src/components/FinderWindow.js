@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './component_styles.css';
 import "./responsive_styles.css";
 
@@ -9,6 +9,8 @@ import FolderOutline from '../icons/FolderOutline.js';
 import FolderAlt from '../icons/FolderAlt.js';
 import RightArrow from "../icons/RightArrow.js";
 
+import FolderStructure from '../FolderStructure.js';
+
 const FinderWindow = ({clickedFolderTitle, onClose}) => {
     const [boxSize, setBoxSize] = useState({ width: Math.max(885, window.innerWidth*0.7), height: Math.max(460, window.innerHeight*0.8) });
     const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
@@ -18,34 +20,9 @@ const FinderWindow = ({clickedFolderTitle, onClose}) => {
     const [selectedSubFolder, setSelectedSubFolder] = useState('');
     const [isInSubFolder, setIsInSubFolder] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
+    const [showSubSidebar, setShowSubSidebar] = useState(false);
 
-    const folders = [
-        {
-        name: 'Upgrading',
-        subFolders: ['SubFolder 1.1', 'SubFolder 1.2'],
-        files: ['File 1.1', 'File 1.2']
-        },
-        {
-        name: 'Design',
-        subFolders: ['SubFolder 2.1', 'SubFolder 2.2'],
-        files: ['File 2.1', 'File 2.2']
-        },
-        {
-        name: 'Sustainability',
-        subFolders: ['SubFolder 3.1', 'SubFolder 3.2'],
-        files: ['File 3.1', 'File 3.2']
-        },
-        {
-        name: 'Featured',
-        subFolders: ['SubFolder 4.1', 'SubFolder 4.2'],
-        files: ['File 4.1', 'File 4.2']
-        },
-        {
-        name: 'Branding',
-        subFolders: ['SubFolder 5.1', 'SubFolder 5.2'],
-        files: ['File 5.1', 'File 5.2']
-        }
-    ];
+    const [folderStructure] = useState(FolderStructure);
 
     const handleMouseDown = (event) => {
         if (
@@ -122,11 +99,32 @@ const FinderWindow = ({clickedFolderTitle, onClose}) => {
         display: isVisible ? "block" : "none",
       };
 
-    const handleFolderClick = (folder) => {
-        setSelectedFolder(folder);
-        setSelectedSubFolder('');
-        setIsInSubFolder(false);
-    };
+      const handleFolderClick = (folderTitle, hasSubfolder) => {
+        setSelectedFolder(folderTitle);
+        setShowSubSidebar(hasSubfolder);
+        if (hasSubfolder) {
+            setSelectedSubFolder(folderStructure.find((folder) => folder.title === folderTitle).subfolders[0].title);
+        } else {
+            setSelectedSubFolder(null);
+        }
+      };
+
+      const selectedImages = useMemo(() => {
+        const selectedFolderObj = folderStructure.find(
+            (folder) => folder.title === selectedFolder
+        );
+    
+        if (!selectedFolderObj) return [];
+    
+        if (selectedFolderObj.hasSubfolder) {
+            const selectedSubfolderObj = selectedFolderObj.subfolders.find(
+                (subfolder) => subfolder.title === selectedSubFolder
+            );
+            return selectedSubfolderObj ? selectedSubfolderObj.images : [];
+        }
+    
+        return selectedFolderObj.images;
+    }, [selectedFolder, selectedSubFolder]);
 
     const handleSubFolderClick = (subFolder) => {
         setSelectedSubFolder(subFolder);
@@ -147,18 +145,18 @@ const FinderWindow = ({clickedFolderTitle, onClose}) => {
                 </div>
                 <div className="sidebar-title">Favorites</div>
                 <div className="parent-sidebar-folders">
-                    {folders.map((folder) => (
-                        <div
-                            key={folder.name}
-                            className={`sidebar-folder-item-wrapper ${selectedFolder === folder.name ? 'selected' : ''}`}
-                            onClick={() => handleFolderClick(folder.name)}
-                        >
-                            <FolderOutline fill="#29a3ff" height="14px" style={{paddingRight: "0.7rem"}}/>
-                            <div className="folder-item">
-                                {folder.name}
+                      {folderStructure.map((folder, index) => (
+                            <div
+                                key={index}
+                                className={`sidebar-folder-item-wrapper ${selectedFolder === folder.title ? 'selected' : ''}`}
+                                onClick={() => handleFolderClick(folder.title, folder.hasSubfolder)}
+                            >
+                                <FolderOutline fill="#29a3ff" height="14px" style={{paddingRight: "0.7rem"}}/>
+                                <div className="folder-item">
+                                    {folder.title}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
                 <div className="parent-sidebar-contact">
                     <div className="parent-sidebar-contact-item">
@@ -182,36 +180,39 @@ const FinderWindow = ({clickedFolderTitle, onClose}) => {
                     )}
                 </div>
                 <div className="finder-right-side-bottom" style={{ height: lowerBodyHeight }}>
-                    <div className="sub-sidebar">
-                        {selectedFolder &&
-                        folders
-                            .find((folder) => folder.name === selectedFolder)
-                            .subFolders.map((subFolder) => (
-                                <div
-                                    key={subFolder}
-                                    className={`sub-sidebar-folder-item-wrapper ${selectedSubFolder === subFolder ? 'selected' : ''}`}
-                                    onClick={() => handleSubFolderClick(subFolder)}
-                                >
-                                <div className="folder-content">
-                                    <FolderAlt fill="#29a3ff" height="15px" style={{paddingRight: "0.7rem"}}/>
-                                    <div className="folder-item">
-                                        {subFolder}
-                                    </div>
-                                </div>
-                                <RightArrow fill="#717171" height="6px"/>
-                                </div>
-                            ))}
-                    </div>
-                    <div className="main-finder-area">
-                        {selectedSubFolder &&
-                        folders
-                            .find((folder) => folder.name === selectedFolder)
-                            .files.map((file) => (
-                            <div key={file} className="file-item">
-                                {file}
-                            </div>
-                            ))}
-                    </div>
+                          <div className={`sub-sidebar ${!showSubSidebar ? 'hidden' : ''}`}>
+                            {showSubSidebar &&
+                                folderStructure
+                                    .find((folder) => folder.title === selectedFolder)
+                                    ?.subfolders.map((subfolder, index) => (
+                                        <div
+                                            key={index}
+                                            className={`sub-sidebar-folder-item-wrapper ${selectedSubFolder === subfolder.title ? 'selected' : ''}`}
+                                            onClick={() => handleSubFolderClick(subfolder.title)}
+                                        >
+                                            <div className="folder-content">
+                                                <FolderAlt fill="#29a3ff" height="15px" style={{paddingRight: "0.7rem"}}/>
+                                                <div className="folder-item">
+                                                    {subfolder.title}
+                                                </div>
+                                            </div>
+                                            <RightArrow fill="#717171" height="6px"/>
+                                        </div>
+                                    ))}
+                          </div>
+                          <div className="main-finder-area">
+                              {selectedImages.map((image) => (
+                                  <div
+                                      key={image.id}
+                                      className="main-finder-image-wrapper"
+                                  >
+                                      <div className="main-finder-image-overlay">
+                                        <img src={image.src} alt={image.alt} decoding='async' loading='lazy'/>
+                                      </div>
+                                      <div className="main-finder-image-title">{image.title}</div>
+                                  </div>
+                              ))}
+                          </div>
                 </div>
             </div>
         </div>

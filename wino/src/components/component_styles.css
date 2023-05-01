@@ -937,9 +937,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 120px;
-    width: 120px;
-    padding: 0.4rem 0rem; */
 }
 
 .desktop-element-container {
@@ -1150,13 +1147,6 @@ p {
     background-color: #d8d8d8;
   }
   
-  .main-finder-area {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-  }
-  
   .file-item {
     width: 100px;
     height: 100px;
@@ -1211,6 +1201,61 @@ p {
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
+}
+
+.main-finder-area {
+    width: calc(100% - 200px);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    padding-right: 30px;
+    overflow-y: scroll;
+}
+
+.main-finder-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+.main-finder-image-overlay {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+}
+
+.main-finder-image-overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-finder-image-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
 }
 
 .default-row {
