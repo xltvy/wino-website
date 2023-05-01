@@ -32,7 +32,7 @@ const DesktopImage = ({ imageIndex, imageSrc, title, onImageClick }) => {
         <Draggable>
             <div className="folder-layout" ref={folderRef}>
               <div className='desktop-image-icon-wrapper'>
-                <img className={`desktop-image-icon${clicked ? ' clicked no-drag' : ' no-drag'}`} src={imageSrc} alt="Desktop Image" onClick={handleClick} onDoubleClick={handleImageClick} />
+                <img className={`desktop-image-icon${clicked ? ' clicked no-drag' : ' no-drag'}`} src={imageSrc} alt="Desktop Image" onClick={handleClick} onDoubleClick={handleImageClick} loading="lazy"/>
               </div>
               <div className={`desktop-element-title${clicked ? ' clicked' : ''}`} onClick={handleClick}>{title}</div>
             </div>

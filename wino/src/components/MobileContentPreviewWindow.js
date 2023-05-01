@@ -68,12 +68,13 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                             <div key={image.id} className="slider-image-wrapper">
                                 <div className="dummy-container"/>
                                 <div className="dummy-container-2"/>
-                                {!image.isVideo && <img src={image.src} alt={image.alt} className="mobile-prev-image" />}
+                                {!image.isVideo && <img src={image.src} alt={image.alt} className="mobile-prev-image" loading="lazy"/>}
                                 {image.isVideo && <iframe
                                                             ref={videoRef}
                                                             title={image.title}
                                                             className="prev-window-video"
                                                             src={image.src}
+                                                            loading="lazy"
                                                             width="100%"
                                                             height="100%"
                                                             frameborder="0"

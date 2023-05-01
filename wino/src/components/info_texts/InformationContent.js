@@ -5,7 +5,7 @@ const InformationContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} loading="lazy"/>
             </div>
             <h3>CONTACT</h3>
             <p>For any inquires, please contact:</p>

@@ -172,12 +172,13 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
                       <div/>
                       <div className="move-forward" onClick={handleNext}/>
                     </div>
-                  {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} />}
+                  {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} loading="lazy"/>}
                   {currentImage.isVideo && <iframe
                                               ref={videoRef}
                                               title={currentImage.alt}
                                               className="prev-window-video"
                                               src={currentImage.src}
+                                              loading="lazy"
                                               width="100%"
                                               height="100%"
                                               frameborder="0"

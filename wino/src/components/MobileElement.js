@@ -13,7 +13,7 @@ const MobileElement = ({imageIndex, title, imageSrc, imageAlt, onImageClick}) =>
     return (
         <div className='mobile-element' onClick={handleOnImageClick}>
             <div className='mobile-element-image-container'>
-                <img className='mobile-desktop-image' src={imageSrc} alt={imageAlt}/>
+                <img className='mobile-desktop-image' src={imageSrc} alt={imageAlt} loading="lazy"/>
             </div>
             <div className='mobile-element-title-container'>
                 <div className='desktop-element-title'>{title}</div>

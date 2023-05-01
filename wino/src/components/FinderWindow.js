@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './component_styles.css';
 import "./responsive_styles.css";
-import Draggable from 'react-draggable';
 
 import CloseIcon from "../icons/CloseIcon.js";
 import ContactOutline from '../icons/ContactOutline.js';
@@ -10,39 +9,138 @@ import FolderOutline from '../icons/FolderOutline.js';
 import FolderAlt from '../icons/FolderAlt.js';
 import RightArrow from "../icons/RightArrow.js";
 
-const FinderWindow = ({onClose}) => {
-  const [selectedFolder, setSelectedFolder] = useState('');
-  const [selectedSubFolder, setSelectedSubFolder] = useState('');
+const FinderWindow = ({clickedFolderTitle, onClose}) => {
+    const [boxSize, setBoxSize] = useState({ width: Math.max(885, window.innerWidth*0.7), height: Math.max(460, window.innerHeight*0.8) });
+    const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
+    const [dragStart, setDragStart] = useState(null);
+    const [isResizing, setIsResizing] = useState(false);
+    const [selectedFolder, setSelectedFolder] = useState(clickedFolderTitle);
+    const [selectedSubFolder, setSelectedSubFolder] = useState('');
+    const [isInSubFolder, setIsInSubFolder] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
 
-  const folders = [
-    {
-      name: 'Folder 1',
-      subFolders: ['SubFolder 1.1', 'SubFolder 1.2'],
-      files: ['File 1.1', 'File 1.2']
-    },
-    {
-      name: 'Folder 2',
-      subFolders: ['SubFolder 2.1', 'SubFolder 2.2'],
-      files: ['File 2.1', 'File 2.2']
-    }
-  ];
+    const folders = [
+        {
+        name: 'Upgrading',
+        subFolders: ['SubFolder 1.1', 'SubFolder 1.2'],
+        files: ['File 1.1', 'File 1.2']
+        },
+        {
+        name: 'Design',
+        subFolders: ['SubFolder 2.1', 'SubFolder 2.2'],
+        files: ['File 2.1', 'File 2.2']
+        },
+        {
+        name: 'Sustainability',
+        subFolders: ['SubFolder 3.1', 'SubFolder 3.2'],
+        files: ['File 3.1', 'File 3.2']
+        },
+        {
+        name: 'Featured',
+        subFolders: ['SubFolder 4.1', 'SubFolder 4.2'],
+        files: ['File 4.1', 'File 4.2']
+        },
+        {
+        name: 'Branding',
+        subFolders: ['SubFolder 5.1', 'SubFolder 5.2'],
+        files: ['File 5.1', 'File 5.2']
+        }
+    ];
 
-  const handleFolderClick = (folder) => {
-    setSelectedFolder(folder);
-    setSelectedSubFolder('');
-  };
+    const handleMouseDown = (event) => {
+        if (
+          event.target.parentNode.className === "finder-right-side-top" ||
+          event.target.parentNode.className === "finder-folder-title" ||
+          event.target.parentNode.className === "finder-right-side"
+        ) {
+          setDragStart({
+            x: event.clientX,
+            y: event.clientY,
+            positionX: boxPosition.x,
+            positionY: boxPosition.y,
+          });
+        } else if (event.target.className === "resizer") {
+          setIsResizing(true);
+          setDragStart({
+            x: event.clientX,
+            y: event.clientY,
+            width: boxSize.width,
+            height: boxSize.height,
+          });
+        }
+      };
+    
+      const handleMouseMove = (event) => {
+        if (!dragStart) return;
+      
+        const dx = event.clientX - dragStart.x;
+        const dy = event.clientY - dragStart.y;
+      
+        if (isResizing) {
+          const newWidth = Math.max(885, dragStart.width + dx);
+          const newHeight = Math.max(460, dragStart.height + dy);
+      
+          setBoxSize({
+            width: newWidth,
+            height: newHeight,
+          });
+        } else {
+          const newX = dragStart.positionX + dx;
+          const newY = dragStart.positionY + dy;
+      
+          setBoxPosition({
+            x: newX,
+            y: newY,
+          });
+        }
+      };
+      
+    
+      const handleMouseUp = () => {
+        setDragStart(null);
+        setIsResizing(false);
+      };
+    
+      useEffect(() => {
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    
+        return () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+        };
+      }, [dragStart]);
+    
+      const upperBodyHeight = 45;
+      const lowerBodyHeight = boxSize.height - 45;
+    
+      const boxStyle = {
+        width: boxSize.width,
+        height: boxSize.height,
+        transform: `translate(${boxPosition.x}px, ${boxPosition.y}px)`,
+        position: "absolute",
+        display: isVisible ? "block" : "none",
+      };
 
-  const handleSubFolderClick = (subFolder) => {
-    setSelectedSubFolder(subFolder);
-  };
+    const handleFolderClick = (folder) => {
+        setSelectedFolder(folder);
+        setSelectedSubFolder('');
+        setIsInSubFolder(false);
+    };
 
-  const handleOnClose = () => {
-    onClose();
-  };
+    const handleSubFolderClick = (subFolder) => {
+        setSelectedSubFolder(subFolder);
+        setIsInSubFolder(true);
+    };
+
+    const handleOnClose = () => {
+        onClose();
+        setIsVisible(false);
+    };
 
   return (
-    <Draggable>
-        <div className="finder-window">
+    <div className="resizable-box" style={boxStyle} onMouseDown={handleMouseDown}>
+        <div className="finder-window" >
             <div className="sidebar">
                 <div className="window-close-button" onClick={handleOnClose} style={{marginTop: "unset", padding: "0px 0px 0px 5px"}}>
                     <CloseIcon height="14px" style={{cursor: "pointer"}}/>
@@ -74,10 +172,16 @@ const FinderWindow = ({onClose}) => {
                 </div>
             </div>
             <div className="finder-right-side">
-                <div className="finder-right-side-top">
-                    Dummy Text
+                <div className="finder-right-side-top" style={{ height: upperBodyHeight }}>
+                    <div className={`finder-folder-title ${isInSubFolder ? 'disabled' : ''}`} style={{paddingLeft: "20px"}}>{selectedFolder}</div>
+                    {isInSubFolder && (
+                        <div className="default-row">
+                            <RightArrow fill="#717171" height="12px"/>
+                            <div className='finder-folder-title'>{selectedSubFolder}</div>
+                        </div>
+                    )}
                 </div>
-                <div className="finder-right-side-bottom">
+                <div className="finder-right-side-bottom" style={{ height: lowerBodyHeight }}>
                     <div className="sub-sidebar">
                         {selectedFolder &&
                         folders
@@ -111,7 +215,8 @@ const FinderWindow = ({onClose}) => {
                 </div>
             </div>
         </div>
-    </Draggable>
+    <div className="resizer"></div>
+    </div>
   );
 };
 
