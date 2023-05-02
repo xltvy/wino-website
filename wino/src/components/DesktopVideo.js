@@ -39,7 +39,7 @@ const DesktopVideo = ({ imageIndex, imageSrc, videoIframe, title, onImageClick }
       <div className="folder-layout" ref={folderRef}>
         <div className='desktop-video-image-container-wrapper'>
             <div className='desktop-video-image-container' onClick={handleClick} onDoubleClick={handleImageClick}>
-                <img className={`desktop-video-icon${clicked ? ' clicked no-drag' : ' no-drag'}`} style={{opacity}} src={imageSrc} alt="Desktop Video" onClick={handleClick} onDoubleClick={handleImageClick} loading="lazy"/>
+                <img className={`desktop-video-icon${clicked ? ' clicked no-drag' : ' no-drag'}`} style={{opacity}} src={imageSrc} alt="Desktop Video" onClick={handleClick} onDoubleClick={handleImageClick} decoding='async' loading="lazy"/>
                 <span className={`desktop-video-container${clicked ? ' clicked' : ''}`}>
                     {videoIframe}
                 </span>

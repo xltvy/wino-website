@@ -106,7 +106,7 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
             <div className="top-bar-right">
                 <div className="top-bar-right-item">Legal</div>
                 <div className="top-bar-right-item">
-                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" onClick={handleOnSearchClick} loading="lazy"/>
+                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" onClick={handleOnSearchClick} decoding='async' loading="lazy"/>
                 </div>
                 <div className="top-bar-right-item-dt">
                     {formattedDate}

@@ -5,7 +5,7 @@ const PinoliContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Pinoli Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} loading="lazy"/>
+                <img src={Logo} alt="Pinoli Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <p>SOPHISTICATED BLOWN GLASS STRATEGY:</p>
             <p style={{ paddingTop: "8px" }}>BRAND IDENTITY, VISUAL IDENTITY, PACKAGING DATE: 2021</p>

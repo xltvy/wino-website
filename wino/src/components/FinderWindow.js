@@ -27,6 +27,7 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
     const [isVisible, setIsVisible] = useState(true);
     const [showSubSidebar, setShowSubSidebar] = useState(folderStructure.find((folder) => folder.title === clickedFolderTitle).hasSubfolder);
     const [contextFileName, setContextFileName] = useState(folderStructure.find((folder) => folder.title === clickedFolderTitle).hasSubfolder ? folderStructure.find((folder) => folder.title === clickedFolderTitle).subfolders[0].title.toUpperCase() + " INFO" : "");
+    const [previewTitle, setPreviewTitle] = useState(folderStructure.find((folder) => folder.title === clickedFolderTitle).hasSubfolder ? folderStructure.find((folder) => folder.title === clickedFolderTitle).subfolders[0].title.toUpperCase() : "");
 
     const handleMouseDown = (event) => {
         if (
@@ -110,9 +111,11 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
       if (hasSubfolder) {
           setSelectedSubFolder(folderStructure.find((folder) => folder.title === folderTitle).subfolders[0].title);
           setContextFileName(folderStructure.find((folder) => folder.title === folderTitle).subfolders[0].title.toUpperCase() + " INFO");
+          setPreviewTitle(folderStructure.find((folder) => folder.title === folderTitle).subfolders[0].title.toUpperCase());
       } else {
           setSelectedSubFolder(null);
           setContextFileName(folderTitle.toUpperCase() + " INFO");
+          setPreviewTitle(folderTitle.toUpperCase());
       }
     };
 
@@ -135,6 +138,7 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
     const handleSubFolderClick = (subFolder) => {
         setSelectedSubFolder(subFolder);
         setContextFileName(subFolder.toUpperCase() + " INFO");
+        setPreviewTitle(subFolder.toUpperCase());
         setIsInSubFolder(true);
     };
 
@@ -144,7 +148,7 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
     };
 
     const handleOnImageClick = (imageIndex) => {
-      onImageClick(selectedImages, imageIndex, contextFileName, selectedImages[0].content);
+      onImageClick(selectedImages, imageIndex, contextFileName, selectedImages[0].content, previewTitle);
     };
 
     const handleOnFolderInfoClick = () => {

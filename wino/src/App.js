@@ -58,6 +58,8 @@ function App() {
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
   const [isMobileImageClicked, setIsMobileImageClicked] = useState(false);
 
+  const [previewTitle, setPreviewTitle] = useState("");
+
   const [isFolderClicked, setIsFolderClicked] = useState(false);
   const [clickedFolderTitle, setClickedFolderTitle] = useState("");
   const [clickedFolderImages, setClickedFolderImages] = useState([]);
@@ -232,11 +234,12 @@ function App() {
     setIsFolderClicked(false);
   };
 
-  const handleFolderImageClick = (images, index, title, content) => {
+  const handleFolderImageClick = (images, index, title, content, previewTitle) => {
     setClickedFolderImages(images);
     setClickedFolderSelectedImageIndex(index);
     setClickedFolderInfoTitle(title);
     setClickedFolderInfoContent(content);
+    setPreviewTitle(previewTitle);
     setIsFolderImageClicked(true);
   };
 
@@ -352,7 +355,7 @@ function App() {
           )}
           {isImageClicked && (
             <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
-              <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} />
+              <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} contentTitle="Featured" />
             </div>
           )}
           {isMobileImageClicked && (
@@ -383,7 +386,7 @@ function App() {
           )}
           {isFolderImageClicked && (
             <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
-              <ContentPreviewWindow images={clickedFolderImages} onFullscreen={handleFolderImageFullscreenClick} onClose={handleFolderImageClose} currentIndex={clickedFolderSelectedImageIndex} onInformationClick={handleFolderImageInfoClick} onViewedImageChange={handleViewedImageChange} />
+              <ContentPreviewWindow images={clickedFolderImages} onFullscreen={handleFolderImageFullscreenClick} onClose={handleFolderImageClose} currentIndex={clickedFolderSelectedImageIndex} onInformationClick={handleFolderImageInfoClick} onViewedImageChange={handleViewedImageChange} contentTitle={previewTitle} />
             </div>
           )}
           {isFolderImageFullscreenClicked && (
