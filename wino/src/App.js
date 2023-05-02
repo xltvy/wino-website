@@ -57,8 +57,16 @@ function App() {
   const [isMobileImageInformationClicked, setIsMobileImageInformationClicked] = useState(false);
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
   const [isMobileImageClicked, setIsMobileImageClicked] = useState(false);
+
   const [isFolderClicked, setIsFolderClicked] = useState(false);
   const [clickedFolderTitle, setClickedFolderTitle] = useState("");
+  const [clickedFolderImages, setClickedFolderImages] = useState([]);
+  const [clickedFolderSelectedImageIndex, setClickedFolderSelectedImageIndex] = useState(null);
+  const [isFolderImageClicked, setIsFolderImageClicked] = useState(false);
+  const [isFolderImageFullscreenClicked, setIsFolderImageFullscreenClicked] = useState(false);
+  const [isFolderInfoClicked, setIsFolderInfoClicked] = useState(false);
+  const [clickedFolderInfoTitle, setClickedFolderInfoTitle] = useState(null);
+  const [clickedFolderInfoContent, setClickedFolderInfoContent] = useState(null);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -140,7 +148,12 @@ function App() {
   };
 
   const handleExitFullscreen = () => {
-    setIsFullscreen(false);
+    if (isFolderImageFullscreenClicked) {
+      setIsFolderImageFullscreenClicked(false);
+    }
+    if (isFullscreen) {
+      setIsFullscreen(false);
+    }
   };
 
   const handleInformationClick = () => {
@@ -202,7 +215,12 @@ function App() {
   }
 
   const handleImageInformationClose = () => {
-    setIsImageInformationClicked(false);
+    if (isFolderInfoClicked) {
+      setIsFolderInfoClicked(false);
+    }
+    if (isImageInformationClicked) {
+      setIsImageInformationClicked(false);
+    }
   };
 
   const handleFolderClick = (title) => {
@@ -214,6 +232,33 @@ function App() {
     setIsFolderClicked(false);
   };
 
+  const handleFolderImageClick = (images, index, title, content) => {
+    setClickedFolderImages(images);
+    setClickedFolderSelectedImageIndex(index);
+    setClickedFolderInfoTitle(title);
+    setClickedFolderInfoContent(content);
+    setIsFolderImageClicked(true);
+  };
+
+  const handleFolderImageClose = () => {
+    setIsFolderImageClicked(false);
+  };
+
+  const handleFolderInfoClick = (title, content) => {
+    setClickedFolderInfoTitle(title);
+    setClickedFolderInfoContent(content);
+    setIsFolderInfoClicked(true);
+  };
+
+  const handleFolderImageInfoClick = () => {
+    setIsFolderInfoClicked(true);
+  };
+
+  const handleFolderImageFullscreenClick = (index) => {
+    setClickedFolderSelectedImageIndex(index);
+    setIsFolderImageFullscreenClicked(true);
+  };
+    
   return (
     <div className="App">
       <Suspense fallback={<LoadingScreen/>}>
@@ -306,7 +351,7 @@ function App() {
             </div>
           )}
           {isImageClicked && (
-            <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", zIndex: "2000"}}>
+            <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
               <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} />
             </div>
           )}
@@ -331,9 +376,24 @@ function App() {
           {isSearchClicked && (
             <SearchBar onSearchClose={handleSearchClose}/>
           )}
-          {isFolderClicked && (<div style={{ zIndex: "1000", top: "0", left: "80px", right: "0", bottom: "0", position: "absolute" }}>
-            <FinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleFolderClose}/>
-          </div>)}
+          {isFolderClicked && (
+            <div style={{ display: "flex", alignItems: "center", zIndex: "1000", position: "relative"}}>
+              <FinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleFolderClose} onImageClick={handleFolderImageClick} onFolderInfoClick={handleFolderInfoClick} onInfoClick={handleInformationClick}/>
+            </div>
+          )}
+          {isFolderImageClicked && (
+            <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
+              <ContentPreviewWindow images={clickedFolderImages} onFullscreen={handleFolderImageFullscreenClick} onClose={handleFolderImageClose} currentIndex={clickedFolderSelectedImageIndex} onInformationClick={handleFolderImageInfoClick} onViewedImageChange={handleViewedImageChange} />
+            </div>
+          )}
+          {isFolderImageFullscreenClicked && (
+            <FullscreenImage imageSrc={clickedFolderImages[clickedFolderSelectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
+          )}
+          {isFolderInfoClicked && (
+            <div style={{ zIndex: "3000", top: "100px", left: "100vh", position: "absolute" }}>
+              <TxtFile title={clickedFolderInfoTitle} content={clickedFolderInfoContent} onInformationClose={handleImageInformationClose} />
+            </div>
+          )}
         </div>
         </Suspense>
     </div>

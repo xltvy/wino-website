@@ -15,6 +15,7 @@ body {
     background-size: cover;
     background-position: center center;
     z-index: 100;
+    position: static;
 }
 
 .desktop-film-container {
@@ -55,6 +56,7 @@ body {
     justify-content: flex-start;
     padding: 40px 40px 0px 40px;
     z-index: 1;
+    position: absolute;
 }
 
 .desktop-elements {
@@ -442,7 +444,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 100px;
+    top: 10vh;
+    left: 20vh;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     border-radius: 5px;
@@ -1134,6 +1137,10 @@ p {
     border-right: 0.1rem solid rgb(242, 242, 242);
     transition: border-color 0.3s ease-in-out 0s;
   }
+
+  .sub-sidebar.hidden {
+    display: none;
+  }
   
   .folder-item,
   .subfolder-item {
@@ -1206,7 +1213,6 @@ p {
 
 .main-finder-area {
     width: calc(100% - 200px);
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
