@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 
 import './components/component_styles.css';
 import './components/responsive_styles.css';
@@ -52,7 +52,6 @@ function App() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isInformationClicked, setIsInformationClicked] = useState(false);
-  const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [isImageClicked, setIsImageClicked] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(null);
   const [isImageInformationClicked, setIsImageInformationClicked] = useState(false);
@@ -73,6 +72,20 @@ function App() {
   const [clickedFolderInfoContent, setClickedFolderInfoContent] = useState(null);
 
   const [isMobileFolderClicked, setIsMobileFolderClicked] = useState(false);
+  const [isMobileFolderInfoClicked, setIsMobileFolderInfoClicked] = useState(false);
+  const [clickedMobileFolderInfoTitle, setClickedMobileFolderInfoTitle] = useState("");
+  const [clickedMobileFolderInfoContent, setClickedMobileFolderInfoContent] = useState(null);
+  const [isMobileFolderImageClicked, setIsMobileFolderImageClicked] = useState(false);
+  const [clickedMobileFolderImages, setClickedMobileFolderImages] = useState([]);
+  const [clickedMobileFolderSelectedImageIndex, setClickedMobileFolderSelectedImageIndex] = useState(null);
+  const [mobileImagePreviewTitle, setMobileImagePreviewTitle] = useState("");
+  const [isMobileFolderImageInfoClicked, setIsMobileFolderImageInfoClicked] = useState(false);
+  const [clickedMobileFolderImageInfoTitle, setClickedMobileFolderImageInfoTitle] = useState("");
+  const [clickedMobileFolderImageInfoContent, setClickedMobileFolderImageInfoContent] = useState(null);
+  const [isMobileFolderImageFullscreenClicked, setIsMobileFolderImageFullscreenClicked] = useState(false);
+  const [mobileFolderImageFullscreenSrc, setMobileFolderImageFullscreenSrc] = useState(null);
+
+  const [isSearch, setIsSearch] = useState(false);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -160,6 +173,9 @@ function App() {
     if (isFullscreen) {
       setIsFullscreen(false);
     }
+    if (isMobileFolderImageFullscreenClicked) {
+      setIsMobileFolderImageFullscreenClicked(false);
+    }
   };
 
   const handleInformationClick = () => {
@@ -175,15 +191,15 @@ function App() {
   };
 
   const handleMobileInformationClose = () => {
-    setIsMobileInformationClicked(false);
-  };
-
-  const handleSearchClick = () => {
-    setIsSearchClicked(true);
-  };
-
-  const handleSearchClose = () => {
-    setIsSearchClicked(false);
+    if (isMobileInformationClicked) {
+      setIsMobileInformationClicked(false);
+    }
+    if (isMobileFolderInfoClicked) {
+      setIsMobileFolderInfoClicked(false);
+    }
+    if (isMobileFolderImageInfoClicked) {
+      setIsMobileFolderImageInfoClicked(false);
+    }
   };
 
   const handleImageClick = (index) => {
@@ -201,7 +217,12 @@ function App() {
   };
 
   const handleMobileImageClose = () => {
-    setIsMobileImageClicked(false);
+    if (isMobileImageClicked) {
+      setIsMobileImageClicked(false);
+    }
+    if (isMobileFolderImageClicked) {
+      setIsMobileFolderImageClicked(false);
+    }
   };
 
   const handleImageInformationClick = () => {
@@ -270,16 +291,55 @@ function App() {
     setClickedFolderTitle(title);
     setIsMobileFolderClicked(true);
   };
+
+  const handleMobileFolderClose = () => {
+    setIsMobileFolderClicked(false);
+  };
+
+  const handleMobileFolderInfoClick = (title, content) => {
+    setClickedMobileFolderInfoTitle(title);
+    setClickedMobileFolderInfoContent(content);
+    setIsMobileFolderInfoClicked(true);
+  };
+
+  const handleMobileFolderImageClick = (images, index, infoTitle, content, previewTitle) => {
+    setClickedMobileFolderImages(images);
+    setClickedMobileFolderSelectedImageIndex(index);
+    setClickedMobileFolderInfoTitle(infoTitle);
+    setClickedMobileFolderInfoContent(content);
+    setMobileImagePreviewTitle(previewTitle);
+    setIsMobileFolderImageClicked(true);
+  };
+
+  const handleMobileImageInfoClick = (title, content) => {
+    setClickedMobileFolderImageInfoTitle(title);
+    setClickedMobileFolderImageInfoContent(content);
+    setIsMobileFolderImageInfoClicked(true);
+  };
+
+  const handleMobileFolderImageFullscreenClick = (imageSrc) => {
+    setMobileFolderImageFullscreenSrc(imageSrc);
+    setIsMobileFolderImageFullscreenClicked(true);
+  };
+  
+  const handleSearch = () => {
+    setIsSearch(true);
+  };
+  
+
+  const handleCloseSearch = () => {
+    setIsSearch(false);
+  };
     
   return (
     <div className="App">
       <Suspense fallback={<LoadingScreen/>}>
       <div className="desktop-layout" style={{backgroundImage: `url(${BaseBackground})`}} >
           {!isMobileFolderClicked && <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick} utilityClass={"top-bar-utility-dots"}/>
+            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
           </div>}
           <div className='mobile-search-container'>
-            <SearchBar onSearchClose={handleSearchClose}/>
+            <SearchBar onSearchClose={handleCloseSearch}/>
           </div>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
@@ -289,11 +349,11 @@ function App() {
                 <MobileDesktopElement children={<ContactIcon className='contact-icon' decoding="async" loading="lazy"/>} title='Contact' onClick={""}/>
               </a>
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Featured' onClick={handleMobileFolderClick}/>
-              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Campaigns' onClick={""}/>
-              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Upgrading' onClick={""}/>
-              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={""}/>
-              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={""}/>
-              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={""}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Campaigns' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Upgrading' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={handleMobileFolderClick}/>
 
               <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
@@ -364,7 +424,7 @@ function App() {
           )}
           {isMobileImageClicked && (
             <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
-              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} onViewedImageChange={handleViewedImageChange} onFullscreen={handleFullscreenClick}/>
+              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} prevInfo={false} onViewedImageChange={handleViewedImageChange} prevTitle={"Featured"} onFullscreen={handleFullscreenClick}/>
             </div>
           )}
           {isImageInformationClicked && (
@@ -380,8 +440,8 @@ function App() {
           {isFullscreen && (
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
           )}
-          {isSearchClicked && (
-            <SearchBar onSearchClose={handleSearchClose}/>
+          {isSearch && (
+            <SearchBar onSearchClose={handleCloseSearch}/>
           )}
           {isFolderClicked && (
             <div style={{ display: "flex", alignItems: "center", zIndex: "1000", position: "relative"}}>
@@ -403,8 +463,26 @@ function App() {
           )}
           {isMobileFolderClicked && (
             <div style={{ zIndex: "1000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
-              <MobileFinderWindow clickedFolderTitle={clickedFolderTitle} />
+              <MobileFinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleMobileFolderClose} onInfoClick={handleMobileFolderInfoClick} onImageClick={handleMobileFolderImageClick} onWinoInfoClick={handleMobileInformationClick}/>
             </div>
+          )}
+          {isMobileFolderInfoClicked && (
+            <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileInformation title={clickedMobileFolderInfoTitle} content={clickedMobileFolderInfoContent} onInformationClose={handleMobileInformationClose} />
+            </div>
+          )}
+          {isMobileFolderImageClicked && (
+            <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileContentPreviewWindow images={clickedMobileFolderImages} currentIndex={clickedMobileFolderSelectedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInfoClick} prevInfo={true} prevTitle={mobileImagePreviewTitle} onFullscreen={handleMobileFolderImageFullscreenClick}/>
+            </div>
+          )}
+          {isMobileFolderImageInfoClicked && (
+            <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileInformation title={clickedMobileFolderImageInfoTitle} content={clickedMobileFolderImageInfoContent} onInformationClose={handleMobileInformationClose} />
+            </div>
+          )}
+          {isMobileFolderImageFullscreenClicked && (
+            <FullscreenImage imageSrc={mobileFolderImageFullscreenSrc} onExitFullscreen={handleExitFullscreen} />
           )}
         </div>
         </Suspense>

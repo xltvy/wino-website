@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MobileDesktopElement = ({ children, title, onClick }) => {
 
+    const [folderTitle] = useState(title);
+
     const handleOnClick = () => {
-        onClick();
+        onClick(folderTitle);
     };
 
     return (
