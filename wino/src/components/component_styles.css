@@ -1047,7 +1047,7 @@ p {
     height: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
+}
   
   .sidebar {
     display: flex;
@@ -1262,6 +1262,21 @@ p {
     margin-top: 10px;
     text-align: center;
     color: black;
+}
+
+.finder-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finder-video-wrapper {
+    opacity: 0;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
 }
 
 .default-row {

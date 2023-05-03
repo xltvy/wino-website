@@ -114,10 +114,10 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
                 <div className="top-bar-right-item-dt">
                     {formattedTime}
                 </div>
-                <div className='top-bar-animation-button-container'>
+                {/* <div className='top-bar-animation-button-container'>
                     {!isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={18} width={30} onColor={"#4cd964"}/>)}
                     {isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={24} width={42} onColor={"#4cd964"}/>)}
-                </div>
+                </div> */}
                 <div className="top-bar-utility-button" onClick={handleMobileDropdown}>
                     <UtilityDots className='top-bar-utility-dots'/>
                 </div>

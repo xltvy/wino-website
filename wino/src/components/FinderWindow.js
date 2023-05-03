@@ -235,13 +235,10 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
                                 <div className="main-finder-image-title">{contextFileName}</div>
                             </div>
                               {selectedImages.map((image) => (
-                                  <div
-                                      key={image.id}
-                                      className="main-finder-image-wrapper"
-                                      onDoubleClick={() => handleOnImageClick((image.id-1))}
-                                  >
+                                  <div key={image.id} className="main-finder-image-wrapper" onDoubleClick={() => handleOnImageClick((image.id-1))}>
                                       <div className="main-finder-image-overlay">
-                                        <img src={image.src} alt={image.alt} decoding='async' loading='lazy'/>
+                                        {!image.isVideo && <img src={image.src} alt={image.alt} decoding='async' loading='lazy'/>}
+                                        {image.isVideo && <div className='finder-video-container'> <div className='finder-video-wrapper' onDoubleClick={() => handleOnImageClick((image.id-1))}/><iframe src={image.src + "&background=1&title=0&byline=0&portrait=0&playsinline=1&muted=1&controls=0&loop=1"} style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%"}} frameborder="0" allow="autoplay; picture-in-picture"/></div>}
                                       </div>
                                       <div className="main-finder-image-title">{image.title}</div>
                                   </div>

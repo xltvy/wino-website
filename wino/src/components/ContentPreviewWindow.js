@@ -6,7 +6,7 @@ import FullscreenIcon from "../icons/FullscreenIcon.js";
 import "./component_styles.css";
 
 const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick, onViewedImageChange, contentTitle }) => {
-  const [boxSize, setBoxSize] = useState({ width: Math.max(690, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
+  const [boxSize, setBoxSize] = useState({ width: Math.max(720, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -46,7 +46,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     const dy = event.clientY - dragStart.y;
   
     if (isResizing) {
-      const newWidth = Math.max(690, dragStart.width + dx);
+      const newWidth = Math.max(720, dragStart.width + dx);
       const newHeight = Math.max(560, dragStart.height + dy);
   
       setBoxSize({

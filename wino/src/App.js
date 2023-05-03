@@ -30,6 +30,8 @@ const FinderWindow = lazy(() => import('./components/FinderWindow'));
 const DesktopElement = lazy(() => import('./components/DesktopElement'));
 const MobileElement = lazy(() => import('./components/MobileElement'));
 const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
+const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
+const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
 
 const InformationContent = lazy(() => import('./components/info_texts/InformationContent'));
 const NikeContent = lazy(() => import('./components/info_texts/NikeContent'));
@@ -69,6 +71,8 @@ function App() {
   const [isFolderInfoClicked, setIsFolderInfoClicked] = useState(false);
   const [clickedFolderInfoTitle, setClickedFolderInfoTitle] = useState(null);
   const [clickedFolderInfoContent, setClickedFolderInfoContent] = useState(null);
+
+  const [isMobileFolderClicked, setIsMobileFolderClicked] = useState(false);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -261,6 +265,11 @@ function App() {
     setClickedFolderSelectedImageIndex(index);
     setIsFolderImageFullscreenClicked(true);
   };
+
+  const handleMobileFolderClick = (title) => {
+    setClickedFolderTitle(title);
+    setIsMobileFolderClicked(true);
+  };
     
   return (
     <div className="App">
@@ -274,26 +283,18 @@ function App() {
           </div>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
-              <div className="mobile-element">
-                <div className='mobile-element-container' onClick={handleMobileInformationClick}>
-                  <div className='mobile-element-image-container'>
-                    <InformationIcon className='information-icon'/>
-                  </div>
-                  <div className='mobile-element-title-container'>
-                    <div className='desktop-element-title'>Information</div>
-                  </div>
-                </div>
-              </div>
-              <div className="mobile-element">
-                <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" className='mobile-element-container'>
-                  <div className='mobile-element-image-container'>
-                    <ContactIcon className='contact-icon'/>
-                  </div>
-                  <div className='mobile-element-title-container'>
-                    <div className='desktop-element-title'>Contact</div>
-                  </div>
-                </a>
-              </div>
+
+              <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>
+              <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
+                <MobileDesktopElement children={<ContactIcon className='contact-icon' decoding="async" loading="lazy"/>} title='Contact' onClick={""}/>
+              </a>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Featured' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Campaigns' onClick={""}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Upgrading' onClick={""}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={""}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={""}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={""}/>
+
               <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
@@ -306,20 +307,23 @@ function App() {
           <div className='desktop-bottom-layout'>
             <div className='desktop-elements'>
               <div className='desktop-folders'>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Featured")}>
+                  <DesktopElement title="Featured" iconSrc={<FolderAlt className='folder-icon' height="45px" decoding="async" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Campaigns")}>
+                  <DesktopElement title="Campaigns" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
                 <div className="desktop-element" onDoubleClick={() => handleFolderClick("Upgrading")}>
                   <DesktopElement title="Upgrading" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
                 </div>
                 <div className="desktop-element" onDoubleClick={() => handleFolderClick("Design")}>
                   <DesktopElement title="Design" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
                 </div>
-                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Sustainability")}>
-                  <DesktopElement title="Sustainability" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
-                </div>
-                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Featured")}>
-                  <DesktopElement title="Featured" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
-                </div>
                 <div className="desktop-element" onDoubleClick={() => handleFolderClick("Branding")}>
                   <DesktopElement title="Branding" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Sustainability")}>
+                  <DesktopElement title="Sustainability" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
                 </div>
               </div>
               <div className='desktop-images'>
@@ -395,6 +399,11 @@ function App() {
           {isFolderInfoClicked && (
             <div style={{ zIndex: "3000", top: "100px", left: "100vh", position: "absolute" }}>
               <TxtFile title={clickedFolderInfoTitle} content={clickedFolderInfoContent} onInformationClose={handleImageInformationClose} />
+            </div>
+          )}
+          {isMobileFolderClicked && (
+            <div style={{ zIndex: "1000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileFinderWindow clickedFolderTitle={clickedFolderTitle} />
             </div>
           )}
         </div>
