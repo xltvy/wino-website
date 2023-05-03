@@ -85,7 +85,14 @@
         display: block;
         max-width: 20px;
         position: relative;
-        color: black;
+    }
+
+    .finder-utility-dots {
+        display: block;
+        max-width: 20px;
+        position: relative;
+        fill: black;
+        border: black;
     }
 
     .mobile-search-container {

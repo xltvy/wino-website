@@ -275,9 +275,9 @@ function App() {
     <div className="App">
       <Suspense fallback={<LoadingScreen/>}>
       <div className="desktop-layout" style={{backgroundImage: `url(${BaseBackground})`}} >
-          <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick}/>
-          </div>
+          {!isMobileFolderClicked && <div className='desktop-top-layout'>
+            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick} utilityClass={"top-bar-utility-dots"}/>
+          </div>}
           <div className='mobile-search-container'>
             <SearchBar onSearchClose={handleSearchClose}/>
           </div>

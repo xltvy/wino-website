@@ -8,7 +8,7 @@ import ContactOutline from '../icons/ContactOutline.js';
 import InfoOutline from '../icons/InfoOutline.js';
 
 
-const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, onDesktopFilmToggle}) => {
+const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, onDesktopFilmToggle, utilityClass}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
@@ -119,7 +119,7 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
                     {isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={24} width={42} onColor={"#4cd964"}/>)}
                 </div> */}
                 <div className="top-bar-utility-button" onClick={handleMobileDropdown}>
-                    <UtilityDots className='top-bar-utility-dots'/>
+                    <UtilityDots className={utilityClass}/>
                 </div>
                 {showMobileDropdown && (<div className='top-bar-utility-dropdown'>
                     <div className='top-bar-utility-dropdown-container'>

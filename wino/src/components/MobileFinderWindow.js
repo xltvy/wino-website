@@ -23,7 +23,7 @@ const FinderWindow = (clickedFolderTitle) => {
     return (
         <div className="finder-window">
             <div className='desktop-top-layout'>
-                <TopBar onInformationClick={""} onMobileInformationClick={""} onSearchClick={""}/>
+                <TopBar onInformationClick={""} onMobileInformationClick={""} onSearchClick={""} utilityClass={"finder-utility-dots"}/>
             </div>
         </div>
     );
