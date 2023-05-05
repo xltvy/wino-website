@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
 import './components/component_styles.css';
 import './components/responsive_styles.css';
@@ -86,6 +86,7 @@ function App() {
   const [mobileFolderImageFullscreenSrc, setMobileFolderImageFullscreenSrc] = useState(null);
 
   const [isSearch, setIsSearch] = useState(false);
+  const searchBarRef = useRef(null);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -322,14 +323,39 @@ function App() {
     setIsMobileFolderImageFullscreenClicked(true);
   };
   
-  const handleSearch = () => {
-    setIsSearch(true);
-  };
-  
-
   const handleCloseSearch = () => {
     setIsSearch(false);
   };
+
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleClickOutsideSearchBar = (event) => {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+        handleCloseSearch();
+      }
+    };
+
+    if (isSearch) {
+      timeoutId = setTimeout(() => {
+        document.addEventListener("click", handleClickOutsideSearchBar);
+      }, 0);
+    } else {
+      document.removeEventListener("click", handleClickOutsideSearchBar);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", handleClickOutsideSearchBar);
+    };
+  }, [isSearch]);
+
+
+  const handleSearch = () => {
+    setIsSearch(true);
+  };
+
     
   return (
     <div className="App">
@@ -441,7 +467,7 @@ function App() {
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
           )}
           {isSearch && (
-            <SearchBar onSearchClose={handleCloseSearch}/>
+            <div ref={searchBarRef}><SearchBar onSearchClose={handleCloseSearch}/></div>
           )}
           {isFolderClicked && (
             <div style={{ display: "flex", alignItems: "center", zIndex: "1000", position: "relative"}}>
