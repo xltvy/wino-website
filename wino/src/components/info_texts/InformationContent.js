@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/wino-logo2.png";
+import Logo from "../../images/wino-logo2.webp";
 
 const InformationContent = () => {
     return (

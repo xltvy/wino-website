@@ -3,12 +3,12 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import './components/component_styles.css';
 import './components/responsive_styles.css';
 
-import BaseBackground from './images/background.jpg';
+import BaseBackground from './images/background.webp';
 
 import Image1 from './images/client_desktop_images/nike.jpg';
-import Image2 from './images/client_desktop_images/petra.jpg';
-import Image3 from './images/client_desktop_images/mercy_born.gif';
-import Image4 from './images/client_desktop_images/luna_merdin.jpg';
+import Image2 from './finder/design/petra/07.webp';
+import Image3 from './finder/branding/mercy_born/02.gif';
+import Image4 from './finder/branding/luna_merdin/13.webp';
 import Image5 from './images/client_desktop_images/ankh.jpg';
 import Image6 from './images/client_desktop_images/fred.jpg';
 import Image7 from './images/client_desktop_images/pinoli.jpg';
@@ -488,7 +488,7 @@ function App() {
             </div>
           )}
           {isMobileFolderClicked && (
-            <div style={{ zIndex: "1000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+            <div style={{ zIndex: "2000", top: "0px", left: "0px", right: "0px", bottom: "0px", position: "absolute", height: "100%", width: "100%" }}>
               <MobileFinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleMobileFolderClose} onInfoClick={handleMobileFolderInfoClick} onImageClick={handleMobileFolderImageClick} onWinoInfoClick={handleMobileInformationClick}/>
             </div>
           )}

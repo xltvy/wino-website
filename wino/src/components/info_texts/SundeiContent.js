@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/sundei-logo.png";
+import Logo from "../../images/client_logos/sundei-logo.webp";
 
 const SundeiContent = () => {
     return (

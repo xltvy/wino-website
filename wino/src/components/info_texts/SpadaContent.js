@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/spada-logo.png";
+import Logo from "../../images/client_logos/spada-logo.webp";
 
 const SpadaContent = () => {
     return (

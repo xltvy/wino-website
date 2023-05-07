@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/pinoli-logo.png";
+import Logo from "../../images/client_logos/pinoli-logo.webp";
 
 const PinoliContent = () => {
     return (

@@ -54,7 +54,7 @@ const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass, onS
     // };
 
     const handleReload = () => {
-        window.location.reload();
+        window.location.href = "/";
     };
 
     const handleOnSearch = () => {

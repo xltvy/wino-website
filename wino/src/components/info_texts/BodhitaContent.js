@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/bodhita-logo.png";
+import Logo from "../../images/client_logos/bodhita-logo.webp";
 
 const BodhitaContent = () => {
     return (

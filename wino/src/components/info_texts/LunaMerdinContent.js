@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/lunamerdin-logo.png";
+import Logo from "../../images/client_logos/lunamerdin-logo.webp";
 
 const LunaMerdinContent = () => {
     return (

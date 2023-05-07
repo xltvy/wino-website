@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/mercyborn-logo.png";
+import Logo from "../../images/client_logos/mercyborn-logo.webp";
 
 const MercyBornContent = () => {
     return (

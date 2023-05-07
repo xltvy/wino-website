@@ -1,129 +1,132 @@
-import Petra1 from './finder/design/petra/01.jpg';
-import Petra2 from './finder/design/petra/02.jpg';
-import Petra3 from './finder/design/petra/03.jpg';
-import Petra4 from './finder/design/petra/04.jpg';
-import Petra5 from './finder/design/petra/05.jpg';
-import Petra6 from './finder/design/petra/06.jpg';
-import Petra7 from './finder/design/petra/07.png';
-import Petra8 from './finder/design/petra/08.png';
-import Petra9 from './finder/design/petra/09.jpg';
-import Petra10 from './finder/design/petra/10.jpg';
-import Petra11 from './finder/design/petra/11.jpg';
-import Petra12 from './finder/design/petra/12.jpeg';
-import Petra13 from './finder/design/petra/13.jpeg';
-import Petra14 from './finder/design/petra/14.png';
-import Petra15 from './finder/design/petra/15.jpeg';
-import Petra16 from './finder/design/petra/16.jpg';
-import Petra17 from './finder/design/petra/17.jpg';
-import Petra18 from './finder/design/petra/18.jpg';
-import Petra19 from './finder/design/petra/19.jpg';
-import Petra20 from './finder/design/petra/20.jpg';
-import Petra21 from './finder/design/petra/21.jpg';
-import Petra22 from './finder/design/petra/22.jpg';
+import Petra1 from './finder/design/petra/01.webp';
+import Petra2 from './finder/design/petra/02.webp';
+import Petra3 from './finder/design/petra/03.webp';
+import Petra4 from './finder/design/petra/04.webp';
+import Petra5 from './finder/design/petra/05.webp';
+import Petra6 from './finder/design/petra/06.webp';
+import Petra7 from './finder/design/petra/07.webp';
+import Petra8 from './finder/design/petra/08.webp';
+import Petra9 from './finder/design/petra/09.webp';
+import Petra10 from './finder/design/petra/10.webp';
+import Petra11 from './finder/design/petra/11.webp';
+import Petra12 from './finder/design/petra/12.webp';
+import Petra13 from './finder/design/petra/13.webp';
+import Petra14 from './finder/design/petra/14.webp';
+import Petra15 from './finder/design/petra/15.webp';
+import Petra16 from './finder/design/petra/16.webp';
+import Petra17 from './finder/design/petra/17.webp';
+import Petra18 from './finder/design/petra/18.webp';
+import Petra19 from './finder/design/petra/19.webp';
+import Petra20 from './finder/design/petra/20.webp';
+import Petra21 from './finder/design/petra/21.webp';
+import Petra22 from './finder/design/petra/22.webp';
 
-import LunaMerdin1 from './finder/branding/luna_merdin/01.png';
-import LunaMerdin2 from './finder/branding/luna_merdin/02.png';
-import LunaMerdin3 from './finder/branding/luna_merdin/03.png';
-import LunaMerdin4 from './finder/branding/luna_merdin/04.png';
-import LunaMerdin5 from './finder/branding/luna_merdin/05.png';
-import LunaMerdin6 from './finder/branding/luna_merdin/06.png';
-import LunaMerdin7 from './finder/branding/luna_merdin/07.png';
-import LunaMerdin8 from './finder/branding/luna_merdin/08.png';
-import LunaMerdin9 from './finder/branding/luna_merdin/09.png';
-import LunaMerdin10 from './finder/branding/luna_merdin/10.png';
-import LunaMerdin11 from './finder/branding/luna_merdin/11.png';
-import LunaMerdin12 from './finder/branding/luna_merdin/12.png';
-import LunaMerdin13 from './finder/branding/luna_merdin/13.png';
-import LunaMerdin14 from './finder/branding/luna_merdin/14.png';
-import LunaMerdin15 from './finder/branding/luna_merdin/15.png';
-import LunaMerdin16 from './finder/branding/luna_merdin/16.png';
+import LunaMerdin1 from './finder/branding/luna_merdin/01.webp';
+import LunaMerdin2 from './finder/branding/luna_merdin/02.webp';
+import LunaMerdin3 from './finder/branding/luna_merdin/03.webp';
+import LunaMerdin4 from './finder/branding/luna_merdin/04.webp';
+import LunaMerdin5 from './finder/branding/luna_merdin/05.webp';
+import LunaMerdin6 from './finder/branding/luna_merdin/06.webp';
+import LunaMerdin7 from './finder/branding/luna_merdin/07.webp';
+import LunaMerdin8 from './finder/branding/luna_merdin/08.webp';
+import LunaMerdin9 from './finder/branding/luna_merdin/09.webp';
+import LunaMerdin10 from './finder/branding/luna_merdin/10.webp';
+import LunaMerdin11 from './finder/branding/luna_merdin/11.webp';
+import LunaMerdin12 from './finder/branding/luna_merdin/12.webp';
+import LunaMerdin13 from './finder/branding/luna_merdin/13.webp';
+import LunaMerdin14 from './finder/branding/luna_merdin/14.webp';
+import LunaMerdin15 from './finder/branding/luna_merdin/15.webp';
+import LunaMerdin16 from './finder/branding/luna_merdin/16.webp';
 
-import Bodhita1 from './finder/branding/bodhita/01.png';
-import Bodhita2 from './finder/branding/bodhita/02.png';
-import Bodhita3 from './finder/branding/bodhita/03.png';
-import Bodhita4 from './finder/branding/bodhita/04.png';
-import Bodhita5 from './finder/branding/bodhita/05.png';
-import Bodhita6 from './finder/branding/bodhita/06.png';
-import Bodhita7 from './finder/branding/bodhita/07.png';
-import Bodhita8 from './finder/branding/bodhita/08.png';
-import Bodhita9 from './finder/branding/bodhita/09.png';
+import Bodhita1 from './finder/branding/bodhita/01.webp';
+import Bodhita2 from './finder/branding/bodhita/02.webp';
+import Bodhita3 from './finder/branding/bodhita/03.webp';
+import Bodhita4 from './finder/branding/bodhita/04.webp';
+import Bodhita5 from './finder/branding/bodhita/05.webp';
+import Bodhita6 from './finder/branding/bodhita/06.webp';
+import Bodhita7 from './finder/branding/bodhita/07.webp';
+import Bodhita8 from './finder/branding/bodhita/08.webp';
+import Bodhita9 from './finder/branding/bodhita/09.webp';
 
-import Pinoli1 from './finder/branding/pinoli/01.png';
-import Pinoli2 from './finder/branding/pinoli/02.png';
-import Pinoli3 from './finder/branding/pinoli/03.png';
-import Pinoli4 from './finder/branding/pinoli/04.png';
-import Pinoli5 from './finder/branding/pinoli/05.png';
-import Pinoli6 from './finder/branding/pinoli/06.png';
-import Pinoli7 from './finder/branding/pinoli/07.png';
-import Pinoli8 from './finder/branding/pinoli/08.png';
+import Pinoli1 from './finder/branding/pinoli/01.webp';
+import Pinoli2 from './finder/branding/pinoli/02.webp';
+import Pinoli3 from './finder/branding/pinoli/03.webp';
+import Pinoli4 from './finder/branding/pinoli/04.webp';
+import Pinoli5 from './finder/branding/pinoli/05.webp';
+import Pinoli6 from './finder/branding/pinoli/06.webp';
+import Pinoli7 from './finder/branding/pinoli/07.webp';
+import Pinoli8 from './finder/branding/pinoli/08.webp';
 import Pinoli9 from './finder/branding/pinoli/09.gif';
-import Pinoli10 from './finder/branding/pinoli/10.png';
-import Pinoli11 from './finder/branding/pinoli/11.png';
-import Pinoli12 from './finder/branding/pinoli/12.png';
-import Pinoli13 from './finder/branding/pinoli/13.png';
-import Pinoli14 from './finder/branding/pinoli/14.png';
-import Pinoli15 from './finder/branding/pinoli/15.png';
-import Pinoli16 from './finder/branding/pinoli/16.png';
-import Pinoli17 from './finder/branding/pinoli/17.png';
-import Pinoli18 from './finder/branding/pinoli/18.png';
-import Pinoli19 from './finder/branding/pinoli/19.png';
-import Pinoli20 from './finder/branding/pinoli/20.png';
-import Pinoli21 from './finder/branding/pinoli/21.png';
-import Pinoli22 from './finder/branding/pinoli/22.png';
+import Pinoli10 from './finder/branding/pinoli/10.webp';
+import Pinoli11 from './finder/branding/pinoli/11.webp';
+import Pinoli12 from './finder/branding/pinoli/12.webp';
+import Pinoli13 from './finder/branding/pinoli/13.webp';
+import Pinoli14 from './finder/branding/pinoli/14.webp';
+import Pinoli15 from './finder/branding/pinoli/15.webp';
+import Pinoli16 from './finder/branding/pinoli/16.webp';
+import Pinoli17 from './finder/branding/pinoli/17.webp';
+import Pinoli18 from './finder/branding/pinoli/18.webp';
+import Pinoli19 from './finder/branding/pinoli/19.webp';
+import Pinoli20 from './finder/branding/pinoli/20.webp';
+import Pinoli21 from './finder/branding/pinoli/21.webp';
+import Pinoli22 from './finder/branding/pinoli/22.webp';
+import Pinoli23 from './finder/branding/pinoli/23.webp';
 
-import MercyBorn1 from './finder/branding/mercy_born/01.png';
-import MercyBorn2 from './finder/branding/mercy_born/02.png';
-import MercyBorn3 from './finder/branding/mercy_born/03.png';
-import MercyBorn4 from './finder/branding/mercy_born/04.png';
-import MercyBorn5 from './finder/branding/mercy_born/05.png';
-import MercyBorn6 from './finder/branding/mercy_born/06.png';
-import MercyBorn7 from './finder/branding/mercy_born/07.png';
-import MercyBorn8 from './finder/branding/mercy_born/08.png';
-import MercyBorn9 from './finder/branding/mercy_born/09.png';
-import MercyBorn10 from './finder/branding/mercy_born/10.png';
-import MercyBorn11 from './finder/branding/mercy_born/11.png';
-import MercyBorn12 from './finder/branding/mercy_born/12.png';
-import MercyBorn13 from './finder/branding/mercy_born/13.png';
-import MercyBorn14 from './finder/branding/mercy_born/14.png';
-import MercyBorn15 from './finder/branding/mercy_born/15.png';
-import MercyBorn16 from './finder/branding/mercy_born/16.png';
-import MercyBorn17 from './finder/branding/mercy_born/17.png';
+import MercyBorn1 from './finder/branding/mercy_born/01.webp';
+import MercyBorn2 from './finder/branding/mercy_born/02.gif';
+import MercyBorn3 from './finder/branding/mercy_born/03.webp';
+import MercyBorn4 from './finder/branding/mercy_born/04.webp';
+import MercyBorn5 from './finder/branding/mercy_born/05.webp';
+import MercyBorn6 from './finder/branding/mercy_born/06.webp';
+import MercyBorn7 from './finder/branding/mercy_born/07.webp';
+import MercyBorn8 from './finder/branding/mercy_born/08.webp';
+import MercyBorn9 from './finder/branding/mercy_born/09.webp';
+import MercyBorn10 from './finder/branding/mercy_born/10.webp';
+import MercyBorn11 from './finder/branding/mercy_born/11.webp';
+import MercyBorn12 from './finder/branding/mercy_born/12.webp';
+import MercyBorn13 from './finder/branding/mercy_born/13.webp';
+import MercyBorn14 from './finder/branding/mercy_born/14.webp';
+import MercyBorn15 from './finder/branding/mercy_born/15.webp';
+import MercyBorn16 from './finder/branding/mercy_born/16.webp';
+import MercyBorn17 from './finder/branding/mercy_born/17.webp';
 
-import Spada1 from './finder/branding/spada/01.png';
-import Spada2 from './finder/branding/spada/02.jpg';
-import Spada3 from './finder/branding/spada/03.png';
-import Spada4 from './finder/branding/spada/04.png';
-import Spada5 from './finder/branding/spada/05.png';
-import Spada6 from './finder/branding/spada/06.png';
-import Spada7 from './finder/branding/spada/07.png';
-import Spada8 from './finder/branding/spada/08.png';
-import Spada9 from './finder/branding/spada/09.png';
+import Spada1 from './finder/branding/spada/01.webp';
+import Spada2 from './finder/branding/spada/02.webp';
+import Spada3 from './finder/branding/spada/03.webp';
+import Spada4 from './finder/branding/spada/04.webp';
+import Spada5 from './finder/branding/spada/05.webp';
+import Spada6 from './finder/branding/spada/06.webp';
+import Spada7 from './finder/branding/spada/07.webp';
+import Spada8 from './finder/branding/spada/08.webp';
+import Spada9 from './finder/branding/spada/09.webp';
+import Spada10 from './finder/branding/spada/10.webp';
 
-import Sundei1 from './finder/branding/sundei/01.png';
-import Sundei2 from './finder/branding/sundei/02.png';
-import Sundei3 from './finder/branding/sundei/03.png';
-import Sundei4 from './finder/branding/sundei/04.png';
-import Sundei5 from './finder/branding/sundei/05.png';
-import Sundei6 from './finder/branding/sundei/06.png';
-import Sundei7 from './finder/branding/sundei/07.png';
+import Sundei1 from './finder/branding/sundei/01.webp';
+import Sundei2 from './finder/branding/sundei/02.webp';
+import Sundei3 from './finder/branding/sundei/03.webp';
+import Sundei4 from './finder/branding/sundei/04.webp';
+import Sundei5 from './finder/branding/sundei/05.webp';
+import Sundei6 from './finder/branding/sundei/06.webp';
+import Sundei7 from './finder/branding/sundei/07.webp';
+import Sundei8 from './finder/branding/sundei/08.webp';
 
-import Nike1 from './finder/campaigns/nike_sneaksup/01.jpg';
-import Nike2 from './finder/campaigns/nike_sneaksup/02.jpg';
-import Nike3 from './finder/campaigns/nike_sneaksup/03.jpg';
-import Nike4 from './finder/campaigns/nike_sneaksup/04.jpg';
-import Nike5 from './finder/campaigns/nike_sneaksup/05.jpg';
-import Nike6 from './finder/campaigns/nike_sneaksup/06.jpg';
-import Nike7 from './finder/campaigns/nike_sneaksup/07.jpg';
-import Nike8 from './finder/campaigns/nike_sneaksup/08.jpg';
-import Nike9 from './finder/campaigns/nike_sneaksup/09.jpg';
-import Nike10 from './finder/campaigns/nike_sneaksup/10.jpg';
-import Nike11 from './finder/campaigns/nike_sneaksup/11.jpg';
-import Nike12 from './finder/campaigns/nike_sneaksup/12.jpg';
-import Nike13 from './finder/campaigns/nike_sneaksup/13.jpg';
-import Nike14 from './finder/campaigns/nike_sneaksup/14.jpg';
-import Nike15 from './finder/campaigns/nike_sneaksup/15.jpg';
-import Nike16 from './finder/campaigns/nike_sneaksup/16.jpg';
-import Nike17 from './finder/campaigns/nike_sneaksup/17.jpg';
+import Nike1 from './finder/campaigns/nike_sneaksup/01.webp';
+import Nike2 from './finder/campaigns/nike_sneaksup/02.webp';
+import Nike3 from './finder/campaigns/nike_sneaksup/03.webp';
+import Nike4 from './finder/campaigns/nike_sneaksup/04.webp';
+import Nike5 from './finder/campaigns/nike_sneaksup/05.webp';
+import Nike6 from './finder/campaigns/nike_sneaksup/06.webp';
+import Nike7 from './finder/campaigns/nike_sneaksup/07.webp';
+import Nike8 from './finder/campaigns/nike_sneaksup/08.webp';
+import Nike9 from './finder/campaigns/nike_sneaksup/09.webp';
+import Nike10 from './finder/campaigns/nike_sneaksup/10.webp';
+import Nike11 from './finder/campaigns/nike_sneaksup/11.webp';
+import Nike12 from './finder/campaigns/nike_sneaksup/12.webp';
+import Nike13 from './finder/campaigns/nike_sneaksup/13.webp';
+import Nike14 from './finder/campaigns/nike_sneaksup/14.webp';
+import Nike15 from './finder/campaigns/nike_sneaksup/15.webp';
+import Nike16 from './finder/campaigns/nike_sneaksup/16.webp';
+import Nike17 from './finder/campaigns/nike_sneaksup/17.webp';
 
 import PetraContent from './components/info_texts/PetraContent.js';
 import LunaMerdinContent from './components/info_texts/LunaMerdinContent.js';
@@ -813,6 +816,14 @@ const FolderStructure = [
                         title: 'PINOLI_19',
                         content: PinoliContent,
                         isVideo: false,
+                    },
+                    {
+                        id: 23,
+                        src: Pinoli23,
+                        alt: 'Pinoli',
+                        title: 'PINOLI_20',
+                        content: PinoliContent,
+                        isVideo: false,
                     }
                 ]
             },
@@ -1045,6 +1056,14 @@ const FolderStructure = [
                         title: 'SPADA_08',
                         content: SpadaContent,
                         isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: Spada10,
+                        alt: 'Spada',
+                        title: 'SPADA_09',
+                        content: SpadaContent,
+                        isVideo: false,
                     }
                 ]
             },
@@ -1104,6 +1123,14 @@ const FolderStructure = [
                         src: Sundei7,
                         alt: 'Sundei',
                         title: 'SUNDEI_06',
+                        content: SundeiContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: Sundei8,
+                        alt: 'Sundei',
+                        title: 'SUNDEI_07',
                         content: SundeiContent,
                         isVideo: false,
                     }

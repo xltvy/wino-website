@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/petra-logo.png";
+import Logo from "../../images/client_logos/petra-logo.webp";
 
 const PetraContent = () => {
     return (

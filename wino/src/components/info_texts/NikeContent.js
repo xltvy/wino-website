@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/nike-logo.png";
+import Logo from "../../images/client_logos/nike-logo.webp";
 
 const NikeContent = () => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/client_logos/fred-logo.png";
+import Logo from "../../images/client_logos/fred-logo.webp";
 
 const FredContent = () => {
     return (
