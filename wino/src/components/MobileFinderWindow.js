@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, lazy } from "react";
 
 import TopBar from "./TopBar.js";
 
@@ -7,6 +7,8 @@ import LeftArrow from "../icons/LeftArrow.js";
 import InfoIcon from '../images/information-icon.png';
 
 import FolderStructure from '../FolderStructure.js';
+
+const MobileFolderImage = lazy(() => import("./MobileFolderImage.js"));
 
 const MobileFinderWindow = ({ clickedFolderTitle, onClose, onInfoClick, onImageClick, onWinoInfoClick }) => {
 
@@ -107,11 +109,8 @@ const MobileFinderWindow = ({ clickedFolderTitle, onClose, onInfoClick, onImageC
                     />
                   </div>
                 ) : (
-                  <div className="mobile-folder-image-wrapper">
-                    <img src={image.src} alt={image.alt} decoding="async" loading="lazy"/>
-                  </div>
+                  <MobileFolderImage key={image.id} image={image} />
                 )}
-                <p className="mobile-image-title">{image.title}</p>
               </div>
           ))
         )}
