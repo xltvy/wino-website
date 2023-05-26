@@ -11,10 +11,8 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
     z-index: 100;
+    position: static;
 }
 
 .desktop-film-container {
@@ -55,6 +53,7 @@ body {
     justify-content: flex-start;
     padding: 40px 40px 0px 40px;
     z-index: 1;
+    position: absolute;
 }
 
 .desktop-elements {
@@ -67,7 +66,6 @@ body {
 }
 
 .desktop-folders {
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +80,7 @@ body {
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+    padding: 0px 40px;
 }
 
 .desktop-top-layout::before {
@@ -410,17 +409,6 @@ body {
     justify-content: center;
 }
 
-.folder-icon {
-    width: 80px;
-    height: 80px;
-    display: inline-block;
-    margin: 3px;
-    filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-}
-
 .no-drag {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -453,7 +441,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 100px;
+    top: 10vh;
+    left: 20vh;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     border-radius: 5px;
@@ -661,7 +650,7 @@ p {
 .prev-upper-body {
     width: 100%;
     display: grid;
-    grid-template-columns: 0fr 1fr 1fr;
+    grid-template-columns: 0fr 1.5fr 0.5fr;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 30px;
@@ -872,8 +861,8 @@ p {
 .search-bar {
     width: 600px;
     position: absolute;
-    top: 250px;
-    left: 400px;
+    top: 35%;
+    left: 20%;
     background-color: rgba(255, 255, 255, 0.63);
     border-radius: 10px;
     padding: 0px 8px;
@@ -896,7 +885,7 @@ p {
 }
 
 .search-bar-input {
-    width: 50%;
+    width: 100%;
     height: 100%;
     border: none;
     outline: none;
@@ -948,9 +937,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 120px;
-    width: 120px;
-    padding: 0.4rem 0rem; */
 }
 
 .desktop-element-container {
@@ -1015,7 +1001,7 @@ p {
     cursor: pointer;
     position: absolute;
     z-index: 50;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .desktop-video-icon.clicked {
@@ -1049,3 +1035,332 @@ p {
     top: 2px !important;
     left: 1px;
 }
+
+/* FinderWindow.js component styles below: */
+
+.finder-window {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    background-color: rgba(236, 239, 240, 0.65);
+    backdrop-filter: blur(1rem) brightness(1.14);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+    overflow: hidden;
+  }
+
+  .sidebar-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgb(135, 140, 141);
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .parent-sidebar-folders {
+    flex-grow: 1;
+  }
+
+  .sidebar-folder-item-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 0.3rem;
+    background-color: transparent;
+  }
+
+  .sub-sidebar-folder-item-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 0.3rem;
+    background-color: transparent;
+  }
+
+  .folder-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-folder-item-wrapper.selected {
+    background-color: rgb(187, 206, 211);
+  }
+
+  .sub-sidebar-folder-item-wrapper.selected {
+    background-color: rgb(234, 237, 237);
+  }
+
+  .parent-sidebar-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+
+  .parent-sidebar-contact-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .parent-sidebar-contact-item-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .sub-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    overflow-y: scroll;
+    border-right: 0.1rem solid rgb(242, 242, 242);
+    transition: border-color 0.3s ease-in-out 0s;
+  }
+
+  .sub-sidebar.hidden {
+    display: none;
+  }
+  
+  .folder-item,
+  .subfolder-item {
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .folder-item.selected,
+  .subfolder-item.selected {
+    background-color: #d8d8d8;
+  }
+  
+  .file-item {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+   }
+
+.file-item:hover {
+  background-color: #eee;
+}
+
+.finder-right-side {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #eee;
+}
+
+.finder-right-side-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(250, 251, 251);
+    border-bottom: 1px solid rgb(242, 242, 242);
+    transition: all 0.3s ease-in-out 0s;
+    border-top-right-radius: 0.5rem;
+    cursor: grab;
+}
+
+.finder-folder-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    padding: 5px 10px;
+    text-align: center;
+    color: black;
+}
+
+.finder-folder-title.disabled {
+    opacity: 0.2;
+}
+
+.finder-right-side-bottom {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.main-finder-area {
+    width: calc(100% - 200px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    padding-right: 30px;
+    overflow-y: scroll;
+}
+
+.main-finder-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+.main-finder-image-overlay {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+}
+
+.main-finder-image-overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-finder-image-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+.finder-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finder-video-wrapper {
+    opacity: 0;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+}
+
+.default-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mobile-finder-window {
+    display: none;
+}
+
+/* LoadingScreen.js component styles below: */
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f3f3f3;
+  }
+  
+  .progress-container {
+    width: 50%;
+    height: 1rem;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #1565c0;
+    animation: loading-animation 2s linear infinite;
+  }
+  
+  @keyframes loading-animation {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
+  .ghost-box {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ghost-box-content {
+    width: 90%;
+    height: 70%;
+    background-color: #e0e0e0;
+    border-radius: 0.6rem;
+    animation: pulse 2s infinite;
+  }
+
+  .ghost-box-title {
+    width: 90%;
+    height: 1rem;
+    background-color: #e0e0e0;
+    border-radius: 0.3rem;
+    margin-top: 0.6rem;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  

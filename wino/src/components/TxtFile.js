@@ -3,7 +3,7 @@ import CloseIcon from "../icons/CloseIcon.js";
 import "./component_styles.css";
 
 const TxtFile = ({ title, content, onInformationClose }) => {
-  const [boxSize, setBoxSize] = useState({ width: 320, height: 400 });
+  const [boxSize, setBoxSize] = useState({ width: 340, height: 400 });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -39,7 +39,7 @@ const TxtFile = ({ title, content, onInformationClose }) => {
     const dy = event.clientY - dragStart.y;
   
     if (isResizing) {
-      const newWidth = Math.max(320, dragStart.width + dx);
+      const newWidth = Math.max(340, dragStart.width + dx);
       const newHeight = Math.max(400, dragStart.height + dy);
   
       setBoxSize({

@@ -9,7 +9,7 @@ const FullscreenImage = ({ imageSrc, onExitFullscreen }) => {
     return (
         <span className="fullscreen-image-container">
             <div className="exit-fullscreen-button" onClick={handleExitFullscreen}>Close</div>
-            <img className="fullscreen-image" src={imageSrc} alt="Fullscreen Image" />
+            <img className="fullscreen-image" src={imageSrc} alt="Fullscreen Image" decoding="async" loading="lazy"/>
         </span>
     );
 };

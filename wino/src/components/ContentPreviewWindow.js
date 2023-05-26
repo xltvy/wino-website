@@ -5,8 +5,8 @@ import CloseIcon from "../icons/CloseIcon.js";
 import FullscreenIcon from "../icons/FullscreenIcon.js";
 import "./component_styles.css";
 
-const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick, onViewedImageChange }) => {
-  const [boxSize, setBoxSize] = useState({ width: Math.max(690, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
+const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onInformationClick, onViewedImageChange, contentTitle }) => {
+  const [boxSize, setBoxSize] = useState({ width: Math.max(720, window.innerWidth*0.4), height: Math.max(560, window.innerHeight*0.6) });
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState(null);
   const [isResizing, setIsResizing] = useState(false);
@@ -46,7 +46,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
     const dy = event.clientY - dragStart.y;
   
     if (isResizing) {
-      const newWidth = Math.max(690, dragStart.width + dx);
+      const newWidth = Math.max(720, dragStart.width + dx);
       const newHeight = Math.max(560, dragStart.height + dy);
   
       setBoxSize({
@@ -148,7 +148,7 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
             </div>
             <div className="prev-upper-body-content">
                 <div className="prev-upper-body-content-wrapper">
-                    <div className="prev-window-title">Featured</div>
+                    <div className="prev-window-title">{contentTitle}</div>
                     <div className="prev-window-title-label">{currentImage.title}</div>
                 </div>
             </div>
@@ -172,12 +172,14 @@ const ContentPreviewWindow = ({ images, onFullscreen, currentIndex, onClose, onI
                       <div/>
                       <div className="move-forward" onClick={handleNext}/>
                     </div>
-                  {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} />}
+                  {!currentImage.isVideo && <img src={currentImage.src} alt={currentImage.alt} decoding="async" loading="lazy"/>}
                   {currentImage.isVideo && <iframe
                                               ref={videoRef}
                                               title={currentImage.alt}
                                               className="prev-window-video"
                                               src={currentImage.src}
+                                              loading="lazy"
+                                              decoding="async"
                                               width="100%"
                                               height="100%"
                                               frameborder="0"

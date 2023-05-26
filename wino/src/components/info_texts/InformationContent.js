@@ -1,18 +1,24 @@
 import React from "react";
-import Logo from "../../images/wino-logo2.png";
+import Logo from "../../images/wino-logo2.webp";
 
 const InformationContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <h3>CONTACT</h3>
+            <br/>
             <p>For any inquires, please contact:</p>
+            <br/>
             <p> <a style={{ color: "black" }} href="mailto:wino@studiowino.com">wino@studiowino.com</a> </p>
+            <br/>
             <p>T: +90 212 807 08 67</p>
+            <br/>
             <p>IG: <a style={{ color: "black" }} href='https://www.instagram.com/studiowino/' target="_blank" rel="noreferrer">@studiowino</a> </p>
+            <br/>
             <h3>ABOUT</h3>
+            <br/>
             <p>WINO is an award-winning creative studio inspired by human-centered outcomes.</p>
             <p style={{ paddingTop: "8px" }}>Here, visual communication strategies, graphic design and industrial products are created by us, for everybody.</p>
             <p style={{ paddingTop: "8px" }}>Also, under the name of GREEN, WINO will maintain its commitment to the environment, resources and ethical values as long as it provides services.</p>

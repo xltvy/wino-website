@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../images/client_logos/fred-logo.png";
+import Logo from "../../images/client_logos/fred-logo.webp";
 
 const FredContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Fred Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} />
+                <img src={Logo} alt="Fred Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <p>When we started our journey with Fred, we had our favorite words about design from Charles Eames on our minds: "The details are not the details. They make the design." We aim to be able to design compositions in which details work for the whole, but each detail retains its own identity. "Harmony, nobility, and power* are three things that come to mind when we set out to build a brand. Then comes "simplicity, joy, and sincerity”. </p>
             <p style={{ paddingTop: "8px" }}>Starting from here, we wanted to deliver the rarest coffee beans in the world to you with a communication language that can clearly express them. We decided to take this labor-intensive journey of coffee to a completely different point by crowning it with the designs we made. We have realized five different designs for five special coffees that touch the story of each one. The first of the packages was for a package called Women Farmers. The seeds were collected only from the farms where women farmers work. This situation is aimed at shaping a social responsibility project in the future. The design of this packaging consists of two female figures floating down to Earth in two separate landscapes where the sun rises and sets. "Wherever the sun rises and sets: We are bound by the honor of labor. the phrase completely explains our idea that we started with the designs we created for Fred. And the back of this design we placed the “Welcome My Women” poem by Nazım Hikmet. "Classical" package has a separate weight. In this way, the integrity that will come after it is formed on the axis of the classic. If such a design is made, we think it is genderless when choosing colors, and timeless when it comes to shapes and general perception.</p>

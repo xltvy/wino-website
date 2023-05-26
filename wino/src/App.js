@@ -1,67 +1,91 @@
-import React, { useState } from 'react';
-import Folder from './components/Folder';
-import TopBar from './components/TopBar';
-import TxtFile from './components/TxtFile';
-import StickyNote from './components/StickyNote';
-// import DesktopBackground from './images/desktop-bg.png';
-// import DesktopEmptyBackground from './images/desktop-empty-bg.png';
-import ContentPreviewWindow from './components/ContentPreviewWindow';
-import FullscreenImage from './components/FullscreenImage';
-import DesktopImage from './components/DesktopImage';
-import DesktopVideo from './components/DesktopVideo';
-import SearchBar from './components/SearchBar';
-import MobileInformation from './components/MobileInformation';
-import MobileContentPreviewWindow from './components/MobileContentPreviewWindow';
-import MobileStickyNote from './components/MobileStickyNote';
-import ContactIcon from './icons/ContactIconFinal.js';
-import InformationIcon from './icons/InformationIcon.js';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
-// import Video1 from './images/desktop-film.mp4';
-// import Video2 from './images/desktop-film-reversed.mp4';
-
-import BaseBackground from './images/background.jpg';
+import './components/component_styles.css';
+import './components/responsive_styles.css';
+import './App.css';
 
 import Image1 from './images/client_desktop_images/nike.jpg';
-import Image2 from './images/client_desktop_images/petra.jpg';
-import Image3 from './images/client_desktop_images/mercy_born.gif';
-import Image4 from './images/client_desktop_images/luna_merdin.jpg';
+import Image2 from './finder/design/petra/07.webp';
+import Image3 from './finder/branding/mercy_born/02.gif';
+import Image4 from './finder/branding/luna_merdin/13.webp';
 import Image5 from './images/client_desktop_images/ankh.jpg';
 import Image6 from './images/client_desktop_images/fred.jpg';
 import Image7 from './images/client_desktop_images/pinoli.jpg';
 
-import DesktopElement from './components/DesktopElement';
-import MobileElement from './components/MobileElement';
-import './components/component_styles.css';
-import './components/responsive_styles.css';
-
-import InformationContent from './components/info_texts/InformationContent';
-import NikeContent from './components/info_texts/NikeContent';
-import PetraContent from './components/info_texts/PetraContent';
-import MercyBornContent from './components/info_texts/MercyBornContent';
-import LunaMerdinContent from './components/info_texts/LunaMerdinContent';
-import AnkhContent from './components/info_texts/AnkhContent';
-import FredContent from './components/info_texts/FredContent';
-import PinoliContent from './components/info_texts/PinoliContent';
-
 import NikeVideo from './components/video_iframes/NikeVideo';
+
+const TopBar = lazy(() => import('./components/TopBar'));
+const ContentPreviewWindow = lazy(() => import('./components/ContentPreviewWindow'));
+const TxtFile = lazy(() => import('./components/TxtFile'));
+const StickyNote = lazy(() => import('./components/StickyNote'));
+const FullscreenImage = lazy(() => import('./components/FullscreenImage'));
+const DesktopImage = lazy(() => import('./components/DesktopImage'));
+const DesktopVideo = lazy(() => import('./components/DesktopVideo'));
+const SearchBar = lazy(() => import('./components/SearchBar'));
+const MobileInformation = lazy(() => import('./components/MobileInformation'));
+const MobileContentPreviewWindow = lazy(() => import('./components/MobileContentPreviewWindow'));
+const MobileStickyNote = lazy(() => import('./components/MobileStickyNote'));
+const FinderWindow = lazy(() => import('./components/FinderWindow'));
+const DesktopElement = lazy(() => import('./components/DesktopElement'));
+const MobileElement = lazy(() => import('./components/MobileElement'));
+const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
+const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
+const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
+
+const InformationContent = lazy(() => import('./components/info_texts/InformationContent'));
+const NikeContent = lazy(() => import('./components/info_texts/NikeContent'));
+const PetraContent = lazy(() => import('./components/info_texts/PetraContent'));
+const MercyBornContent = lazy(() => import('./components/info_texts/MercyBornContent'));
+const LunaMerdinContent = lazy(() => import('./components/info_texts/LunaMerdinContent'));
+const AnkhContent = lazy(() => import('./components/info_texts/AnkhContent'));
+const FredContent = lazy(() => import('./components/info_texts/FredContent'));
+const PinoliContent = lazy(() => import('./components/info_texts/PinoliContent'));
+
+const ContactIcon = lazy(() => import('./icons/ContactIconFinal.js'));
+const InformationIcon = lazy(() => import('./icons/InformationIcon.js'));
+const FolderAlt = lazy(() => import('./icons/FolderAlt.js'));
+
 
 function App() {
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isInformationClicked, setIsInformationClicked] = useState(false);
-  const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [isImageClicked, setIsImageClicked] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(null);
   const [isImageInformationClicked, setIsImageInformationClicked] = useState(false);
   const [isMobileImageInformationClicked, setIsMobileImageInformationClicked] = useState(false);
   const [isMobileInformationClicked, setIsMobileInformationClicked] = useState(false);
   const [isMobileImageClicked, setIsMobileImageClicked] = useState(false);
-  // const [desktopSource] = useState(DesktopBackground);
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const [currentVideo, setCurrentVideo] = useState(1);
-  // const video1Ref = useRef(null);
-  // const video2Ref = useRef(null);
+
+  const [previewTitle, setPreviewTitle] = useState("");
+
+  const [isFolderClicked, setIsFolderClicked] = useState(false);
+  const [clickedFolderTitle, setClickedFolderTitle] = useState("");
+  const [clickedFolderImages, setClickedFolderImages] = useState([]);
+  const [clickedFolderSelectedImageIndex, setClickedFolderSelectedImageIndex] = useState(null);
+  const [isFolderImageClicked, setIsFolderImageClicked] = useState(false);
+  const [isFolderImageFullscreenClicked, setIsFolderImageFullscreenClicked] = useState(false);
+  const [isFolderInfoClicked, setIsFolderInfoClicked] = useState(false);
+  const [clickedFolderInfoTitle, setClickedFolderInfoTitle] = useState(null);
+  const [clickedFolderInfoContent, setClickedFolderInfoContent] = useState(null);
+
+  const [isMobileFolderClicked, setIsMobileFolderClicked] = useState(false);
+  const [isMobileFolderInfoClicked, setIsMobileFolderInfoClicked] = useState(false);
+  const [clickedMobileFolderInfoTitle, setClickedMobileFolderInfoTitle] = useState("");
+  const [clickedMobileFolderInfoContent, setClickedMobileFolderInfoContent] = useState(null);
+  const [isMobileFolderImageClicked, setIsMobileFolderImageClicked] = useState(false);
+  const [clickedMobileFolderImages, setClickedMobileFolderImages] = useState([]);
+  const [clickedMobileFolderSelectedImageIndex, setClickedMobileFolderSelectedImageIndex] = useState(null);
+  const [mobileImagePreviewTitle, setMobileImagePreviewTitle] = useState("");
+  const [isMobileFolderImageInfoClicked, setIsMobileFolderImageInfoClicked] = useState(false);
+  const [clickedMobileFolderImageInfoTitle, setClickedMobileFolderImageInfoTitle] = useState("");
+  const [clickedMobileFolderImageInfoContent, setClickedMobileFolderImageInfoContent] = useState(null);
+  const [isMobileFolderImageFullscreenClicked, setIsMobileFolderImageFullscreenClicked] = useState(false);
+  const [mobileFolderImageFullscreenSrc, setMobileFolderImageFullscreenSrc] = useState(null);
+
+  const [isSearch, setIsSearch] = useState(false);
+  const searchBarRef = useRef(null);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -133,7 +157,6 @@ function App() {
     },
   ];
 
-
   const handleContactDoubleClick = () => {
     window.location.href = 'mailto:wino@studiowino.com';
   }
@@ -144,11 +167,18 @@ function App() {
   };
 
   const handleExitFullscreen = () => {
-    setIsFullscreen(false);
+    if (isFolderImageFullscreenClicked) {
+      setIsFolderImageFullscreenClicked(false);
+    }
+    if (isFullscreen) {
+      setIsFullscreen(false);
+    }
+    if (isMobileFolderImageFullscreenClicked) {
+      setIsMobileFolderImageFullscreenClicked(false);
+    }
   };
 
   const handleInformationClick = () => {
-    console.log("Information clicked")
     setIsInformationClicked(true);
   };
 
@@ -157,21 +187,19 @@ function App() {
   };
 
   const handleMobileInformationClick = () => {
-    console.log("Mobile information clicked")
     setIsMobileInformationClicked(true);
   };
 
   const handleMobileInformationClose = () => {
-    setIsMobileInformationClicked(false);
-  };
-
-  const handleSearchClick = () => {
-    console.log("Search clicked")
-    setIsSearchClicked(true);
-  };
-
-  const handleSearchClose = () => {
-    setIsSearchClicked(false);
+    if (isMobileInformationClicked) {
+      setIsMobileInformationClicked(false);
+    }
+    if (isMobileFolderInfoClicked) {
+      setIsMobileFolderInfoClicked(false);
+    }
+    if (isMobileFolderImageInfoClicked) {
+      setIsMobileFolderImageInfoClicked(false);
+    }
   };
 
   const handleImageClick = (index) => {
@@ -189,7 +217,12 @@ function App() {
   };
 
   const handleMobileImageClose = () => {
-    setIsMobileImageClicked(false);
+    if (isMobileImageClicked) {
+      setIsMobileImageClicked(false);
+    }
+    if (isMobileFolderImageClicked) {
+      setIsMobileFolderImageClicked(false);
+    }
   };
 
   const handleImageInformationClick = () => {
@@ -197,7 +230,6 @@ function App() {
   };
 
   const handleMobileImageInformationClick = () => {
-    console.log("Mobile image information clicked and cliced image index is: " + clickedImageIndex);
     setIsMobileImageInformationClicked(true);
   };
 
@@ -210,135 +242,198 @@ function App() {
   }
 
   const handleImageInformationClose = () => {
-    setIsImageInformationClicked(false);
+    if (isFolderInfoClicked) {
+      setIsFolderInfoClicked(false);
+    }
+    if (isImageInformationClicked) {
+      setIsImageInformationClicked(false);
+    }
   };
 
-//   const handleDesktopFilmToggle = () => {
-//     const video1 = video1Ref.current;
-//     const video2 = video2Ref.current;
+  const handleFolderClick = (title) => {
+    setClickedFolderTitle(title);
+    setIsFolderClicked(true);
+  };
 
-//     if (currentVideo === 1) {
-//       setCurrentVideo(1);
-//       video2.style.display = 'none';
-//       video1.style.display = 'block';
-//       video1.play();
-//       video1.addEventListener('ended', () => {
-//         console.log("Video 2 loaded");
-//         video2.load();
-//         video1.style.display = 'none';
-//         video2.style.display = 'block';
-//         setCurrentVideo(2);
-//       });
-//     } else {
-//       setCurrentVideo(2);
-//       video1.style.display = 'none';
-//       video2.style.display = 'block';
-//       video2.play();
-//       video2.addEventListener('ended', () => {
-//         console.log("Video 1 loaded");
-//         video1.load();
-//         video2.style.display = 'none';
-//         video1.style.display = 'block';
-//         setCurrentVideo(1);
-//       });
-//     }
+  const handleFolderClose = () => {
+    setIsFolderClicked(false);
+  };
 
-//     setIsPlaying(!isPlaying);
-// };
+  const handleFolderImageClick = (images, index, title, content, previewTitle) => {
+    setClickedFolderImages(images);
+    setClickedFolderSelectedImageIndex(index);
+    setClickedFolderInfoTitle(title);
+    setClickedFolderInfoContent(content);
+    setPreviewTitle(previewTitle);
+    setIsFolderImageClicked(true);
+  };
 
-  // useEffect(() => {
-  //   const video1 = video1Ref.current;
-  //   const video2 = video2Ref.current;
-  //   const handleEnded = () => {};
+  const handleFolderImageClose = () => {
+    setIsFolderImageClicked(false);
+  };
 
-  //   video1.addEventListener('ended', handleEnded);
-  //   video2.addEventListener('ended', handleEnded);
+  const handleFolderInfoClick = (title, content) => {
+    setClickedFolderInfoTitle(title);
+    setClickedFolderInfoContent(content);
+    setIsFolderInfoClicked(true);
+  };
 
-  //   return () => {
-  //     video1.removeEventListener('ended', handleEnded);
-  //     video2.removeEventListener('ended', handleEnded);
-  //   };
-  // }, []);
+  const handleFolderImageInfoClick = () => {
+    setIsFolderInfoClicked(true);
+  };
+
+  const handleFolderImageFullscreenClick = (index) => {
+    setClickedFolderSelectedImageIndex(index);
+    setIsFolderImageFullscreenClicked(true);
+  };
+
+  const handleMobileFolderClick = (title) => {
+    setClickedFolderTitle(title);
+    setIsMobileFolderClicked(true);
+  };
+
+  const handleMobileFolderClose = () => {
+    setIsMobileFolderClicked(false);
+  };
+
+  const handleMobileFolderInfoClick = (title, content) => {
+    setClickedMobileFolderInfoTitle(title);
+    setClickedMobileFolderInfoContent(content);
+    setIsMobileFolderInfoClicked(true);
+  };
+
+  const handleMobileFolderImageClick = (images, index, infoTitle, content, previewTitle) => {
+    setClickedMobileFolderImages(images);
+    setClickedMobileFolderSelectedImageIndex(index);
+    setClickedMobileFolderInfoTitle(infoTitle);
+    setClickedMobileFolderInfoContent(content);
+    setMobileImagePreviewTitle(previewTitle);
+    setIsMobileFolderImageClicked(true);
+  };
+
+  const handleMobileImageInfoClick = (title, content) => {
+    setClickedMobileFolderImageInfoTitle(title);
+    setClickedMobileFolderImageInfoContent(content);
+    setIsMobileFolderImageInfoClicked(true);
+  };
+
+  const handleMobileFolderImageFullscreenClick = (imageSrc) => {
+    setMobileFolderImageFullscreenSrc(imageSrc);
+    setIsMobileFolderImageFullscreenClicked(true);
+  };
   
-  //<div className="desktop-layout" style={{backgroundImage: `url(${desktopSource})`}} >
-  //<TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick} onDesktopFilmToggle={handleDesktopFilmToggle}/>
+  const handleCloseSearch = () => {
+    setIsSearch(false);
+  };
 
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleClickOutsideSearchBar = (event) => {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+        handleCloseSearch();
+      }
+    };
+
+    if (isSearch) {
+      timeoutId = setTimeout(() => {
+        document.addEventListener("click", handleClickOutsideSearchBar);
+      }, 0);
+    } else {
+      document.removeEventListener("click", handleClickOutsideSearchBar);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", handleClickOutsideSearchBar);
+    };
+  }, [isSearch]);
+
+
+  const handleSearch = () => {
+    setIsSearch(true);
+  };
+
+    
   return (
-    <div className="App">
-      <div className="desktop-layout" style={{backgroundImage: `url(${BaseBackground})`}} >
-          {/* <div className="desktop-film-container">
-            <video ref={video1Ref} className='desktop-film' poster={DesktopBackground} autoPlay={false} loop={false} muted={true} playsinline="true" disablePictureInPicture="true" preload='auto' type="video/mp4" style={{ display: currentVideo === 1 ? 'block' : 'none' }}>
-              <source src={Video1} type="video/mp4" />
-            </video>
-            <video ref={video2Ref} className='desktop-film' poster={DesktopEmptyBackground} autoPlay={false} loop={false} muted={true} playsinline="true" disablePictureInPicture="true" preload='auto' type="video/mp4" style={{ display: currentVideo === 2 ? 'block' : 'none' }}>
-              <source src={Video2} type="video/mp4" />
-            </video>
-          </div> */}
-          <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} onSearchClick={handleSearchClick}/>
-          </div>
+    <div className="root">
+      <Suspense fallback={<LoadingScreen/>}>
+      <div className="desktop-layout">
+          {!isMobileFolderClicked && <div className='desktop-top-layout'>
+            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
+          </div>}
           <div className='mobile-search-container'>
-            <SearchBar onSearchClose={handleSearchClose}/>
+            <SearchBar onSearchClose={handleCloseSearch}/>
           </div>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
-              <div className="mobile-element">
-                <div className='mobile-element-container' onClick={handleMobileInformationClick}>
-                  <div className='mobile-element-image-container'>
-                    <InformationIcon className='information-icon'/>
-                  </div>
-                  <div className='mobile-element-title-container'>
-                    <div className='desktop-element-title'>Information</div>
-                  </div>
-                </div>
-              </div>
-              <div className="mobile-element">
-                <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" className='mobile-element-container'>
-                  <div className='mobile-element-image-container'>
-                    <ContactIcon className='contact-icon'/>
-                  </div>
-                  <div className='mobile-element-title-container'>
-                    <div className='desktop-element-title'>Contact</div>
-                  </div>
-                </a>
-              </div>
-              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={4} title={images[4].title} imageSrc={images[4].src} imageAlt={images[4].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={5} title={images[5].title} imageSrc={images[5].src} imageAlt={images[5].alt} onImageClick={handleMobileImageClick}/>
-              <MobileElement imageIndex={6} title={images[6].title} imageSrc={images[6].src} imageAlt={images[6].alt} onImageClick={handleMobileImageClick}/>
+
+              <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>
+              <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
+                <MobileDesktopElement children={<ContactIcon className='contact-icon' decoding="async" loading="lazy"/>} title='Contact' onClick={""}/>
+              </a>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Featured' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Campaigns' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Upgrading' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={handleMobileFolderClick}/>
+
+              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={4} title={images[4].title} imageSrc={images[4].src} imageAlt={images[4].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={5} title={images[5].title} imageSrc={images[5].src} imageAlt={images[5].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={6} title={images[6].title} imageSrc={images[6].src} imageAlt={images[6].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
             </div>
           </div>
           <div className='desktop-bottom-layout'>
             <div className='desktop-elements'>
               <div className='desktop-folders'>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Featured")}>
+                  <DesktopElement title="Featured" iconSrc={<FolderAlt className='folder-icon' height="45px" decoding="async" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Campaigns")}>
+                  <DesktopElement title="Campaigns" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Upgrading")}>
+                  <DesktopElement title="Upgrading" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Design")}>
+                  <DesktopElement title="Design" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Branding")}>
+                  <DesktopElement title="Branding" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Sustainability")}>
+                  <DesktopElement title="Sustainability" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
+              </div>
+              <div className='desktop-images'>
                 <div className="desktop-element" onDoubleClick={handleInformationClick}>
-                  <DesktopElement title="Information" iconSrc={<InformationIcon className='information-icon' height="58px"/>} onClick={handleInformationClick}/>
+                  <DesktopElement title="Information" iconSrc={<InformationIcon className='information-icon' height="58px"/>} onClick={handleInformationClick} loading="lazy"/>
                 </div>
                 <div className="desktop-element" onDoubleClick={handleContactDoubleClick}>
-                  <DesktopElement title="Contact" iconSrc={<ContactIcon className='contact-icon' height="38px" style={{borderRadius: "3px"}}/>}/>
+                  <DesktopElement title="Contact" iconSrc={<ContactIcon className='contact-icon' height="38px" style={{borderRadius: "3px"}} loading="lazy"/>}/>
                 </div>
-                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={1} imageSrc={images[1].src} title={images[1].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={4} imageSrc={images[4].src} title={images[4].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "20px 0px"}}><DesktopImage imageIndex={5} imageSrc={images[5].src} title={images[5].title} onImageClick={handleImageClick}/></div>
-                <div style={{display: "none"}}><Folder title={"Projects of Wino"} children={"This is folder 1"}></Folder></div>
-                <div style={{display: "none"}}><Folder title={"Folder 2"} children={"This is folder 2"}></Folder></div>
-                <div style={{display: "none"}}><Folder title={"Folder 3"} children={"This is folder 3"}></Folder></div>
+                <div style={{padding: "15px 0px"}}><DesktopImage imageIndex={1} imageSrc={images[1].src} title={images[1].title} onImageClick={handleImageClick} loading="lazy"/></div>
+                <div style={{padding: "15px 0px"}}><DesktopImage imageIndex={4} imageSrc={images[4].src} title={images[4].title} onImageClick={handleImageClick} loading="lazy"/></div>
+                <div style={{padding: "15px 0px"}}><DesktopImage imageIndex={5} imageSrc={images[5].src} title={images[5].title} onImageClick={handleImageClick} loading="lazy"/></div>
               </div>
               <div className='desktop-images'>
                 <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopVideo imageIndex={0} imageSrc={Image1} videoIframe={nikeVideo} onImageClick={handleImageClick} title={images[0].title}/></div>
-                <div style={{padding: "5px 0px", position: "relative", bottom: "100px", left: "215px"}}><DesktopImage imageIndex={2} imageSrc={images[2].src} title={images[2].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopImage imageIndex={3} imageSrc={images[3].src} title={images[3].title} onImageClick={handleImageClick}/></div>
-                <div style={{padding: "5px 0px", position: "relative", top: "260px", left: "255px"}}><DesktopImage imageIndex={6} imageSrc={images[6].src} title={images[6].title} onImageClick={handleImageClick}/></div>
+                <div style={{padding: "5px 0px", position: "relative", bottom: "100px", left: "215px"}}><DesktopImage imageIndex={2} imageSrc={images[2].src} title={images[2].title} onImageClick={handleImageClick} loading="lazy"/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopImage imageIndex={3} imageSrc={images[3].src} title={images[3].title} onImageClick={handleImageClick} loading="lazy"/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "260px", left: "255px"}}><DesktopImage imageIndex={6} imageSrc={images[6].src} title={images[6].title} onImageClick={handleImageClick} loading="lazy"/></div>
               </div>
             </div>
             <StickyNote/>
             <MobileStickyNote/>
           </div>
           {isInformationClicked && (
-            <div style={{ zIndex: "1000", top: "100px", left: "40vh", position: "absolute" }}>
+            <div style={{ zIndex: "4000", top: "100px", left: "40vh", position: "absolute" }}>
               <TxtFile title={"Information"} content={informationContent} onInformationClose={handleInformationClose} />
             </div>
           )}
@@ -348,14 +443,13 @@ function App() {
             </div>
           )}
           {isImageClicked && (
-            <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", zIndex: "2000"}}>
-              <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} />
+            <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
+              <ContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={handleImageClose} currentIndex={clickedImageIndex} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} contentTitle="Featured" />
             </div>
           )}
           {isMobileImageClicked && (
             <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
-              {/* <MobileContentPreviewWindow images={images} onFullscreen={handleFullscreenClick} onClose={} currentIndex={1} onInformationClick={handleImageInformationClick} onViewedImageChange={handleViewedImageChange} /> */}
-              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} onViewedImageChange={handleViewedImageChange} onFullscreen={handleFullscreenClick}/>
+              <MobileContentPreviewWindow images={images} currentIndex={clickedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInformationClick} prevInfo={false} onViewedImageChange={handleViewedImageChange} prevTitle={"Featured"} onFullscreen={handleFullscreenClick}/>
             </div>
           )}
           {isImageInformationClicked && (
@@ -371,10 +465,52 @@ function App() {
           {isFullscreen && (
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
           )}
-          {isSearchClicked && (
-            <SearchBar onSearchClose={handleSearchClose}/>
+          {isSearch && (
+            <div ref={searchBarRef}><SearchBar onSearchClose={handleCloseSearch}/></div>
+          )}
+          {isFolderClicked && (
+            <div style={{ display: "flex", alignItems: "center", zIndex: "1000", position: "relative"}}>
+              <FinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleFolderClose} onImageClick={handleFolderImageClick} onFolderInfoClick={handleFolderInfoClick} onInfoClick={handleInformationClick}/>
+            </div>
+          )}
+          {isFolderImageClicked && (
+            <div style={{ display: "flex", alignItems: "center", zIndex: "2000", position: "relative"}}>
+              <ContentPreviewWindow images={clickedFolderImages} onFullscreen={handleFolderImageFullscreenClick} onClose={handleFolderImageClose} currentIndex={clickedFolderSelectedImageIndex} onInformationClick={handleFolderImageInfoClick} onViewedImageChange={handleViewedImageChange} contentTitle={previewTitle} />
+            </div>
+          )}
+          {isFolderImageFullscreenClicked && (
+            <FullscreenImage imageSrc={clickedFolderImages[clickedFolderSelectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
+          )}
+          {isFolderInfoClicked && (
+            <div style={{ zIndex: "3000", top: "100px", left: "100vh", position: "absolute" }}>
+              <TxtFile title={clickedFolderInfoTitle} content={clickedFolderInfoContent} onInformationClose={handleImageInformationClose} />
+            </div>
+          )}
+          {isMobileFolderClicked && (
+            <div style={{ zIndex: "2000", top: "0px", left: "0px", right: "0px", bottom: "0px", position: "absolute", height: "100%", width: "100%" }}>
+              <MobileFinderWindow clickedFolderTitle={clickedFolderTitle} onClose={handleMobileFolderClose} onInfoClick={handleMobileFolderInfoClick} onImageClick={handleMobileFolderImageClick} onWinoInfoClick={handleMobileInformationClick}/>
+            </div>
+          )}
+          {isMobileFolderInfoClicked && (
+            <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileInformation title={clickedMobileFolderInfoTitle} content={clickedMobileFolderInfoContent} onInformationClose={handleMobileInformationClose} />
+            </div>
+          )}
+          {isMobileFolderImageClicked && (
+            <div style={{ zIndex: "9000", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileContentPreviewWindow images={clickedMobileFolderImages} currentIndex={clickedMobileFolderSelectedImageIndex} onClose={handleMobileImageClose} onInformationClick={handleMobileImageInfoClick} prevInfo={true} prevTitle={mobileImagePreviewTitle} onFullscreen={handleMobileFolderImageFullscreenClick}/>
+            </div>
+          )}
+          {isMobileFolderImageInfoClicked && (
+            <div style={{ zIndex: "9999", top: "0", left: "0", right: "0", bottom: "0", position: "absolute" }}>
+              <MobileInformation title={clickedMobileFolderImageInfoTitle} content={clickedMobileFolderImageInfoContent} onInformationClose={handleMobileInformationClose} />
+            </div>
+          )}
+          {isMobileFolderImageFullscreenClicked && (
+            <FullscreenImage imageSrc={mobileFolderImageFullscreenSrc} onExitFullscreen={handleExitFullscreen} />
           )}
         </div>
+        </Suspense>
     </div>
   );
 }

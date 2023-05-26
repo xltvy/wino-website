@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformationClick, onViewedImageChange, onFullscreen }) => {
+const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformationClick, prevInfo, infoTitle, onViewedImageChange, prevTitle, onFullscreen }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex);
 
 
@@ -16,25 +16,37 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
     const currentImage = images[currentImageIndex];
 
     const handleOnClose = () => {
-        console.log("close clicked");
+        console.log("close")
         onClose();
     };
 
     const handleAfterChange = (index) => {
-        setCurrentImageIndex(index);
-        onViewedImageChange(index);
+        if (prevInfo) {
+            setCurrentImageIndex(index);
+        } else {
+            setCurrentImageIndex(index);
+            onViewedImageChange(index);
+        }
     };
 
     const handleOnInformationClick = () => {
-        onInformationClick();
+        if (prevInfo) {
+            console.log(infoTitle)
+            onInformationClick(infoTitle, currentImage.content);
+        } else {
+            onInformationClick();
+        }
     };
 
     const handleOnFullscreen = () => {
-        console.log("fullscreen clicked");
         if (currentImage.isVideo) {
             videoRef.current.requestFullscreen();
         } else {
-            onFullscreen(currentImageIndex);
+            if (prevInfo) {
+                onFullscreen(currentImage.src);
+            } else {
+                onFullscreen(currentImageIndex);
+            };
         }
     };
 
@@ -42,7 +54,7 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
         <div className="content">
             <div className="prev-upper-body">
                 <div className="prev-upper-body-content">
-                    <div className="prev-window-title">Featured</div>
+                    <div className="prev-window-title">{prevTitle}</div>
                     <div className="prev-window-title-label">{currentImage.title}</div>
                     <div className="prev-window-utility-buttons">
                         <div className="window-close-button" onClick={handleOnClose}>
@@ -68,14 +80,16 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                             <div key={image.id} className="slider-image-wrapper">
                                 <div className="dummy-container"/>
                                 <div className="dummy-container-2"/>
-                                {!image.isVideo && <img src={image.src} alt={image.alt} className="mobile-prev-image" />}
+                                {!image.isVideo && <img src={image.src} alt={image.alt} className="mobile-prev-image" decoding="async" loading="lazy"/>}
                                 {image.isVideo && <iframe
                                                             ref={videoRef}
                                                             title={image.title}
                                                             className="prev-window-video"
                                                             src={image.src}
+                                                            loading="lazy"
+                                                            decoding="async"
                                                             width="100%"
-                                                            height="100%"
+                                                            height="85%"
                                                             frameborder="0"
                                                             allow="autoplay; fullscreen; picture-in-picture"
                                                             allowfullscreen>

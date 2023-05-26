@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './component_styles.css'
-import Switch from "react-switch";
+// import Switch from "react-switch";
 import WinoLogo from "../icons/WinoLogo2.js";
 import SearchIcon from '../images/search-icon.svg';
 import UtilityDots from '../icons/UtilityDots.js';
@@ -8,13 +8,13 @@ import ContactOutline from '../icons/ContactOutline.js';
 import InfoOutline from '../icons/InfoOutline.js';
 
 
-const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, onDesktopFilmToggle}) => {
+const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass, onSearch}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
     const [showMobileDropdown, setShowMobileDropdown] = useState(false);
     const [dateTime, setDateTime] = useState(new Date());
-    const [isAnimationChecked, setIsAnimationChecked] = useState(false);
+    // const [isAnimationChecked, setIsAnimationChecked] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
     const formattedDate = dateTime.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric', month: 'short' });
@@ -48,18 +48,17 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
         onMobileInformationClick();
     };
 
-    const handleOnSearchClick = () => {
-        console.log('search click')
-        onSearchClick();
-    };
-
-    const handleOnDesktopFilmToggle = () => {
-        setIsAnimationChecked(!isAnimationChecked);
-        onDesktopFilmToggle();
-    };
+    // const handleOnDesktopFilmToggle = () => {
+    //     setIsAnimationChecked(!isAnimationChecked);
+    //     onDesktopFilmToggle();
+    // };
 
     const handleReload = () => {
-        window.location.reload();
+        window.location.href = "/";
+    };
+
+    const handleOnSearch = () => {
+        onSearch();
     };
 
     useEffect(() => {
@@ -105,8 +104,8 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
             </div>
             <div className="top-bar-right">
                 <div className="top-bar-right-item">Legal</div>
-                <div className="top-bar-right-item">
-                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" onClick={handleOnSearchClick}/>
+                <div className="top-bar-right-item" onClick={handleOnSearch}>
+                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" decoding='async' loading="lazy"/>
                 </div>
                 <div className="top-bar-right-item-dt">
                     {formattedDate}
@@ -114,12 +113,12 @@ const TopBar = ({onInformationClick, onMobileInformationClick, onSearchClick, on
                 <div className="top-bar-right-item-dt">
                     {formattedTime}
                 </div>
-                <div className='top-bar-animation-button-container'>
+                {/* <div className='top-bar-animation-button-container'>
                     {!isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={18} width={30} onColor={"#4cd964"}/>)}
                     {isMobile && (<Switch type={"button"} checked={isAnimationChecked} onChange={handleOnDesktopFilmToggle} handleColor="white" offColor="#C6CED0" checkedIcon={false} uncheckedIcon={false} height={24} width={42} onColor={"#4cd964"}/>)}
-                </div>
+                </div> */}
                 <div className="top-bar-utility-button" onClick={handleMobileDropdown}>
-                    <UtilityDots className='top-bar-utility-dots'/>
+                    <UtilityDots className={utilityClass}/>
                 </div>
                 {showMobileDropdown && (<div className='top-bar-utility-dropdown'>
                     <div className='top-bar-utility-dropdown-container'>
