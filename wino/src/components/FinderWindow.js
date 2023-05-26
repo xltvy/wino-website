@@ -228,17 +228,17 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
                                     ))}
                           </div>
                           <div className="main-finder-area">
-                            <div className="main-finder-image-wrapper" onDoubleClick={handleOnFolderInfoClick}>
+                            <div className="main-finder-image-wrapper" onClick={handleOnFolderInfoClick}>
                                 <div className="main-finder-image-overlay" style={{filter: "none"}}>
                                   <img src={InfoIcon} alt="Information File Icon" decoding='async' loading='lazy'/>
                                 </div>
                                 <div className="main-finder-image-title">{contextFileName}</div>
                             </div>
                               {selectedImages.map((image) => (
-                                  <div key={image.id} className="main-finder-image-wrapper" onDoubleClick={() => handleOnImageClick((image.id-1))}>
+                                  <div key={image.id} className="main-finder-image-wrapper" onClick={() => handleOnImageClick((image.id-1))}>
                                       <div className="main-finder-image-overlay">
                                         {!image.isVideo && <img src={image.src} alt={image.alt} decoding='async' loading='lazy'/>}
-                                        {image.isVideo && <div className='finder-video-container'> <div className='finder-video-wrapper' onDoubleClick={() => handleOnImageClick((image.id-1))}/><iframe src={image.src + "&background=1&title=0&byline=0&portrait=0&playsinline=1&muted=1&controls=0&loop=1"} style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%"}} frameborder="0" allow="autoplay; picture-in-picture"/></div>}
+                                        {image.isVideo && <div className='finder-video-container'> <div className='finder-video-wrapper' onClick={() => handleOnImageClick((image.id-1))}/><iframe src={image.src + "&background=1&title=0&byline=0&portrait=0&playsinline=1&muted=1&controls=0&loop=1"} style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%"}} frameborder="0" allow="autoplay; picture-in-picture"/></div>}
                                       </div>
                                       <div className="main-finder-image-title">{image.title}</div>
                                   </div>

@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
 import './components/component_styles.css';
 import './components/responsive_styles.css';
-
-import BaseBackground from './images/background.webp';
+import './App.css';
 
 import Image1 from './images/client_desktop_images/nike.jpg';
 import Image2 from './finder/design/petra/07.webp';
@@ -358,9 +357,9 @@ function App() {
 
     
   return (
-    <div className="App">
+    <div className="root">
       <Suspense fallback={<LoadingScreen/>}>
-      <div className="desktop-layout" style={{backgroundImage: `url(${BaseBackground})`}} >
+      <div className="desktop-layout">
           {!isMobileFolderClicked && <div className='desktop-top-layout'>
             <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
           </div>}
