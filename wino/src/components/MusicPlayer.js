@@ -7,6 +7,8 @@ const MusicPlayer = () => {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [played, setPlayed] = useState(0);
   const playerRef = useRef(null);
+  const [playedSeconds, setPlayedSeconds] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const urlList = [
     'https://www.youtube.com/watch?v=wMSUZhsmttA',
@@ -48,8 +50,20 @@ const MusicPlayer = () => {
     }
   };
 
-  const handleProgress = (progress) => {  // Add this function
+  const handleProgress = (progress) => {
     setPlayed(progress.played);
+    setPlayedSeconds(progress.playedSeconds);
+  };
+
+  const handleDuration = (duration) => {
+    setDuration(duration);
+  };
+
+  const formatTime = (seconds) => {
+    const h = Math.floor(seconds / 3600),
+          m = Math.floor(seconds % 3600 / 60),
+          s = Math.floor(seconds % 60);
+    return [h, m > 9 ? m : h ? '0' + m : m || '0', s > 9 ? s : '0' + s].filter(Boolean).join(':');
   };
 
   return (
@@ -69,9 +83,12 @@ const MusicPlayer = () => {
             width="0px"
             height="0px"
             playing={playing}
-            onProgress={handleProgress}  // Add this prop
+            onProgress={handleProgress}
+            onDuration={handleDuration}
           />
         </div>
+        <div>Time elapsed: {formatTime(playedSeconds)}</div>
+        <div>Time remaining: {formatTime(duration - playedSeconds)}</div>
         <input 
           type="range" 
           min={0} 
