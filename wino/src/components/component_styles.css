@@ -1299,10 +1299,15 @@ p {
     right: 20px;
 }
 
-.yt-player-container {
+.yt-thumbnail-container {
     width: 42px;
     height: 42px;
-    z-index: 50;
+}
+
+.yt-thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* LoadingScreen.js component styles below: */
