@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import './component_styles.css';
+import './responsive_styles.css'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import PlayerPreviousIcon from '../icons/PlayerPreviousIcon.js';

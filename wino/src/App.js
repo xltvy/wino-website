@@ -21,7 +21,6 @@ const StickyNote = lazy(() => import('./components/StickyNote'));
 const FullscreenImage = lazy(() => import('./components/FullscreenImage'));
 const DesktopImage = lazy(() => import('./components/DesktopImage'));
 const DesktopVideo = lazy(() => import('./components/DesktopVideo'));
-const SearchBar = lazy(() => import('./components/SearchBar'));
 const MobileInformation = lazy(() => import('./components/MobileInformation'));
 const MobileContentPreviewWindow = lazy(() => import('./components/MobileContentPreviewWindow'));
 const MobileStickyNote = lazy(() => import('./components/MobileStickyNote'));
@@ -84,9 +83,6 @@ function App() {
   const [clickedMobileFolderImageInfoContent, setClickedMobileFolderImageInfoContent] = useState(null);
   const [isMobileFolderImageFullscreenClicked, setIsMobileFolderImageFullscreenClicked] = useState(false);
   const [mobileFolderImageFullscreenSrc, setMobileFolderImageFullscreenSrc] = useState(null);
-
-  const [isSearch, setIsSearch] = useState(false);
-  const searchBarRef = useRef(null);
 
   const informationContent = <InformationContent/>;
   const nikeContent = <NikeContent/>;
@@ -322,51 +318,15 @@ function App() {
     setMobileFolderImageFullscreenSrc(imageSrc);
     setIsMobileFolderImageFullscreenClicked(true);
   };
-  
-  const handleCloseSearch = () => {
-    setIsSearch(false);
-  };
-
-
-  useEffect(() => {
-    let timeoutId;
-
-    const handleClickOutsideSearchBar = (event) => {
-      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
-        handleCloseSearch();
-      }
-    };
-
-    if (isSearch) {
-      timeoutId = setTimeout(() => {
-        document.addEventListener("click", handleClickOutsideSearchBar);
-      }, 0);
-    } else {
-      document.removeEventListener("click", handleClickOutsideSearchBar);
-    }
-
-    return () => {
-      clearTimeout(timeoutId);
-      document.removeEventListener("click", handleClickOutsideSearchBar);
-    };
-  }, [isSearch]);
-
-
-  const handleSearch = () => {
-    setIsSearch(true);
-  };
-
     
   return (
     <div className="root">
       <Suspense>
       <div className="desktop-layout">
           {!isMobileFolderClicked && <div className='desktop-top-layout'>
-            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
+            <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"}/>
           </div>}
-          <div className='mobile-search-container'>
-            <SearchBar onSearchClose={handleCloseSearch}/>
-          </div>
+          <MusicPlayer/>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
               <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>
@@ -432,7 +392,7 @@ function App() {
             <StickyNote/>
             <MobileStickyNote/>
           </div>
-          <MusicPlayer/>
+          
           {isInformationClicked && (
             <div style={{ zIndex: "4000", top: "100px", left: "40vh", position: "absolute" }}>
               <TxtFile title={"Information"} content={informationContent} onInformationClose={handleInformationClose} />
@@ -465,9 +425,6 @@ function App() {
           )}
           {isFullscreen && (
             <FullscreenImage imageSrc={images[selectedImageIndex].src} onExitFullscreen={handleExitFullscreen} />
-          )}
-          {isSearch && (
-            <div ref={searchBarRef}><SearchBar onSearchClose={handleCloseSearch}/></div>
           )}
           {isFolderClicked && (
             <div style={{ display: "flex", alignItems: "center", zIndex: "1000", position: "relative"}}>
