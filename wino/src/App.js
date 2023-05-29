@@ -359,7 +359,7 @@ function App() {
     
   return (
     <div className="root">
-      <Suspense fallback={<LoadingScreen/>}>
+      <Suspense>
       <div className="desktop-layout">
           {!isMobileFolderClicked && <div className='desktop-top-layout'>
             <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
@@ -369,7 +369,6 @@ function App() {
           </div>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
-
               <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>
               <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
                 <MobileDesktopElement children={<ContactIcon className='contact-icon' decoding="async" loading="lazy"/>} title='Contact' onClick={""}/>

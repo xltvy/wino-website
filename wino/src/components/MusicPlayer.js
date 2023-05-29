@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import './component_styles.css';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import PlayerPreviousIcon from '../icons/PlayerPreviousIcon.js';
 import PlayerNextIcon from '../icons/PlayerNextIcon.js';
 import PlayerPlayIcon from '../icons/PlayerPlayIcon.js';
@@ -43,9 +45,12 @@ const MusicPlayer = () => {
   const handleNextTrack = () => {
     if (currentTrackIndex < urlList.length - 1) {
       setCurrentTrackIndex(currentTrackIndex + 1);
-      setPlaying(true);
+    } else {
+      setCurrentTrackIndex(0);
     }
+    setPlaying(true);
   };
+  
 
   const handlePrevTrack = () => {
     if (currentTrackIndex > 0) {
@@ -82,6 +87,7 @@ const MusicPlayer = () => {
             playing={playing}
             onProgress={handleProgress}
             onDuration={handleDuration}
+            onEnded={handleNextTrack}
           />
         </div>
         <div className='player-wrapper'>
@@ -95,13 +101,10 @@ const MusicPlayer = () => {
             </div>
             <div className='player-progress-bar-container'>
               <div className='player-secondary-text'>{formatTime(playedSeconds)}</div>
-              <input
-                type="range" 
-                min={0} 
-                max={1} 
-                step='any' 
-                value={played} 
-                onChange={e => setPlayed(+e.target.value)}
+              <Slider
+                value={played * 100}
+                onChange={value => setPlayed(value / 100)}
+                disabled={true}
               />
               <div className='player-secondary-text'>{formatTime(duration - playedSeconds)}</div>
             </div>

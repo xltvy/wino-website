@@ -1,6 +1,6 @@
 import * as React from "react";
 const SvgPlayerPauseIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.02 56.76" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.83 54.79" {...props}>
     <defs>
       <style>{".player-pause-icon_svg__cls-1{fill:#383838}"}</style>
     </defs>
