@@ -1290,9 +1290,9 @@ p {
 
 .music-player-container {
     width: 230px;
-    height: 100%;
+    height: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: end;
     position: absolute;
     bottom: 20px;
@@ -1304,19 +1304,23 @@ p {
 }
 
 .yt-thumbnail-container {
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .yt-thumbnail-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .music-player-button {
-    width: 15px;
-    height: 15px;
+    width: 8px;
+    max-width: 8px;
+    max-height: 8px;
+    height: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1328,26 +1332,89 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-right: 10px;
+    padding: 1px 30px 5px 30px;
 }
 
 .player-progress-bar-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
-    margin-right: 10px;
+    padding: 2px 0px;
+}
+
+.player-primary-text {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #000000;
+    padding: 0px 6px;
+    margin: 0px !important;
+}
+
+.player-secondary-text {
+    font-size: 0.4rem;
+    font-weight: 600;
+    color: #BBBDBF;
+    padding: 0px 6px;
+    margin: 0px !important;
+}
+
+.music-player-meta-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px 1px 0px;
+}
+
+.player-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.player-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 100%;
+      -webkit-appearance: none;
+      background-color: #99D3F7;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 2px;
+      color: #E4E6E9;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+        width: 100%;
+      height: 2px;
+      user-select: none;
+      background: #99D3F7;
+      box-shadow: -80px 0 0 80px #E4E6E9;
+    }
+
 }
 
 input[type="range"] {
-    -webkit-appearance: none;
+
     width: 100%;
     height: 2px;
     background-color: #E4E6E9;
     outline: none;
     overflow: hidden;
-    cursor: pointer;
   }
   
   input[type="range"]::-webkit-slider-thumb {
@@ -1364,7 +1431,7 @@ input[type="range"] {
   }
   
   input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #99D3F7;
+    background-color: #E4E6E9;
   }
 /* LoadingScreen.js component styles below: */
 

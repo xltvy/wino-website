@@ -73,13 +73,6 @@ const MusicPlayer = () => {
   return (
     <div className='music-player-container'>
       <div className='music-player-wrapper'>
-        <div className='yt-thumbnail-container'>
-            <img src={imgList[currentTrackIndex]} alt='thumbnail' />
-        </div>
-        <div>
-            <h2>{titleList[currentTrackIndex]}</h2>
-            <h3>{artistList[currentTrackIndex]}</h3>
-        </div>
         <div>
           <ReactPlayer
             ref={playerRef}
@@ -91,24 +84,35 @@ const MusicPlayer = () => {
             onDuration={handleDuration}
           />
         </div>
-        <div className='player-progress-bar-container'>
-          <div>{formatTime(playedSeconds)}</div>
-          <input
-            type="range" 
-            min={0} 
-            max={1} 
-            step='any' 
-            value={played} 
-            onChange={e => setPlayed(+e.target.value)}
-          />
-          <div>{formatTime(duration - playedSeconds)}</div>
-        </div>
-        <div className='music-player-buttons-container'>
-          <div className='music-player-button' onClick={handlePrevTrack}>{<PlayerPreviousIcon/>}</div>
-          <div className='music-player-button' onClick={handlePlayPause}>
-            {playing ? <PlayerPauseIcon /> : <PlayerPlayIcon />}
+        <div className='player-wrapper'>
+          <div className='yt-thumbnail-container'>
+              <img src={imgList[currentTrackIndex]} alt='thumbnail' />
           </div>
-          <div className='music-player-button' onClick={handleNextTrack}>{<PlayerNextIcon/>}</div>
+          <div className='player-info-container'>
+            <div className='music-player-meta-container'>
+                <p className='player-primary-text'>{titleList[currentTrackIndex]}</p>
+                <p className='player-secondary-text'>{artistList[currentTrackIndex]}</p>
+            </div>
+            <div className='player-progress-bar-container'>
+              <div className='player-secondary-text'>{formatTime(playedSeconds)}</div>
+              <input
+                type="range" 
+                min={0} 
+                max={1} 
+                step='any' 
+                value={played} 
+                onChange={e => setPlayed(+e.target.value)}
+              />
+              <div className='player-secondary-text'>{formatTime(duration - playedSeconds)}</div>
+            </div>
+            <div className='music-player-buttons-container'>
+              <div className='music-player-button' onClick={handlePrevTrack}>{<PlayerPreviousIcon/>}</div>
+              <div className='music-player-button' onClick={handlePlayPause}>
+                {playing ? <PlayerPauseIcon /> : <PlayerPlayIcon />}
+              </div>
+              <div className='music-player-button' onClick={handleNextTrack}>{<PlayerNextIcon/>}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
