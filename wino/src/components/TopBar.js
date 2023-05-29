@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './component_styles.css'
 // import Switch from "react-switch";
 import WinoLogo from "../icons/WinoLogo2.js";
-import SearchIcon from '../images/search-icon.svg';
 import UtilityDots from '../icons/UtilityDots.js';
 import ContactOutline from '../icons/ContactOutline.js';
 import InfoOutline from '../icons/InfoOutline.js';
 
 
-const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass, onSearch}) => {
+const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass}) => {
 
     const [showContactDropdown, setShowContactDropdown] = useState(false);
     const [showSocialDropdown, setShowSocialDropdown] = useState(false);
@@ -57,10 +56,6 @@ const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass, onS
         window.location.href = "/";
     };
 
-    const handleOnSearch = () => {
-        onSearch();
-    };
-
     useEffect(() => {
         const handleResize = () => {
           setIsMobile(window.innerWidth < 978); // adjust the breakpoint as needed
@@ -104,9 +99,6 @@ const TopBar = ({onInformationClick, onMobileInformationClick, utilityClass, onS
             </div>
             <div className="top-bar-right">
                 <div className="top-bar-right-item">Legal</div>
-                <div className="top-bar-right-item" onClick={handleOnSearch}>
-                    <img className='top-bar-search-icon' src={SearchIcon} alt="Search Icon" decoding='async' loading="lazy"/>
-                </div>
                 <div className="top-bar-right-item-dt">
                     {formattedDate}
                 </div>
