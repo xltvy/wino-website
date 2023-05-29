@@ -31,6 +31,7 @@ const MobileElement = lazy(() => import('./components/MobileElement'));
 const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
 const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
 const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
+const MusicPlayer = lazy(() => import('./components/MusicPlayer'));
 
 const InformationContent = lazy(() => import('./components/info_texts/InformationContent'));
 const NikeContent = lazy(() => import('./components/info_texts/NikeContent'));
@@ -432,6 +433,7 @@ function App() {
             <StickyNote/>
             <MobileStickyNote/>
           </div>
+          <MusicPlayer/>
           {isInformationClicked && (
             <div style={{ zIndex: "4000", top: "100px", left: "40vh", position: "absolute" }}>
               <TxtFile title={"Information"} content={informationContent} onInformationClose={handleInformationClose} />

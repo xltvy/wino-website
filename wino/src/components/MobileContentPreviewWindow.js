@@ -90,9 +90,8 @@ const MobileContentPreviewWindow = ({ images, currentIndex, onClose, onInformati
                                                             decoding="async"
                                                             width="100%"
                                                             height="85%"
-                                                            frameborder="0"
-                                                            allow="autoplay; fullscreen; picture-in-picture"
-                                                            allowfullscreen>
+                                                            frameBorder="0"
+                                                            allow="autoplay; fullscreen; picture-in-picture">
                                                         </iframe>}
                             </div>
                         ))}
