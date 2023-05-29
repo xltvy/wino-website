@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import './component_styles.css';
+import PlayerPreviousIcon from '../icons/PlayerPreviousIcon.js';
+import PlayerNextIcon from '../icons/PlayerNextIcon.js';
+import PlayerPlayIcon from '../icons/PlayerPlayIcon.js';
+import PlayerPauseIcon from '../icons/PlayerPauseIcon.js';
 
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
@@ -87,19 +91,25 @@ const MusicPlayer = () => {
             onDuration={handleDuration}
           />
         </div>
-        <div>Time elapsed: {formatTime(playedSeconds)}</div>
-        <div>Time remaining: {formatTime(duration - playedSeconds)}</div>
-        <input 
-          type="range" 
-          min={0} 
-          max={1} 
-          step='any' 
-          value={played} 
-          onChange={e => setPlayed(+e.target.value)}
-        />
-        <button onClick={handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
-        <button onClick={handlePrevTrack}>Previous</button>
-        <button onClick={handleNextTrack}>Next</button>
+        <div className='player-progress-bar-container'>
+          <div>{formatTime(playedSeconds)}</div>
+          <input
+            type="range" 
+            min={0} 
+            max={1} 
+            step='any' 
+            value={played} 
+            onChange={e => setPlayed(+e.target.value)}
+          />
+          <div>{formatTime(duration - playedSeconds)}</div>
+        </div>
+        <div className='music-player-buttons-container'>
+          <div className='music-player-button' onClick={handlePrevTrack}>{<PlayerPreviousIcon/>}</div>
+          <div className='music-player-button' onClick={handlePlayPause}>
+            {playing ? <PlayerPauseIcon /> : <PlayerPlayIcon />}
+          </div>
+          <div className='music-player-button' onClick={handleNextTrack}>{<PlayerNextIcon/>}</div>
+        </div>
       </div>
     </div>
   );
