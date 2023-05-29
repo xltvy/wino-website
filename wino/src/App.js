@@ -31,6 +31,7 @@ const MobileElement = lazy(() => import('./components/MobileElement'));
 const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
 const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
 const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
+const MusicPlayer = lazy(() => import('./components/MusicPlayer'));
 
 const InformationContent = lazy(() => import('./components/info_texts/InformationContent'));
 const NikeContent = lazy(() => import('./components/info_texts/NikeContent'));
@@ -358,7 +359,7 @@ function App() {
     
   return (
     <div className="root">
-      <Suspense fallback={<LoadingScreen/>}>
+      <Suspense>
       <div className="desktop-layout">
           {!isMobileFolderClicked && <div className='desktop-top-layout'>
             <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"} onSearch={handleSearch}/>
@@ -368,7 +369,6 @@ function App() {
           </div>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
-
               <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>
               <a href="mailto: wino@studiowino.com" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
                 <MobileDesktopElement children={<ContactIcon className='contact-icon' decoding="async" loading="lazy"/>} title='Contact' onClick={""}/>
@@ -432,6 +432,7 @@ function App() {
             <StickyNote/>
             <MobileStickyNote/>
           </div>
+          <MusicPlayer/>
           {isInformationClicked && (
             <div style={{ zIndex: "4000", top: "100px", left: "40vh", position: "absolute" }}>
               <TxtFile title={"Information"} content={informationContent} onInformationClose={handleInformationClose} />

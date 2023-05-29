@@ -13,6 +13,8 @@ body {
     overflow: hidden;
     z-index: 100;
     position: static;
+    display: flex;
+    flex-direction: column;
 }
 
 .desktop-film-container {
@@ -1284,6 +1286,126 @@ p {
 
 .mobile-finder-window {
     display: none;
+}
+
+.music-player-container {
+    width: 230px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    top: 270px;
+    right: 60px;
+    z-index: 50;
+    border-radius: 5px;
+    background-color: #ffffff;
+    filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
+}
+
+.yt-thumbnail-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.yt-thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.music-player-button {
+    width: 8px;
+    max-width: 8px;
+    max-height: 8px;
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.music-player-buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 30px 5px 30px;
+}
+
+.player-progress-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    padding: 2px 0px;
+}
+
+.player-primary-text {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #000000;
+    padding: 0px 6px;
+    margin: 0px !important;
+}
+
+.player-secondary-text {
+    font-size: 0.4rem;
+    font-weight: 600;
+    color: #BBBDBF;
+    padding: 0px 6px;
+    margin: 0px !important;
+}
+
+.music-player-meta-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px 1px 0px;
+}
+
+.player-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.player-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+}
+
+.rc-slider {
+    padding: 0px 0px 2px 0px !important;
+    height: unset !important;
+}
+
+.rc-slider-handle {
+    visibility: hidden;
+}
+
+.rc-slider-rail {
+    background-color: #E4E6E9 !important;
+    height: 2px !important;
+}
+
+.rc-slider-track {
+    background-color: #99D3F7 !important;
+    height: 2px !important;
+}
+
+.rc-slider-disabled {
+    background-color: transparent !important;
 }
 
 /* LoadingScreen.js component styles below: */
