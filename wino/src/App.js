@@ -31,6 +31,7 @@ const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
 const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
 const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
 const MusicPlayer = lazy(() => import('./components/MusicPlayer'));
+const MusicPlayerMobile = lazy(() => import('./components/MusicPlayerMobile'));
 
 const InformationContent = lazy(() => import('./components/info_texts/InformationContent'));
 const NikeContent = lazy(() => import('./components/info_texts/NikeContent'));
@@ -327,6 +328,7 @@ function App() {
             <TopBar onInformationClick={handleInformationClick} onMobileInformationClick={handleMobileInformationClick} utilityClass={"top-bar-utility-dots"}/>
           </div>}
           <MusicPlayer/>
+          <MusicPlayerMobile/>
           <div className='mobile-elements-container'>
             <div className="mobile-elements-container-wrapper">
               <MobileDesktopElement children={<InformationIcon className='information-icon' decoding="async" loading="lazy"/>} title='Information' onClick={handleMobileInformationClick}/>

@@ -8,9 +8,8 @@ import PlayerPreviousIcon from '../icons/PlayerPreviousIcon.js';
 import PlayerNextIcon from '../icons/PlayerNextIcon.js';
 import PlayerPlayIcon from '../icons/PlayerPlayIcon.js';
 import PlayerPauseIcon from '../icons/PlayerPauseIcon.js';
-import Draggable from 'react-draggable';
 
-const MusicPlayer = () => {
+const MusicPlayerMobile = () => {
   const [playing, setPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [played, setPlayed] = useState(0);
@@ -79,8 +78,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <Draggable>
-      <div className='music-player-container-d'>
+      <div className='music-player-container-m'>
         <div className='music-player-wrapper'>
           <div>
             <ReactPlayer
@@ -123,8 +121,7 @@ const MusicPlayer = () => {
           </div>
         </div>
       </div>
-    </Draggable>
   );
 };
 
-export default MusicPlayer;
+export default MusicPlayerMobile;
