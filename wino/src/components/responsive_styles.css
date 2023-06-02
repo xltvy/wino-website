@@ -614,14 +614,12 @@
     .music-player-container-m {
         display: flex;
         justify-content: center;
-        top: 270px;
-        right: 60px;
         z-index: 50;
         border-radius: 5px;
         background-color: #ffffff;
         filter: drop-shadow(-2px 2px 3px rgb(0 0 0 / 0.15));
         width: 86%;
-        height: 68px;
+        height: 40px;
     }
 
     .music-player-container-d {
@@ -629,7 +627,10 @@
     }
 
     .player-wrapper {
-        height: 68px;
+        height: 40px;
+        align-items: center;
+        overflow-y: hidden;
+        border-radius: 5px 0px 0px 5px;
     }
 
     .music-player-wrapper {
@@ -639,7 +640,7 @@
 
     .player-info-container {
         width: calc(100% - 68px);
-        height: 68px;
+        height: 40px;
         display: flex;
         flex-direction: row;
         justify-content: unset;
@@ -649,6 +650,9 @@
     .yt-thumbnail-container {
         width: 68px;
         height: 68px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 5px 5px 0px 0px;
     }
 
@@ -700,10 +704,10 @@
     }
 
     .player-primary-text {
-        font-size: 1rem;
+        font-size: 0.7rem;
         font-weight: 600;
         color: #000000;
-        padding: 2px 0px;
+        padding: unset;
         margin: 0px !important;
     }
     
@@ -711,7 +715,7 @@
         font-size: 0.7rem;
         font-weight: 600;
         color: #BBBDBF;
-        padding: 2px 0px;
+        padding: unset;
         margin: 0px !important;
     }
 
