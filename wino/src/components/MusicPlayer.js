@@ -19,25 +19,57 @@ const MusicPlayer = () => {
   const [duration, setDuration] = useState(0);
 
   const urlList = [
-    'https://www.youtube.com/watch?v=BhYKN21olBw',
-    'https://www.youtube.com/watch?v=h90j3lOXNvU'
+    'https://www.youtube.com/watch?v=c-MU_5VkjtE',
+    'https://www.youtube.com/watch?v=x-xTttimcNk',
+    'https://www.youtube.com/watch?v=wGAAo9s1ahg',
+    'https://www.youtube.com/watch?v=rhVUgq8LrCk',
+    'https://www.youtube.com/watch?v=gGdpMot_cSg',
+    'https://www.youtube.com/watch?v=wpvXfLlcHwc',
+    'https://www.youtube.com/watch?v=K3QDDlWmR9Q',
+    'https://www.youtube.com/watch?v=MlZOFIRC9HA',
+    'https://www.youtube.com/watch?v=47P6CI7V8gM',
+    'https://www.youtube.com/watch?v=mAAqKx4aD_g'
     // add more URLs here
   ];
 
   const imgList = [
-    'https://i.ytimg.com/vi/BhYKN21olBw/maxresdefault.jpg',
-    'https://i.ytimg.com/vi/h90j3lOXNvU/maxresdefault.jpg'
+    'https://i.ytimg.com/vi/c-MU_5VkjtE/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/x-xTttimcNk/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/wGAAo9s1ahg/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/rhVUgq8LrCk/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/gGdpMot_cSg/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/wpvXfLlcHwc/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/K3QDDlWmR9Q/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/MlZOFIRC9HA/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/47P6CI7V8gM/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/mAAqKx4aD_g/maxresdefault.jpg'
     // add more URLs here
     ];
 
     const titleList = [
-        'Brain Damage',
-        'Us and Them'
+        'Hey You',
+        'Comfortably Numb',
+        'Pseudo Silk Kimono',
+        'Kayleigh',
+        'Such A Shame',
+        'State Trooper',
+        'Personal Jesus',
+        'Champagne Supernova',
+        'Undisclosed Desires',
+        'Love Will Tear Us Apart'
     ];
 
     const artistList = [
         'Pink Floyd',
-        'Pink Floyd'
+        'Pink Floyd',
+        'Marillion',
+        'Marillion',
+        'Talk Talk',
+        'Bruce Springsteen',
+        'Johnny Cash',
+        'Oasis',
+        'Muse',
+        'Joy Division'
     ];
 
   const handlePlayPause = () => {

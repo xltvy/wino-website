@@ -1217,6 +1217,16 @@ p {
     overflow-y: scroll;
 }
 
+.main-finder-area-alt {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    padding-right: 30px;
+    overflow-y: scroll;
+}
+
 .main-finder-image-wrapper {
     display: flex;
     flex-direction: column;
@@ -1226,7 +1236,11 @@ p {
     height: max-content;
     overflow: hidden;
     cursor: pointer;
-  }
+}
+
+.main-finder-image-wrapper-disabled {
+    display: none;
+}
 
 .main-finder-image-overlay {
     width: 100%;

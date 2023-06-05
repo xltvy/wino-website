@@ -128,6 +128,55 @@ import Nike15 from './finder/campaigns/nike_sneaksup/15.webp';
 import Nike16 from './finder/campaigns/nike_sneaksup/16.webp';
 import Nike17 from './finder/campaigns/nike_sneaksup/17.webp';
 
+import Fred1 from './finder/branding/fred/01.webp';
+import Fred2 from './finder/branding/fred/02.webp';
+import Fred3 from './finder/branding/fred/03.webp';
+import Fred4 from './finder/branding/fred/04.webp';
+import Fred5 from './finder/branding/fred/05.webp';
+import Fred6 from './finder/branding/fred/06.webp';
+import Fred7 from './finder/branding/fred/07.webp';
+import Fred8 from './finder/branding/fred/08.gif';
+import Fred9 from './finder/branding/fred/09.webp';
+import Fred10 from './finder/branding/fred/10.webp';
+import Fred11 from './finder/branding/fred/11.gif';
+import Fred12 from './finder/branding/fred/12.webp';
+import Fred13 from './finder/branding/fred/13.webp';
+import Fred14 from './finder/branding/fred/14.gif';
+import Fred15 from './finder/branding/fred/15.webp';
+import Fred16 from './finder/branding/fred/16.webp';
+import Fred17 from './finder/branding/fred/17.webp';
+import Fred18 from './finder/branding/fred/18.gif';
+import Fred19 from './finder/branding/fred/19.webp';
+
+import Feat1 from './finder/featured/01.webp';
+import Feat2 from './finder/featured/02.webp';
+import Feat3 from './finder/featured/03.webp';
+import Feat4 from './finder/featured/04.webp';
+import Feat5 from './finder/featured/05.webp';
+import Feat6 from './finder/featured/06.webp';
+import Feat7 from './finder/featured/07.webp';
+import Feat8 from './finder/featured/08.webp';
+import Feat9 from './finder/featured/09.webp';
+import Feat10 from './finder/featured/10.webp';
+import Feat11 from './finder/featured/11.webp';
+import Feat12 from './finder/featured/12.webp';
+import Feat13 from './finder/featured/13.webp';
+
+import Ankh1 from './finder/branding/ankh/01.webp';
+import Ankh2 from './finder/branding/ankh/02.webp';
+import Ankh3 from './finder/branding/ankh/03.webp';
+import Ankh4 from './finder/branding/ankh/04.webp';
+import Ankh5 from './finder/branding/ankh/05.webp';
+import Ankh6 from './finder/branding/ankh/06.webp';
+import Ankh7 from './finder/branding/ankh/07.webp';
+import Ankh8 from './finder/branding/ankh/08.webp';
+import Ankh9 from './finder/branding/ankh/09.webp';
+import Ankh10 from './finder/branding/ankh/10.webp';
+import Ankh11 from './finder/branding/ankh/11.webp';
+import Ankh12 from './finder/branding/ankh/12.webp';
+import Ankh13 from './finder/branding/ankh/13.webp';
+import Ankh14 from './finder/branding/ankh/14.webp';
+
 import PetraContent from './components/info_texts/PetraContent.js';
 import LunaMerdinContent from './components/info_texts/LunaMerdinContent.js';
 import BodhitaContent from './components/info_texts/BodhitaContent.js';
@@ -136,13 +185,118 @@ import MercyBornContent from './components/info_texts/MercyBornContent.js';
 import SpadaContent from './components/info_texts/SpadaContent.js';
 import SundeiContent from './components/info_texts/SundeiContent.js';
 import NikeContent from './components/info_texts/NikeContent.js';
+import FredContent from './components/info_texts/FredContent.js';
+import AnkhContent from './components/info_texts/AnkhContent.js';
 
 const FolderStructure = [
     {
         title: 'Featured',
         hasSubfolder: false,
         images: [
-            //
+            {
+                id: 1,
+                src: Feat1,
+                alt: 'Acayip Gala',
+                title: 'ACAYIP_GALA',
+                content: FredContent,
+                isVideo: false,
+            },
+            {
+                id: 2,
+                src: Feat2,
+                alt: 'Beylerbeyi',
+                title: 'BEYLERBEYI',
+                content: FredContent,
+                isVideo: false,
+            },
+            {
+                id: 3,
+                src: Feat3,
+                alt: 'Bodhita',
+                title: 'BODHITA',
+                content: BodhitaContent,
+                isVideo: false,
+            },
+            {
+                id: 4,
+                src: Feat4,
+                alt: 'Karamanli',
+                title: 'KARAMANLI',
+                content: BodhitaContent,
+                isVideo: false,
+            },
+            {
+                id: 5,
+                src: Feat5,
+                alt: 'Karnas Vineyards',
+                title: 'KARNAS_VINEYARDS',
+                content: LunaMerdinContent,
+                isVideo: false,
+            },
+            {
+                id: 6,
+                src: Feat6,
+                alt: 'Leandra',
+                title: 'LEANDRA',
+                content: MercyBornContent,
+                isVideo: false,
+            },
+            {
+                id: 7,
+                src: Feat7,
+                alt: 'Pinoli Box',
+                title: 'PINOLI_BOX',
+                content: MercyBornContent,
+                isVideo: false,
+            },
+            {
+                id: 8,
+                src: Feat8,
+                alt: 'Rainbow Origins',
+                title: 'RAINBOW_ORIGINS',
+                content: PinoliContent,
+                isVideo: false,
+            },
+            {
+                id: 9,
+                src: Feat9,
+                alt: 'Show by Pastel',
+                title: 'SHOWBYPASTEL',
+                content: SundeiContent,
+                isVideo: false,
+            },
+            {
+                id: 10,
+                src: Feat10,
+                alt: 'Spada',
+                title: 'SPADA',
+                content: SpadaContent,
+                isVideo: false,
+            },
+            {
+                id: 11,
+                src: Feat11,
+                alt: 'Sundei',
+                title: 'SUNDEI',
+                content: SundeiContent,
+                isVideo: false,
+            },
+            {
+                id: 12,
+                src: Feat12,
+                alt: 'Sneaks Up SS23',
+                title: 'SUP_SS23',
+                content: LunaMerdinContent,
+                isVideo: false,
+            },
+            {
+                id: 13,
+                src: Feat13,
+                alt: 'Sneaks Up FW23',
+                title: 'SUP_WINTER2023',
+                content: LunaMerdinContent,
+                isVideo: false,
+            }
         ]
     },
     {
@@ -979,7 +1133,118 @@ const FolderStructure = [
             {
                 title: 'Ankh',
                 images: [
-                    //
+                    {
+                        id: 1,
+                        src: Ankh1,
+                        alt: 'Ankh',
+                        title: 'ANKH_LOGO',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: Ankh2,
+                        alt: 'Ankh',
+                        title: 'ANKH_01',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: Ankh3,
+                        alt: 'Ankh',
+                        title: 'ANKH_02',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: Ankh4,
+                        alt: 'Ankh',
+                        title: 'ANKH_03',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: Ankh5,
+                        alt: 'Ankh',
+                        title: 'ANKH_04',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: Ankh6,
+                        alt: 'Ankh',
+                        title: 'ANKH_05',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: Ankh7,
+                        alt: 'Ankh',
+                        title: 'ANKH_06',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: Ankh8,
+                        alt: 'Ankh',
+                        title: 'ANKH_07',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: Ankh9,
+                        alt: 'Ankh',
+                        title: 'ANKH_08',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: Ankh10,
+                        alt: 'Ankh',
+                        title: 'ANKH_09',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: Ankh11,
+                        alt: 'Ankh',
+                        title: 'ANKH_10',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: Ankh12,
+                        alt: 'Ankh',
+                        title: 'ANKH_11',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 13,
+                        src: Ankh13,
+                        alt: 'Ankh',
+                        title: 'ANKH_12',
+                        content: AnkhContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 14,
+                        src: Ankh14,
+                        alt: 'Ankh',
+                        title: 'ANKH_13',
+                        content: AnkhContent,
+                        isVideo: false,
+                    }
                 ]
             },
             {
@@ -1209,6 +1474,163 @@ const FolderStructure = [
                         alt: 'Bodhita',
                         title: 'BODHITA_06',
                         content: BodhitaContent,
+                        isVideo: false,
+                    }
+                ]
+            },
+            {
+                title: 'Fred',
+                images: [
+                    {
+                        id: 1,
+                        src: Fred1,
+                        alt: 'Fred',
+                        title: 'FRED_MOOD',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: Fred2,
+                        alt: 'Fred',
+                        title: 'FRED_LOGO',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: Fred3,
+                        alt: 'Fred',
+                        title: 'FRED_01',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: Fred4,
+                        alt: 'Fred',
+                        title: 'FRED_02',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: Fred5,
+                        alt: 'Fred',
+                        title: 'FRED_03',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: Fred6,
+                        alt: 'Fred',
+                        title: 'FRED_04',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: Fred7,
+                        alt: 'Fred',
+                        title: 'FRED_05',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: Fred8,
+                        alt: 'Fred',
+                        title: 'FRED_06',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: Fred9,
+                        alt: 'Fred',
+                        title: 'FRED_07',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: Fred10,
+                        alt: 'Fred',
+                        title: 'FRED_08',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: Fred11,
+                        alt: 'Fred',
+                        title: 'FRED_09',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: Fred12,
+                        alt: 'Fred',
+                        title: 'FRED_10',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 13,
+                        src: Fred13,
+                        alt: 'Fred',
+                        title: 'FRED_11',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 14,
+                        src: Fred14,
+                        alt: 'Fred',
+                        title: 'FRED_12',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 15,
+                        src: Fred15,
+                        alt: 'Fred',
+                        title: 'FRED_13',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 16,
+                        src: Fred16,
+                        alt: 'Fred',
+                        title: 'FRED_14',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 17,
+                        src: Fred17,
+                        alt: 'Fred',
+                        title: 'FRED_15',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 18,
+                        src: Fred18,
+                        alt: 'Fred',
+                        title: 'FRED_16',
+                        content: FredContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 19,
+                        src: Fred19,
+                        alt: 'Fred',
+                        title: 'FRED_17',
+                        content: FredContent,
                         isVideo: false,
                     }
                 ]

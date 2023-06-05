@@ -227,8 +227,8 @@ const FinderWindow = ({clickedFolderTitle, onClose, onImageClick, onFolderInfoCl
                                         </div>
                                     ))}
                           </div>
-                          <div className="main-finder-area">
-                            <div className="main-finder-image-wrapper" onClick={handleOnFolderInfoClick}>
+                          <div className={`main-finder-area${selectedFolder.hasSubfolder ? '' : '-alt'}`}>
+                          <div className={`main-finder-image-wrapper${selectedFolder === 'Featured' ? '-disabled' : ''}`} onClick={handleOnFolderInfoClick}>
                                 <div className="main-finder-image-overlay" style={{filter: "none"}}>
                                   <img src={InfoIcon} alt="Information File Icon" decoding='async' loading='lazy'/>
                                 </div>
