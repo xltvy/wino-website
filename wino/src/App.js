@@ -341,6 +341,7 @@ function App() {
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={handleMobileFolderClick}/>
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={handleMobileFolderClick}/>
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={handleMobileFolderClick}/>
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Team' onClick={handleMobileFolderClick}/>
 
               <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
@@ -374,6 +375,9 @@ function App() {
                 </div>
               </div>
               <div className='desktop-images'>
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Team")}>
+                  <DesktopElement title="Team" iconSrc={<FolderAlt className='folder-icon' height="45px" decoding="async" loading="lazy"/>}/>
+                </div>
                 <div className="desktop-element" onDoubleClick={handleInformationClick}>
                   <DesktopElement title="Information" iconSrc={<InformationIcon className='information-icon' height="58px"/>} onClick={handleInformationClick} loading="lazy"/>
                 </div>

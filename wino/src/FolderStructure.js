@@ -188,6 +188,7 @@ import SundeiContent from './components/info_texts/SundeiContent.js';
 import NikeContent from './components/info_texts/NikeContent.js';
 import FredContent from './components/info_texts/FredContent.js';
 import AnkhContent from './components/info_texts/AnkhContent.js';
+//import KaramanliContent from './componenets/info_texts/KaramanliContent.js';
 
 const FolderStructure = [
     {
@@ -1698,6 +1699,13 @@ const FolderStructure = [
             },
             // Other subfolders for Sustainability
         ],
+    },
+    {
+        title: 'Team',
+        hasSubfolder: false,
+        images: [
+
+        ]
     }
 ];
 
