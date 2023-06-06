@@ -505,19 +505,19 @@ const FolderStructure = [
             // Other subfolders for Campaigns
         ],
     },
-    {
-        title: 'Upgrading',
-        hasSubfolder: true,
-        subfolders: [
-            {
-                title: 'Subfolder 2',
-                images: [
-                    //
-                ],
-            },
-            // Other subfolders for Upgrading
-        ],
-    },
+    // {
+    //     title: 'Upgrading',
+    //     hasSubfolder: true,
+    //     subfolders: [
+    //         {
+    //             title: 'Subfolder 2',
+    //             images: [
+    //                 //
+    //             ],
+    //         },
+    //         // Other subfolders for Upgrading
+    //     ],
+    // },
     {
         title: 'Design',
         hasSubfolder: true,
@@ -1687,26 +1687,26 @@ const FolderStructure = [
             }
         ],
     },
-    {
-        title: 'Sustainability',
-        hasSubfolder: true,
-        subfolders: [
-            {
-                title: 'Subfolder 3',
-                images: [
-                    //
-                ],
-            },
-            // Other subfolders for Sustainability
-        ],
-    },
-    {
-        title: 'Team',
-        hasSubfolder: false,
-        images: [
+    // {
+    //     title: 'Sustainability',
+    //     hasSubfolder: true,
+    //     subfolders: [
+    //         {
+    //             title: 'Subfolder 3',
+    //             images: [
+    //                 //
+    //             ],
+    //         },
+    //         // Other subfolders for Sustainability
+    //     ],
+    // },
+    // {
+    //     title: 'Team',
+    //     hasSubfolder: false,
+    //     images: [
 
-        ]
-    }
+    //     ]
+    // }
 ];
 
 export default FolderStructure;
