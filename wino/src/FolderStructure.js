@@ -148,7 +148,7 @@ import Fred17 from './finder/branding/fred/17.webp';
 import Fred18 from './finder/branding/fred/18.gif';
 import Fred19 from './finder/branding/fred/19.webp';
 
-import Feat1 from './finder/featured/01.webp';
+import Feat1 from './finder/featured/ankh.webp';
 import Feat2 from './finder/featured/02.webp';
 import Feat3 from './finder/featured/03.webp';
 import Feat4 from './finder/featured/04.webp';
@@ -161,6 +161,7 @@ import Feat10 from './finder/featured/10.webp';
 import Feat11 from './finder/featured/11.webp';
 import Feat12 from './finder/featured/12.webp';
 import Feat13 from './finder/featured/13.webp';
+import Feat14 from './finder/featured/pinoli.webp';
 
 import Ankh1 from './finder/branding/ankh/01.webp';
 import Ankh2 from './finder/branding/ankh/02.webp';
@@ -195,14 +196,62 @@ const FolderStructure = [
         images: [
             {
                 id: 1,
-                src: Feat1,
-                alt: 'Acayip Gala',
-                title: 'ACAYIP_GALA',
+                src: "https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
+                alt: "Nike x Sneaks Up Air Force 1",
+                title: "AF1xSUP_MOVIE",
+                content: NikeContent,
+                isVideo: true,
+            },
+            {
+                id: 2,
+                src: MercyBorn2,
+                alt: 'Mercy Born',
+                title: 'MERCY BORN',
+                content: MercyBornContent,
+                isVideo: false,
+            },
+            {
+                id: 3,
+                src: Feat5,
+                alt: 'Karnas Vineyards',
+                title: 'KARNAS VINEYARDS',
+                content: LunaMerdinContent,
+                isVideo: false,
+            },
+            {
+                id: 4,
+                src: Petra7,
+                alt: 'Petra',
+                title: 'PETRA_BOX',
+                content: PetraContent,
+                isVideo: false,
+            },
+            {
+                id: 5,
+                src: Fred7,
+                alt: 'Fred',
+                title: 'FRED_BOX',
                 content: FredContent,
                 isVideo: false,
             },
             {
-                id: 2,
+                id: 6,
+                src: LunaMerdin13,
+                alt: 'Luna Merdin',
+                title: 'LUNA MERDIN',
+                content: LunaMerdinContent,
+                isVideo: false,
+            },
+            {
+                id: 7,
+                src: Feat1,
+                alt: 'Ankh',
+                title: 'ANKH',
+                content: AnkhContent,
+                isVideo: false,
+            },
+            {
+                id: 8,
                 src: Feat2,
                 alt: 'Beylerbeyi',
                 title: 'BEYLERBEYI',
@@ -210,31 +259,7 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 3,
-                src: Feat3,
-                alt: 'Bodhita',
-                title: 'BODHITA',
-                content: BodhitaContent,
-                isVideo: false,
-            },
-            {
-                id: 4,
-                src: Feat4,
-                alt: 'Karamanli',
-                title: 'KARAMANLI',
-                content: BodhitaContent,
-                isVideo: false,
-            },
-            {
-                id: 5,
-                src: Feat5,
-                alt: 'Karnas Vineyards',
-                title: 'KARNAS_VINEYARDS',
-                content: LunaMerdinContent,
-                isVideo: false,
-            },
-            {
-                id: 6,
+                id: 9,
                 src: Feat6,
                 alt: 'Leandra',
                 title: 'LEANDRA',
@@ -242,15 +267,23 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 7,
-                src: Feat7,
-                alt: 'Pinoli Box',
-                title: 'PINOLI_BOX',
-                content: MercyBornContent,
+                id: 10,
+                src: Feat13,
+                alt: 'Sneaks Up FW23',
+                title: 'SUP_WINTER2023',
+                content: LunaMerdinContent,
                 isVideo: false,
             },
             {
-                id: 8,
+                id: 11,
+                src: Feat3,
+                alt: 'Bodhita',
+                title: 'BODHITA',
+                content: BodhitaContent,
+                isVideo: false,
+            },
+            {
+                id: 12,
                 src: Feat8,
                 alt: 'Rainbow Origins',
                 title: 'RAINBOW_ORIGINS',
@@ -258,15 +291,7 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 9,
-                src: Feat9,
-                alt: 'Show by Pastel',
-                title: 'SHOWBYPASTEL',
-                content: SundeiContent,
-                isVideo: false,
-            },
-            {
-                id: 10,
+                id: 13,
                 src: Feat10,
                 alt: 'Spada',
                 title: 'SPADA',
@@ -274,15 +299,31 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 11,
-                src: Feat11,
-                alt: 'Sundei',
-                title: 'SUNDEI',
+                id: 14,
+                src: Feat7,
+                alt: 'Pinoli Box',
+                title: 'PINOLI_BOX',
+                content: MercyBornContent,
+                isVideo: false,
+            },
+            {
+                id: 15,
+                src: Feat9,
+                alt: 'Show by Pastel',
+                title: 'SHOWBYPASTEL',
                 content: SundeiContent,
                 isVideo: false,
             },
             {
-                id: 12,
+                id: 16,
+                src: Feat4,
+                alt: 'Karamanli',
+                title: 'KARAMANLI',
+                content: BodhitaContent,
+                isVideo: false,
+            },
+            {
+                id: 17,
                 src: Feat12,
                 alt: 'Sneaks Up SS23',
                 title: 'SUP_SS23',
@@ -290,11 +331,19 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 13,
-                src: Feat13,
-                alt: 'Sneaks Up FW23',
-                title: 'SUP_WINTER2023',
-                content: LunaMerdinContent,
+                id: 18,
+                src: Feat11,
+                alt: 'Sundei',
+                title: 'SUNDEI',
+                content: SundeiContent,
+                isVideo: false,
+            },
+            {
+                id: 19,
+                src: Feat14,
+                alt: 'Pinoli',
+                title: 'PINOLI',
+                content: PinoliContent,
                 isVideo: false,
             }
         ]

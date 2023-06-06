@@ -8,9 +8,9 @@ import Image1 from './images/client_desktop_images/nike.webp';
 import Image2 from './finder/design/petra/07.webp';
 import Image3 from './finder/branding/mercy_born/02.gif';
 import Image4 from './finder/branding/luna_merdin/13.webp';
-import Image5 from './images/client_desktop_images/ankh.webp';
+import Image5 from './finder/featured/ankh.webp';
 import Image6 from './finder/branding/fred/07.webp';
-import Image7 from './images/client_desktop_images/pinoli.webp';
+import Image7 from './finder/featured/pinoli.webp';
 
 import NikeVideo from './components/video_iframes/NikeVideo';
 
