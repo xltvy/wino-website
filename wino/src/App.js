@@ -7,7 +7,7 @@ import './App.css';
 import Image1 from './images/client_desktop_images/nike.webp';
 import Image2 from './finder/design/petra/07.webp';
 import Image3 from './finder/branding/mercy_born/02.gif';
-import Image4 from './finder/branding/luna_merdin/13.webp';
+import Image4 from './finder/featured/05.webp';
 import Image5 from './finder/featured/ankh.webp';
 import Image6 from './finder/branding/fred/07.webp';
 import Image7 from './finder/featured/pinoli.webp';
@@ -101,7 +101,7 @@ function App() {
       id: 1,
       src: "https://player.vimeo.com/video/794071012?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
       alt: "Nike x Sneaks Up Air Force 1",
-      title: "AF1xSUP_MOVIE",
+      title: "af1xsup_movie",
       content: nikeContent,
       isVideo: true,
     },
@@ -109,7 +109,7 @@ function App() {
       id: 2,
       src: Image2,
       alt: 'Petra Roasting Co. Coffee',
-      title: 'PETRA_BOX',
+      title: 'petra_box',
       content: petraContent,
       isVideo: false,
     },
@@ -117,23 +117,23 @@ function App() {
       id: 3,
       src: Image3,
       alt: 'Mercy Born',
-      title: 'MERCYBORN',
+      title: 'mercyborn',
       content: mercyBornContent,
       isVideo: false,
     },
     {
       id: 4,
       src: Image4,
-      alt: 'Luna Merdin',
-      title: 'LUNA MERDIN',
-      content: lunaMerdinContent,
+      alt: 'Karnas',
+      title: 'karnas',
+      content: null,
       isVideo: false,
     },
     {
       id: 5,
       src: Image5,
       alt: 'Ankh',
-      title: 'ANKH',
+      title: 'ankh',
       content: ankhContent,
       isVideo: false,
     },
@@ -141,7 +141,7 @@ function App() {
       id: 6,
       src: Image6,
       alt: 'Fred',
-      title: 'FRED_BOX',
+      title: 'fred_box',
       content: fredContent,
       isVideo: false,
     },
@@ -149,7 +149,7 @@ function App() {
       id: 7,
       src: Image7,
       alt: 'Pinoli',
-      title: 'PINOLI',
+      title: 'pinoli',
       content: pinoliContent,
       isVideo: false,
     },
