@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../images/wino-logo2.webp";
+// import Logo from "../../images/wino-logo2.webp";
 
 const InformationContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
+                <img src={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1658a380-92e5-4029-a188-b292e4456300/public"} alt="Wino Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <h3>CONTACT</h3>
             <br/>

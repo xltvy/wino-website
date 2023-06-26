@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../images/client_logos/ankh-logo.webp";
+// import Logo from "../../images/client_logos/ankh-logo.webp";
 
 const AnkhContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Ankh Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
+                <img src={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ec74fa06-5327-4b1f-dbc6-e052e710c700/public"} alt="Ankh Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <p>
                 We have started our journey, and we have taken our inspiration from the depths of history and mythology

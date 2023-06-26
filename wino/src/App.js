@@ -4,13 +4,13 @@ import './components/component_styles.css';
 import './components/responsive_styles.css';
 import './App.css';
 
-import Image1 from './images/client_desktop_images/nike.webp';
-import Image2 from './finder/design/petra/07.webp';
+// import Image1 from './images/client_desktop_images/nike.webp';
+// import Image2 from './finder/design/petra/07.webp';
 import Image3 from './finder/branding/mercy_born/02.gif';
-import Image4 from './finder/featured/05.webp';
-import Image5 from './finder/featured/ankh.webp';
-import Image6 from './finder/branding/fred/07.webp';
-import Image7 from './finder/featured/pinoli.webp';
+// import Image4 from './finder/featured/05.webp';
+// import Image5 from './finder/featured/ankh.webp';
+// import Image6 from './finder/branding/fred/07.webp';
+// import Image7 from './finder/featured/pinoli.webp';
 
 import NikeVideo from './components/video_iframes/NikeVideo';
 
@@ -27,7 +27,7 @@ const MobileStickyNote = lazy(() => import('./components/MobileStickyNote'));
 const FinderWindow = lazy(() => import('./components/FinderWindow'));
 const DesktopElement = lazy(() => import('./components/DesktopElement'));
 const MobileElement = lazy(() => import('./components/MobileElement'));
-const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
+// const LoadingScreen = lazy(() => import('./components/LoadingScreen'));
 const MobileDesktopElement = lazy(() => import('./components/MobileDesktopElement'));
 const MobileFinderWindow = lazy(() => import('./components/MobileFinderWindow'));
 const MusicPlayer = lazy(() => import('./components/MusicPlayer'));
@@ -107,7 +107,7 @@ function App() {
     },
     {
       id: 2,
-      src: Image2,
+      src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/473ef696-3d3a-4be8-67f5-aa5e4524af00/public",
       alt: 'Petra Roasting Co. Coffee',
       title: 'petra_box',
       content: petraContent,
@@ -123,7 +123,7 @@ function App() {
     },
     {
       id: 4,
-      src: Image4,
+      src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/85350992-a68d-42ef-b6e8-6dd9d1a4f500/public",
       alt: 'Karnas',
       title: 'karnas',
       content: null,
@@ -131,7 +131,7 @@ function App() {
     },
     {
       id: 5,
-      src: Image5,
+      src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/81e9ca7c-1a87-4b45-187c-03e4dd73ee00/public",
       alt: 'Ankh',
       title: 'ankh',
       content: ankhContent,
@@ -139,7 +139,7 @@ function App() {
     },
     {
       id: 6,
-      src: Image6,
+      src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/61d6d11c-4508-43ad-552a-fa8b8686fd00/public",
       alt: 'Fred',
       title: 'fred_box',
       content: fredContent,
@@ -147,7 +147,7 @@ function App() {
     },
     {
       id: 7,
-      src: Image7,
+      src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/bd1a17e3-cfbb-4ce3-b1d0-79fd64cdf900/public",
       alt: 'Pinoli',
       title: 'pinoli',
       content: pinoliContent,
@@ -343,7 +343,7 @@ function App() {
               {/* <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={handleMobileFolderClick}/> */}
               {/* <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Team' onClick={handleMobileFolderClick}/> */}
 
-              <MobileElement imageIndex={0} title={images[0].title} imageSrc={Image1} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
+              <MobileElement imageIndex={0} title={images[0].title} imageSrc={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ef88e728-c0c4-46a5-8be4-741b9a4bda00/public"} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={1} title={images[1].title} imageSrc={images[1].src} imageAlt={images[1].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={2} title={images[2].title} imageSrc={images[2].src} imageAlt={images[2].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
               <MobileElement imageIndex={3} title={images[3].title} imageSrc={images[3].src} imageAlt={images[3].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
@@ -389,7 +389,7 @@ function App() {
                 <div style={{padding: "15px 0px"}}><DesktopImage imageIndex={5} imageSrc={images[5].src} title={images[5].title} onImageClick={handleImageClick} loading="lazy"/></div>
               </div>
               <div className='desktop-images'>
-                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopVideo imageIndex={0} imageSrc={Image1} videoIframe={nikeVideo} onImageClick={handleImageClick} title={images[0].title}/></div>
+                <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopVideo imageIndex={0} imageSrc={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ef88e728-c0c4-46a5-8be4-741b9a4bda00/public"} videoIframe={nikeVideo} onImageClick={handleImageClick} title={images[0].title}/></div>
                 <div style={{padding: "5px 0px", position: "relative", bottom: "100px", left: "215px"}}><DesktopImage imageIndex={2} imageSrc={images[2].src} title={images[2].title} onImageClick={handleImageClick} loading="lazy"/></div>
                 <div style={{padding: "5px 0px", position: "relative", top: "112px", left: "85px"}}><DesktopImage imageIndex={3} imageSrc={images[3].src} title={images[3].title} onImageClick={handleImageClick} loading="lazy"/></div>
                 <div style={{padding: "5px 0px", position: "relative", top: "260px", left: "255px"}}><DesktopImage imageIndex={6} imageSrc={images[6].src} title={images[6].title} onImageClick={handleImageClick} loading="lazy"/></div>

@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../images/client_logos/fred-logo.webp";
+// import Logo from "../../images/client_logos/fred-logo.webp";
 
 const FredContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Fred Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
+                <img src={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8ff6f4d7-41fe-48bd-71b1-8082e6b86500/public"} alt="Fred Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <p>
                 When we started our journey with Fred, we had our favorite words about design from Charles Eames on our minds:

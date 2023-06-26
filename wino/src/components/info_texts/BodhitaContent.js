@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../images/client_logos/bodhita-logo.webp";
+// import Logo from "../../images/client_logos/bodhita-logo.webp";
 
 const BodhitaContent = () => {
     return (
         <>
             <div style={{justifyContent: "center", alignItems: "center", width: "100%", display: "flex"}}>
-                <img src={Logo} alt="Bodhita Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
+                <img src={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/eb63e208-0515-45bc-29d7-bf94bf07b400/public"} alt="Bodhita Logo" style={{ width: "60%", height: "auto", paddingTop: "8px" }} decoding="async" loading="lazy"/>
             </div>
             <p>
                 We started our journey with Bodhita by embracing the meaning of its name.
