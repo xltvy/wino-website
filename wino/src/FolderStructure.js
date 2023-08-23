@@ -501,6 +501,26 @@ const FolderStructure = [
                         isVideo: false,
                     }
                 ],
+            },
+            {
+                title: 'AIRFORCE',
+                images: []
+            },
+            {
+                title: 'AIRMAX',
+                images: []
+            },
+            {
+                title: 'Goodbye Summer 23',
+                images: []
+            },
+            {
+                title: 'ELLE W.I.P',
+                images: []
+            },
+            {
+                title: "SUP SS'23",
+                images: []
             }
         ],
     },
@@ -1686,6 +1706,37 @@ const FolderStructure = [
             }
         ],
     },
+    {
+        title: 'Strategy',
+        hasSubfolder: true,
+        subfolders: [
+            {
+                title: 'PASTEL',
+                images: [
+                    //
+                ],
+            },
+            {
+                title: 'SNEAKS UP',
+                images: [
+                    //
+                ],
+            },
+            {
+                title: 'ELLE W.I.P',
+                images: [
+                    //
+                ],
+            },
+        ],
+    },
+    // {
+    //     title: 'Team',
+    //     hasSubfolder: false,
+    //     images: [
+
+    //     ]
+    // }
     // {
     //     title: 'Sustainability',
     //     hasSubfolder: true,

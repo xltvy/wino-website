@@ -340,7 +340,7 @@ function App() {
               {/* <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Upgrading' onClick={handleMobileFolderClick}/> */}
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Design' onClick={handleMobileFolderClick}/>
               <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Branding' onClick={handleMobileFolderClick}/>
-              {/* <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Sustainability' onClick={handleMobileFolderClick}/> */}
+              <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Strategy' onClick={handleMobileFolderClick}/>
               {/* <MobileDesktopElement children={<FolderAlt className='mobile-folder-icon' decoding="async" loading="lazy"/>} title='Team' onClick={handleMobileFolderClick}/> */}
 
               <MobileElement imageIndex={0} title={images[0].title} imageSrc={"https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ef88e728-c0c4-46a5-8be4-741b9a4bda00/public"} imageAlt={images[0].alt} onImageClick={handleMobileImageClick} loading="lazy"/>
@@ -370,9 +370,9 @@ function App() {
                 <div className="desktop-element" onDoubleClick={() => handleFolderClick("Branding")}>
                   <DesktopElement title="Branding" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
                 </div>
-                {/* <div className="desktop-element" onDoubleClick={() => handleFolderClick("Sustainability")}>
-                  <DesktopElement title="Sustainability" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
-                </div> */}
+                <div className="desktop-element" onDoubleClick={() => handleFolderClick("Strategy")}>
+                  <DesktopElement title="Strategy" iconSrc={<FolderAlt className='folder-icon' height="45px" loading="lazy"/>}/>
+                </div>
               </div>
               <div className='desktop-images'>
                 {/* <div className="desktop-element" onDoubleClick={() => handleFolderClick("Team")}>
