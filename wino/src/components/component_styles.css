@@ -53,8 +53,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
-    padding: 40px 40px 40px 40px;
+    padding: 68px 40px 40px 40px;
     z-index: 1;
     position: absolute;
 }

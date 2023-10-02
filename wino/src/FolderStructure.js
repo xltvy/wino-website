@@ -1,182 +1,12 @@
-// import Petra1 from './finder/design/petra/01.webp';
-// import Petra2 from './finder/design/petra/02.webp';
-// import Petra3 from './finder/design/petra/03.webp';
-// import Petra4 from './finder/design/petra/04.webp';
-// import Petra5 from './finder/design/petra/05.webp';
-// import Petra6 from './finder/design/petra/06.webp';
-// import Petra7 from './finder/design/petra/07.webp';
-// import Petra8 from './finder/design/petra/08.webp';
-// import Petra9 from './finder/design/petra/09.webp';
-// import Petra10 from './finder/design/petra/10.webp';
-// import Petra11 from './finder/design/petra/11.webp';
-// import Petra12 from './finder/design/petra/12.webp';
-// import Petra13 from './finder/design/petra/13.webp';
-// import Petra14 from './finder/design/petra/14.webp';
-// import Petra15 from './finder/design/petra/15.webp';
-// import Petra16 from './finder/design/petra/16.webp';
-// import Petra17 from './finder/design/petra/17.webp';
-// import Petra18 from './finder/design/petra/18.webp';
-// import Petra19 from './finder/design/petra/19.webp';
-// import Petra20 from './finder/design/petra/20.webp';
-// import Petra21 from './finder/design/petra/21.webp';
-// import Petra22 from './finder/design/petra/22.webp';
-
-// import LunaMerdin1 from './finder/branding/luna_merdin/01.webp';
-// import LunaMerdin2 from './finder/branding/luna_merdin/02.webp';
-// import LunaMerdin3 from './finder/branding/luna_merdin/03.webp';
-// import LunaMerdin4 from './finder/branding/luna_merdin/04.webp';
-// import LunaMerdin5 from './finder/branding/luna_merdin/05.webp';
-// import LunaMerdin6 from './finder/branding/luna_merdin/06.webp';
-// import LunaMerdin7 from './finder/branding/luna_merdin/07.webp';
-// import LunaMerdin8 from './finder/branding/luna_merdin/08.webp';
-// import LunaMerdin9 from './finder/branding/luna_merdin/09.webp';
-// import LunaMerdin10 from './finder/branding/luna_merdin/10.webp';
-// import LunaMerdin11 from './finder/branding/luna_merdin/11.webp';
-// import LunaMerdin12 from './finder/branding/luna_merdin/12.webp';
-// import LunaMerdin13 from './finder/branding/luna_merdin/13.webp';
-// import LunaMerdin14 from './finder/branding/luna_merdin/14.webp';
-// import LunaMerdin15 from './finder/branding/luna_merdin/15.webp';
-// import LunaMerdin16 from './finder/branding/luna_merdin/16.webp';
-
-// import Bodhita1 from './finder/branding/bodhita/01.webp';
-// import Bodhita2 from './finder/branding/bodhita/02.webp';
-// import Bodhita3 from './finder/branding/bodhita/03.webp';
-// import Bodhita4 from './finder/branding/bodhita/04.webp';
-// import Bodhita5 from './finder/branding/bodhita/05.webp';
-// import Bodhita6 from './finder/branding/bodhita/06.webp';
-// import Bodhita7 from './finder/branding/bodhita/07.webp';
-// import Bodhita8 from './finder/branding/bodhita/08.webp';
-// import Bodhita9 from './finder/branding/bodhita/09.webp';
-
-// import Pinoli1 from './finder/branding/pinoli/01.webp';
-// import Pinoli2 from './finder/branding/pinoli/02.webp';
-// import Pinoli3 from './finder/branding/pinoli/03.webp';
-// import Pinoli4 from './finder/branding/pinoli/04.webp';
-// import Pinoli5 from './finder/branding/pinoli/05.webp';
-// import Pinoli6 from './finder/branding/pinoli/06.webp';
-// import Pinoli7 from './finder/branding/pinoli/07.webp';
-// import Pinoli8 from './finder/branding/pinoli/08.webp';
 import Pinoli9 from './finder/branding/pinoli/09.gif';
-// import Pinoli10 from './finder/branding/pinoli/10.webp';
-// import Pinoli11 from './finder/branding/pinoli/11.webp';
-// import Pinoli12 from './finder/branding/pinoli/12.webp';
-// import Pinoli13 from './finder/branding/pinoli/13.webp';
-// import Pinoli14 from './finder/branding/pinoli/14.webp';
-// import Pinoli15 from './finder/branding/pinoli/15.webp';
-// import Pinoli16 from './finder/branding/pinoli/16.webp';
-// import Pinoli17 from './finder/branding/pinoli/17.webp';
-// import Pinoli18 from './finder/branding/pinoli/18.webp';
-// import Pinoli19 from './finder/branding/pinoli/19.webp';
-// import Pinoli20 from './finder/branding/pinoli/20.webp';
-// import Pinoli21 from './finder/branding/pinoli/21.webp';
-// import Pinoli22 from './finder/branding/pinoli/22.webp';
-// import Pinoli23 from './finder/branding/pinoli/23.webp';
 
-// import MercyBorn1 from './finder/branding/mercy_born/01.webp';
 import MercyBorn2 from './finder/branding/mercy_born/02.gif';
-// import MercyBorn3 from './finder/branding/mercy_born/03.webp';
-// import MercyBorn4 from './finder/branding/mercy_born/04.webp';
-// import MercyBorn5 from './finder/branding/mercy_born/05.webp';
-// import MercyBorn6 from './finder/branding/mercy_born/06.webp';
-// import MercyBorn7 from './finder/branding/mercy_born/07.webp';
-// import MercyBorn8 from './finder/branding/mercy_born/08.webp';
-// import MercyBorn9 from './finder/branding/mercy_born/09.webp';
-// import MercyBorn10 from './finder/branding/mercy_born/10.webp';
-// import MercyBorn11 from './finder/branding/mercy_born/11.webp';
-// import MercyBorn12 from './finder/branding/mercy_born/12.webp';
-// import MercyBorn13 from './finder/branding/mercy_born/13.webp';
-// import MercyBorn14 from './finder/branding/mercy_born/14.webp';
-// import MercyBorn15 from './finder/branding/mercy_born/15.webp';
-// import MercyBorn16 from './finder/branding/mercy_born/16.webp';
-// import MercyBorn17 from './finder/branding/mercy_born/17.webp';
 
-// import Spada1 from './finder/branding/spada/01.webp';
-// import Spada2 from './finder/branding/spada/02.webp';
-// import Spada3 from './finder/branding/spada/03.webp';
-// import Spada4 from './finder/branding/spada/04.webp';
-// import Spada5 from './finder/branding/spada/05.webp';
-// import Spada6 from './finder/branding/spada/06.webp';
-// import Spada7 from './finder/branding/spada/07.webp';
-// import Spada8 from './finder/branding/spada/08.webp';
-// import Spada9 from './finder/branding/spada/09.webp';
-// import Spada10 from './finder/branding/spada/10.webp';
+import SupWinterPink from './finder/branding/sup/01.gif';
+import SupWinter14 from './finder/branding/sup/02.gif';
 
-// import Sundei1 from './finder/branding/sundei/01.webp';
-// import Sundei2 from './finder/branding/sundei/02.webp';
-// import Sundei3 from './finder/branding/sundei/03.webp';
-// import Sundei4 from './finder/branding/sundei/04.webp';
-// import Sundei5 from './finder/branding/sundei/05.webp';
-// import Sundei6 from './finder/branding/sundei/06.webp';
-// import Sundei7 from './finder/branding/sundei/07.webp';
-// import Sundei8 from './finder/branding/sundei/08.webp';
-
-// import Nike1 from './finder/campaigns/nike_sneaksup/01.webp';
-// import Nike2 from './finder/campaigns/nike_sneaksup/02.webp';
-// import Nike3 from './finder/campaigns/nike_sneaksup/03.webp';
-// import Nike4 from './finder/campaigns/nike_sneaksup/04.webp';
-// import Nike5 from './finder/campaigns/nike_sneaksup/05.webp';
-// import Nike6 from './finder/campaigns/nike_sneaksup/06.webp';
-// import Nike7 from './finder/campaigns/nike_sneaksup/07.webp';
-// import Nike8 from './finder/campaigns/nike_sneaksup/08.webp';
-// import Nike9 from './finder/campaigns/nike_sneaksup/09.webp';
-// import Nike10 from './finder/campaigns/nike_sneaksup/10.webp';
-// import Nike11 from './finder/campaigns/nike_sneaksup/11.webp';
-// import Nike12 from './finder/campaigns/nike_sneaksup/12.webp';
-// import Nike13 from './finder/campaigns/nike_sneaksup/13.webp';
-// import Nike14 from './finder/campaigns/nike_sneaksup/14.webp';
-// import Nike15 from './finder/campaigns/nike_sneaksup/15.webp';
-// import Nike16 from './finder/campaigns/nike_sneaksup/16.webp';
-// import Nike17 from './finder/campaigns/nike_sneaksup/17.webp';
-
-// import Fred1 from './finder/branding/fred/01.webp';
-// import Fred2 from './finder/branding/fred/02.webp';
-// import Fred3 from './finder/branding/fred/03.webp';
-// import Fred4 from './finder/branding/fred/04.webp';
-// import Fred5 from './finder/branding/fred/05.webp';
-// import Fred6 from './finder/branding/fred/06.webp';
-// import Fred7 from './finder/branding/fred/07.webp';
-import Fred8 from './finder/branding/fred/08.gif';
-// import Fred9 from './finder/branding/fred/09.webp';
-// import Fred10 from './finder/branding/fred/10.webp';
-import Fred11 from './finder/branding/fred/11.gif';
-// import Fred12 from './finder/branding/fred/12.webp';
-// import Fred13 from './finder/branding/fred/13.webp';
-import Fred14 from './finder/branding/fred/14.gif';
-// import Fred15 from './finder/branding/fred/15.webp';
-// import Fred16 from './finder/branding/fred/16.webp';
-// import Fred17 from './finder/branding/fred/17.webp';
-import Fred18 from './finder/branding/fred/18.gif';
-// import Fred19 from './finder/branding/fred/19.webp';
-
-// import Feat1 from './finder/featured/ankh.webp';
-// import Feat2 from './finder/featured/02.webp';
-// import Feat3 from './finder/featured/03.webp';
-// import Feat4 from './finder/featured/04.webp';
-// import Feat5 from './finder/featured/05.webp';
-// import Feat6 from './finder/featured/06.webp';
-// import Feat7 from './finder/featured/07.webp';
-// import Feat8 from './finder/featured/08.webp';
-// import Feat9 from './finder/featured/09.webp';
-// import Feat10 from './finder/featured/10.webp';
-// import Feat11 from './finder/featured/11.webp';
-// import Feat12 from './finder/featured/12.webp';
-// import Feat13 from './finder/featured/13.webp';
-// import Feat14 from './finder/featured/pinoli.webp';
-
-// import Ankh1 from './finder/branding/ankh/01.webp';
-// import Ankh2 from './finder/branding/ankh/02.webp';
-// import Ankh3 from './finder/branding/ankh/03.webp';
-// import Ankh4 from './finder/branding/ankh/04.webp';
-// import Ankh5 from './finder/branding/ankh/05.webp';
-// import Ankh6 from './finder/branding/ankh/06.webp';
-// import Ankh7 from './finder/branding/ankh/07.webp';
-// import Ankh8 from './finder/branding/ankh/08.webp';
-// import Ankh9 from './finder/branding/ankh/09.webp';
-// import Ankh10 from './finder/branding/ankh/10.webp';
-// import Ankh11 from './finder/branding/ankh/11.webp';
-// import Ankh12 from './finder/branding/ankh/12.webp';
-// import Ankh13 from './finder/branding/ankh/13.webp';
-// import Ankh14 from './finder/branding/ankh/14.webp';
+import SpadaGif1 from './finder/branding/spada/01.gif';
+import SpadaGif2 from './finder/branding/spada/02.gif';
 
 import PetraContent from './components/info_texts/PetraContent.js';
 import LunaMerdinContent from './components/info_texts/LunaMerdinContent.js';
@@ -212,12 +42,12 @@ const FolderStructure = [
                 isVideo: false,
             },
             {
-                id: 3,
-                src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/85350992-a68d-42ef-b6e8-6dd9d1a4f500/public",
+                id: 3, 
+                src: "https://player.vimeo.com/video/869285190?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
                 alt: 'Karnas Vineyards',
                 title: 'KARNAS VINEYARDS',
                 content: LunaMerdinContent,
-                isVideo: false,
+                isVideo: true,
             },
             {
                 id: 4,
@@ -256,7 +86,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/33744e66-3454-47e0-1c73-2dfccfc9d100/public",
                 alt: 'Beylerbeyi',
                 title: 'BEYLERBEYI',
-                content: FredContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -264,7 +94,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/9d1c4952-89a7-4f8d-d83c-917eb71e8c00/public",
                 alt: 'Leandra',
                 title: 'LEANDRA',
-                content: MercyBornContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -272,7 +102,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a66117c2-c49f-4d6a-8585-9a463dbf4800/public",
                 alt: 'Sneaks Up FW23',
                 title: 'SUP_WINTER2023',
-                content: LunaMerdinContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -288,7 +118,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3f1ee432-7f12-4b9e-d931-d169e144f400/public",
                 alt: 'Rainbow Origins',
                 title: 'RAINBOW_ORIGINS',
-                content: PinoliContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -304,7 +134,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/bf0ed3fa-beb6-464e-2e50-a2ee1aba1200/public",
                 alt: 'Pinoli Box',
                 title: 'PINOLI_BOX',
-                content: MercyBornContent,
+                content: PinoliContent,
                 isVideo: false,
             },
             {
@@ -312,7 +142,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/000e1d1c-a66f-4d8b-abc9-cf31a858bb00/public",
                 alt: 'Show by Pastel',
                 title: 'SHOWBYPASTEL',
-                content: SundeiContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -320,7 +150,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8ed57573-bcf3-4cde-12d4-d2dba7b0fa00/public",
                 alt: 'Karamanli',
                 title: 'KARAMANLI',
-                content: BodhitaContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -328,7 +158,7 @@ const FolderStructure = [
                 src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fd4ce97e-2b7d-43c9-31bc-1e8a24fbd400/public",
                 alt: 'Sneaks Up SS23',
                 title: 'SUP_SS23',
-                content: LunaMerdinContent,
+                content: "",
                 isVideo: false,
             },
             {
@@ -503,6 +333,486 @@ const FolderStructure = [
                 ],
             },
             {
+                title: 'JOURNEYTOSPRING',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2344e158-7757-4820-7dce-cc15c3ee9e00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8af0c7c4-31cc-420a-9e88-228a39c98a00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b99a7cfd-8c10-4b0f-72a2-25f356580800/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/7a182035-eda5-47eb-fac9-ca7c4deb3700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_04',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8d81e832-4619-4cfe-97ef-d2555c96c800/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_05',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d261fe06-fc30-487e-157b-c490c15de400/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_06',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5c44d3a3-fd1e-45e5-9a1b-828357da6400/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_07',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/34a4fbc7-4aae-4908-f6ff-b59daeb37e00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_08',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/82f57e18-c902-416c-3a14-25ff7f970a00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_09',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/142e0737-1144-4e17-4692-bd4fe134ef00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_10',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/aa1a5e7c-99de-4093-426b-ac92fa56c600/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_11',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a4ddd40a-7304-403a-6226-8c4b1dce6700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_12',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 13,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a920758f-864c-4cf1-2be6-dc455b3e3b00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_13',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 14,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6d9ad30e-8ad2-4504-85e2-310ee845a400/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_14',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 15,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ca2bb169-eab4-432c-1c2e-0b23395fd600/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_15',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 16,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/400c671a-9404-4dc9-438b-716b18dfd000/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_16',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 17,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/30345139-5b8a-4abd-cc19-db21f8ec4e00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_17',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 18,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3e7a4a56-b206-4848-400b-e707c5342700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_18',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 19,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c3e967b3-0904-4228-6ef8-4e16c66b9800/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_19',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 20,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2839ab0a-e5b4-4bd6-5a1d-a1b2f0a8d500/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_20',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 21,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a282e59f-6e3f-460f-4a01-b3a53262fe00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_21',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 22,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b6543c77-7747-4844-4dbc-c3c184bcbf00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_22',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 23,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/34424b99-dc01-4973-da84-594b885f4400/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_23',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 24,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2febadf4-f711-4c23-f0da-cc8cdadab200/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_24',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 25,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1d137654-2e34-4507-1da7-fd7c5d140600/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_25',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 26,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b3e0ce17-5619-4ec5-a255-c472c9c12200/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_26',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 27,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d582b147-1e15-4d1b-54be-b35a70423500/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_27',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 28,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d10b8be2-e570-429b-14cc-4fd5c08ed600/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_28',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 29,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/9ae8dade-200e-4754-1c59-d6852ce2cd00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_29',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 30,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/4e5a4bb0-a479-47a7-afef-b6c630bcd500/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_30',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 31,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6d68cd95-664f-41fe-51da-95233434d200/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_31',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 32,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/298b8ca0-4ad3-4430-df32-3792e4226900/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_JTS_32',
+                        content: "",
+                        isVideo: false,
+                    },
+                ]
+            },
+            {
+                title: 'SUMMER_2023',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/49563a7a-ae31-4b0f-c04b-62da52d63f00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1767ac74-ffc8-435f-ce99-b1d109851000/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3b4b57ba-cbde-4da5-0929-d0c03eb45900/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a9ded031-683c-49f8-1d93-c5705248b600/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_04',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/228bf604-4441-484d-186a-f450b5482700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_05',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b7cb4b77-d458-458b-29ab-d3c11cb0d700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_06',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/7e4f1e6a-30ff-4bfe-6be3-a1fb58dfb300/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_07',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b64e9b2f-a8fd-457a-cb7f-ba9184939a00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_08',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c04d03f4-d3a1-442b-6ca9-ed533927a800/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_09',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e6af9dd9-f96d-4073-75fa-b498e0372000/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_10',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/44018345-3c3e-496c-5c41-e8a549a35800/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_11',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/762d0a33-dfb2-43c7-5aa6-39a39e111700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_SS_12',
+                        content: "",
+                        isVideo: false,
+                    },
+
+                ]
+            },
+            {
+                title: 'WINTER_2023',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e9281884-ac5c-45c7-4a61-567ad1b0c900/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e76c4a53-0e7a-4392-a178-add595bbc700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/f57b467f-d6ac-4f27-53f0-fc70b903d700/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8db688c6-d067-4b45-cc68-cbcee7eb4c00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_04',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/4d261068-b528-4d27-7102-dc32398cec00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_05',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/249356a4-21f2-4591-5056-43f8f7d10c00/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_06',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: SupWinterPink,
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_07',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cfacdbf6-576b-42ac-f0cb-f62d2d968400/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_08',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/022c13a9-5a58-4066-35b5-b56fccfe9900/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_09',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cc51fea9-5875-4768-515b-e850c04fa200/public",
+                        alt: 'Sneaks Up',
+                        title: 'SUP_WINTER_10',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3d37497e-150b-4026-d16e-4c5195171f00/public",
+                        alt: 'Sneaks Up',
+                        title:'SUP_WINTER_11',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: SupWinter14,
+                        alt: 'Sneaks Up',
+                        title:'SUP_WINTER_12',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 13,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/58a73eac-1aae-4bdb-4c95-725d61385500/public",
+                        alt: 'Sneaks Up',
+                        title:'SUP_WINTER_13',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 14,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/87ceb6aa-936b-42a6-e0cf-da200e37d100/public",
+                        alt: 'Sneaks Up',
+                        title:'SUP_WINTER_14',
+                        content: "",
+                        isVideo: false,
+                    }
+                ]
+            },
+            {
                 title: 'AIRFORCE',
                 images: []
             },
@@ -536,6 +846,13 @@ const FolderStructure = [
     //         },
     //         // Other subfolders for Upgrading
     //     ],
+    // },
+    // {
+    //     title: 'Design',
+    //     hasSubfolder: true,
+    //     subfolders: [
+            
+    //     ]
     // },
     {
         title: 'Design',
@@ -666,68 +983,54 @@ const FolderStructure = [
                     },
                     {
                         id: 16,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/73ad0922-6671-44fe-647a-fd6eb5feea00/public",
-                        alt: 'Petra Roasting Co. Kenya Illustration',
-                        title: 'KENYA',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/35f17009-86e9-41d8-09f0-48b438106600/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_15',
                         content: PetraContent,
                         isVideo: false,
                     },
                     {
                         id: 17,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ddb3a1d2-fa3c-4822-94d2-39b3640ed000/public",
-                        alt: 'Petra Roasting Co. Rwanda Illustration',
-                        title: 'RWANDA',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fe567d2d-d038-406c-d37c-a38780dfcc00/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_16',
                         content: PetraContent,
                         isVideo: false,
                     },
                     {
                         id: 18,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/53bb6537-fda2-4d95-c514-69f4dcfd1c00/public",
-                        alt: 'Petra Roasting Co. Burundi Illustration',
-                        title: 'BURUNDI',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1cdd5bf0-4082-43e7-e44f-8c431d685700/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_17',
                         content: PetraContent,
                         isVideo: false,
                     },
                     {
                         id: 19,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c7a37e41-fc1b-49de-a01c-24c7c8d7c400/public",
-                        alt: 'Petra Roasting Co. Ethiopia Illustration',
-                        title: 'ETHIOPIA',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1392862b-4d3e-4bb9-e6b6-893764a94100/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_18',
                         content: PetraContent,
                         isVideo: false,
                     },
                     {
                         id: 20,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/00080279-8990-4e38-a6f1-be6fd1a22400/public",
-                        alt: 'Petra Roasting Co. Guatemala Illustration',
-                        title: 'GUATEMALA',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/30c5edf2-33a9-4f22-6f83-c544f4d25a00/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_19',
                         content: PetraContent,
                         isVideo: false,
                     },
                     {
                         id: 21,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a33b7153-feaa-499c-432f-e6d7db9dba00/public",
-                        alt: 'Petra Roasting Co. Brazil Illustration',
-                        title: 'BRAZIL',
-                        content: PetraContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 22,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d030d229-4112-4fd7-006e-d5fcd7511b00/public",
-                        alt: 'Petra Roasting Co. Colombia Illustration',
-                        title: 'COLOMBIA',
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/85d9d39b-1b84-4cf2-f3e9-20133efb2300/public",
+                        alt: 'Petra Roasting Co. Coffee Boxes',
+                        title: 'PETRA_20',
                         content: PetraContent,
                         isVideo: false,
                     }
                 ]
-            }
-        ]
-    },
-    {
-        title: 'Branding',
-        hasSubfolder: true,
-        subfolders: [
+            },
             {
                 title: 'Luna Merdin',
                 images: [
@@ -805,14 +1108,6 @@ const FolderStructure = [
                     },
                     {
                         id: 10,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/72e437d8-a909-4aa3-7a28-69f7fd305f00/public",
-                        alt: 'Luna Merdin',
-                        title: 'LUNAMERDIN_07',
-                        content: LunaMerdinContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 11,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fc28258e-b7a9-4b92-e5a9-89b25d924000/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_08',
@@ -820,7 +1115,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 12,
+                        id: 11,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/44315bb4-ff24-4385-d814-db221acaf500/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_09',
@@ -828,7 +1123,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 13,
+                        id: 12,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/18489a67-12cd-412f-14c4-7bc551c48000/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_10',
@@ -836,7 +1131,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 14,
+                        id: 13,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/77e292ae-5ceb-4a9d-6e28-9023bbc70f00/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_11',
@@ -844,7 +1139,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 15,
+                        id: 14,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/23f3094c-8767-4e4a-5aa3-0255927ce300/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_12',
@@ -852,10 +1147,130 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 16,
+                        id: 15,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2d37e555-51bf-4086-e81b-c1f578853e00/public",
                         alt: 'Luna Merdin',
                         title: 'LUNAMERDIN_13',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 16,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/426c24f9-26b1-4e84-4b00-b936335d4900/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_14',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 17,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/0b825777-64f3-4c6c-6ca8-080c1424c000/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_15',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 18,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/87499378-5827-4613-ed10-f4c8d9d94200/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_16',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 19,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/052d002e-75a7-4444-5541-e39220b29000/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_17',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 20,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/f6c67798-1412-4ba9-7d32-cc7ed53c9f00/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_18',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 21,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e240cada-2f6e-4554-d575-bad2f575e500/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_19',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 22,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/96f6b50f-d79a-4d08-01ce-46b1d061d700/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_20',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 23,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/0a371ff5-d7b3-4b24-a5d1-7a4afbab3500/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_21',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 24,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fadc4cd7-11de-4e7c-3628-bcf07889b300/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_22',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 25,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e884f98c-7795-4bbc-131d-447c292f2b00/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_23',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 26,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/021100cb-ec99-4e52-8242-a49d7b469300/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_24',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 27,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/53341869-5329-4385-1caf-f8627457aa00/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_25',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 28,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/0d4001e4-7632-4dcf-f478-99a958b48000/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_26',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 29,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/675074d7-e3ef-453f-424c-f90f3a63d700/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_27',
+                        content: LunaMerdinContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 30,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/7542c16a-804d-4f33-862a-e01bfe9d0500/public",
+                        alt: 'Luna Merdin',
+                        title: 'LUNAMERDIN_28',
                         content: LunaMerdinContent,
                         isVideo: false,
                     }
@@ -1021,30 +1436,6 @@ const FolderStructure = [
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/290ba86c-8260-4275-3174-933fbece0a00/public",
                         alt: 'Pinoli',
                         title: 'PINOLI_17',
-                        content: PinoliContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 21,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ff4ba175-f8e3-4c70-22dc-271de40b5500/public",
-                        alt: 'Pinoli',
-                        title: 'PINOLI_18',
-                        content: PinoliContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 22,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/61fda8df-c910-4b99-9385-ce26906ba400/public",
-                        alt: 'Pinoli',
-                        title: 'PINOLI_19',
-                        content: PinoliContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 23,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a2b6901d-7fcd-418d-3da7-fbdca76d4a00/public",
-                        alt: 'Pinoli',
-                        title: 'PINOLI_20',
                         content: PinoliContent,
                         isVideo: false,
                     }
@@ -1236,14 +1627,6 @@ const FolderStructure = [
                     },
                     {
                         id: 5,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/655dc8d8-c681-4d0c-0ff3-820d2616f400/public",
-                        alt: 'Ankh',
-                        title: 'ANKH_04',
-                        content: AnkhContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 6,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/911d46e7-8505-4fe7-489c-b22f01259300/public",
                         alt: 'Ankh',
                         title: 'ANKH_05',
@@ -1251,7 +1634,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 7,
+                        id: 6,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a71c571b-fff5-4266-3c05-6f1acfb58500/public",
                         alt: 'Ankh',
                         title: 'ANKH_06',
@@ -1259,7 +1642,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 8,
+                        id: 7,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5d63a9b0-8865-4240-0c3b-5ba39c8d0100/public",
                         alt: 'Ankh',
                         title: 'ANKH_07',
@@ -1267,7 +1650,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 9,
+                        id: 8,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e80ca3e1-fde0-4b5c-fef8-526a97c9de00/public",
                         alt: 'Ankh',
                         title: 'ANKH_08',
@@ -1275,7 +1658,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 10,
+                        id: 9,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a1da3c65-dfa7-4efd-358a-4a1d964cd200/public",
                         alt: 'Ankh',
                         title: 'ANKH_09',
@@ -1283,7 +1666,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 11,
+                        id: 10,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6f8f4fa2-bfac-4651-d4c5-cea6430c4400/public",
                         alt: 'Ankh',
                         title: 'ANKH_10',
@@ -1291,7 +1674,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 12,
+                        id: 11,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/377a1dca-c23c-4adc-2bfd-efa1c42c1000/public",
                         alt: 'Ankh',
                         title: 'ANKH_11',
@@ -1299,18 +1682,10 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 13,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1e621fba-9f9a-487f-9f76-b69f940e7f00/public",
-                        alt: 'Ankh',
-                        title: 'ANKH_12',
-                        content: AnkhContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 14,
+                        id: 12,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cd76636b-4f49-4fba-be4f-0a334fb8e400/public",
                         alt: 'Ankh',
-                        title: 'ANKH_13',
+                        title: 'ANKH_12',
                         content: AnkhContent,
                         isVideo: false,
                     }
@@ -1321,14 +1696,6 @@ const FolderStructure = [
                 images: [
                     {
                         id: 1,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/46ea3498-7131-4a21-b485-e87f1e96b200/public",
-                        alt: 'Spada',
-                        title: 'SPADA_LOGO',
-                        content: SpadaContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 2,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b27ee7cf-7c0b-4ac9-9998-068f7e22e800/public",
                         alt: 'Spada',
                         title: 'SPADA_01',
@@ -1336,7 +1703,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 3,
+                        id: 2,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8b4c0b93-57da-4fdb-80e4-841a8f1a7e00/public",
                         alt: 'Spada',
                         title: 'SPADA_02',
@@ -1344,7 +1711,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 4,
+                        id: 3,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2d53b4f4-9fec-4069-3919-55decdf55100/public",
                         alt: 'Spada',
                         title: 'SPADA_03',
@@ -1352,7 +1719,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 5,
+                        id: 4,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1a063d93-5af1-49d3-7076-9eb8ceb02000/public",
                         alt: 'Spada',
                         title: 'SPADA_04',
@@ -1360,7 +1727,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 6,
+                        id: 5,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/2b1d0fa8-228c-454b-99f2-511a72aa7a00/public",
                         alt: 'Spada',
                         title: 'SPADA_05',
@@ -1368,7 +1735,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 7,
+                        id: 6,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d28753ad-ec41-4e7b-9f1b-9390c9540d00/public",
                         alt: 'Spada',
                         title: 'SPADA_06',
@@ -1376,7 +1743,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 8,
+                        id: 7,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/19eb9078-d35a-44be-9f53-cbed09ca7600/public",
                         alt: 'Spada',
                         title: 'SPADA_07',
@@ -1384,7 +1751,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 9,
+                        id: 8,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/bebbb288-bb29-4c51-d643-c40bfd921f00/public",
                         alt: 'Spada',
                         title: 'SPADA_08',
@@ -1392,10 +1759,58 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 10,
+                        id: 9,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1a8b2bec-a31a-4e1e-bf82-cc7ccc670000/public",
                         alt: 'Spada',
                         title: 'SPADA_09',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5eb6f4a3-20e3-4545-724b-8132d9959400/public",
+                        alt: 'Spada',
+                        title: 'SPADA_10',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b0c97da5-743b-4072-fccf-228b376f4500/public",
+                        alt: 'Spada',
+                        title: 'SPADA_11',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/dd0b77ae-609d-4936-d496-efd35213f700/public",
+                        alt: 'Spada',
+                        title: 'SPADA_12',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 13,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fbc78c9b-fe30-4beb-eda0-e2c54e960f00/public",
+                        alt: 'Spada',
+                        title: 'SPADA_13',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 14,
+                        src: SpadaGif1,
+                        alt: 'Spada',
+                        title: 'SPADA_14',
+                        content: SpadaContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 15,
+                        src: SpadaGif2,
+                        alt: 'Spada',
+                        title: 'SPADA_15',
                         content: SpadaContent,
                         isVideo: false,
                     }
@@ -1441,30 +1856,6 @@ const FolderStructure = [
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5042ab81-3e2a-467a-7e1b-10a421ce8700/public",
                         alt: 'Sundei',
                         title: 'SUNDEI_04',
-                        content: SundeiContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 6,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b9577792-6187-45f4-65ca-416f5e816d00/public",
-                        alt: 'Sundei',
-                        title: 'SUNDEI_05',
-                        content: SundeiContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 7,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/41493a4a-d4f9-4430-be4c-a57b8ce61600/public",
-                        alt: 'Sundei',
-                        title: 'SUNDEI_06',
-                        content: SundeiContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 8,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/83ed5ef9-aeab-42e6-7c1d-21e979a88700/public",
-                        alt: 'Sundei',
-                        title: 'SUNDEI_07',
                         content: SundeiContent,
                         isVideo: false,
                     }
@@ -1539,7 +1930,7 @@ const FolderStructure = [
                     },
                     {
                         id: 9,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/4c7a1f21-d035-438a-5f24-8b6639ba7000/public",
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6bb67545-5db8-4768-0532-7722b8294600/public",
                         alt: 'Bodhita',
                         title: 'BODHITA_06',
                         content: BodhitaContent,
@@ -1608,22 +1999,6 @@ const FolderStructure = [
                     },
                     {
                         id: 8,
-                        src: Fred8,
-                        alt: 'Fred',
-                        title: 'FRED_06',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 9,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/281c307d-f177-4754-cb9f-b48ab842e200/public",
-                        alt: 'Fred',
-                        title: 'FRED_07',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 10,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/072e8f5c-b4e3-4016-a44d-b5bfd1488100/public",
                         alt: 'Fred',
                         title: 'FRED_08',
@@ -1631,23 +2006,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 11,
-                        src: Fred11,
-                        alt: 'Fred',
-                        title: 'FRED_09',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 12,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b24fb0d2-a5ea-4eed-5f66-bcdae2608100/public",
-                        alt: 'Fred',
-                        title: 'FRED_10',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 13,
+                        id: 9,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/05ba4979-bb6e-42a1-1330-e14152f41000/public",
                         alt: 'Fred',
                         title: 'FRED_11',
@@ -1655,50 +2014,10 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 14,
-                        src: Fred14,
-                        alt: 'Fred',
-                        title: 'FRED_12',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 15,
+                        id: 10,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b05b9e46-ed2c-45de-4310-b7fe81f19100/public",
                         alt: 'Fred',
                         title: 'FRED_13',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 16,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/0454ec5f-8496-4cc0-1177-6a5bbd030900/public",
-                        alt: 'Fred',
-                        title: 'FRED_14',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 17,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/80153ddb-f024-4231-6725-dccb1de74f00/public",
-                        alt: 'Fred',
-                        title: 'FRED_15',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 18,
-                        src: Fred18,
-                        alt: 'Fred',
-                        title: 'FRED_16',
-                        content: FredContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 19,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/bc7eb46e-3063-4bfa-a357-701836d4af00/public",
-                        alt: 'Fred',
-                        title: 'FRED_17',
                         content: FredContent,
                         isVideo: false,
                     }
