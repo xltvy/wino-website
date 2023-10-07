@@ -8,6 +8,8 @@ import SupWinter14 from './finder/branding/sup/02.gif';
 import SpadaGif1 from './finder/branding/spada/01.gif';
 import SpadaGif2 from './finder/branding/spada/02.gif';
 
+import ByeSummerGif from './finder/branding/byesummer/01.gif';
+
 import PetraContent from './components/info_texts/PetraContent.js';
 import LunaMerdinContent from './components/info_texts/LunaMerdinContent.js';
 import BodhitaContent from './components/info_texts/BodhitaContent.js';
@@ -46,7 +48,7 @@ const FolderStructure = [
                 src: "https://player.vimeo.com/video/869285190?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
                 alt: 'Karnas Vineyards',
                 title: 'KARNAS VINEYARDS',
-                content: LunaMerdinContent,
+                content: "",
                 isVideo: true,
             },
             {
@@ -183,8 +185,9 @@ const FolderStructure = [
         title: 'Campaigns',
         hasSubfolder: true,
         subfolders: [
+            // Nike Air Force x Sneaks Up
             {
-                title: 'Nike x Sneaks Up',
+                title: 'NIKE AIRFORCE X SUP',
                 images: [
                     {
                         id: 1,
@@ -329,9 +332,74 @@ const FolderStructure = [
                         title: 'AF1xSUP_16',
                         content: NikeContent,
                         isVideo: false,
+                    },
+                    {
+                        id: 19,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/87e2b3cf-6d67-443a-3a96-5328c66a2700/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_17',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 20,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/75328f09-a694-4386-74aa-801e2de9e300/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_18',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 21,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/83306068-9fcb-4516-d5ce-33169e73e400/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_19',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 22,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/583a91f7-e16c-4da2-a910-56e751dbe600/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_20',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 23,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ce933b8a-fa40-48ab-d2a6-2f4dc2b29c00/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_21',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 24,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1aaae1d6-7f10-4523-2fa3-24d727887000/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_22',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 25,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/bd05e99b-ec60-497d-4158-dd8d04ce9f00/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_23',
+                        content: NikeContent,
+                        isVideo: false,
+                    },
+                    {
+                        id: 26,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e7ec8e0f-d619-42f1-eb2d-db5e79589300/public",
+                        alt: 'Nike x Sneaks Up',
+                        title: 'AF1xSUP_24',
+                        content: NikeContent,
+                        isVideo: false,
                     }
                 ],
             },
+            // Journey to Spring Sneaks Up
             {
                 title: 'JOURNEYTOSPRING',
                 images: [
@@ -384,14 +452,6 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 7,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5c44d3a3-fd1e-45e5-9a1b-828357da6400/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_07',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
                         id: 8,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/34a4fbc7-4aae-4908-f6ff-b59daeb37e00/public",
                         alt: 'Sneaks Up',
@@ -412,14 +472,6 @@ const FolderStructure = [
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/142e0737-1144-4e17-4692-bd4fe134ef00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_JTS_10',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
-                        id: 11,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/aa1a5e7c-99de-4093-426b-ac92fa56c600/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_11',
                         content: "",
                         isVideo: false,
                     },
@@ -460,14 +512,6 @@ const FolderStructure = [
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/400c671a-9404-4dc9-438b-716b18dfd000/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_JTS_16',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
-                        id: 17,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/30345139-5b8a-4abd-cc19-db21f8ec4e00/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_17',
                         content: "",
                         isVideo: false,
                     },
@@ -536,22 +580,6 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 26,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b3e0ce17-5619-4ec5-a255-c472c9c12200/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_26',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
-                        id: 27,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d582b147-1e15-4d1b-54be-b35a70423500/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_27',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
                         id: 28,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/d10b8be2-e570-429b-14cc-4fd5c08ed600/public",
                         alt: 'Sneaks Up',
@@ -576,14 +604,6 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 31,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6d68cd95-664f-41fe-51da-95233434d200/public",
-                        alt: 'Sneaks Up',
-                        title: 'SUP_JTS_31',
-                        content: "",
-                        isVideo: false,
-                    },
-                    {
                         id: 32,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/298b8ca0-4ad3-4430-df32-3792e4226900/public",
                         alt: 'Sneaks Up',
@@ -593,11 +613,20 @@ const FolderStructure = [
                     },
                 ]
             },
+            // Sneaks Up Summer 2023
             {
                 title: 'SUMMER_2023',
                 images: [
                     {
                         id: 1,
+                        src: "https://player.vimeo.com/video/871551817?h=0fcbbb3720",
+                        alt: 'Sneaks Up',
+                        title: 'SNEAKS UP SUMMER2023',
+                        content: "",
+                        isVideo: true,
+                    },
+                    {
+                        id: 2,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/49563a7a-ae31-4b0f-c04b-62da52d63f00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_01',
@@ -605,7 +634,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 2,
+                        id: 3,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/1767ac74-ffc8-435f-ce99-b1d109851000/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_02',
@@ -613,7 +642,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 3,
+                        id: 4,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3b4b57ba-cbde-4da5-0929-d0c03eb45900/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_03',
@@ -621,7 +650,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 4,
+                        id: 5,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a9ded031-683c-49f8-1d93-c5705248b600/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_04',
@@ -629,7 +658,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 5,
+                        id: 6,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/228bf604-4441-484d-186a-f450b5482700/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_05',
@@ -637,7 +666,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 6,
+                        id: 7,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b7cb4b77-d458-458b-29ab-d3c11cb0d700/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_06',
@@ -645,7 +674,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 7,
+                        id: 8,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/7e4f1e6a-30ff-4bfe-6be3-a1fb58dfb300/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_07',
@@ -653,7 +682,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 8,
+                        id: 9,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b64e9b2f-a8fd-457a-cb7f-ba9184939a00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_08',
@@ -661,7 +690,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 9,
+                        id: 10,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c04d03f4-d3a1-442b-6ca9-ed533927a800/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_09',
@@ -669,7 +698,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 10,
+                        id: 11,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e6af9dd9-f96d-4073-75fa-b498e0372000/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_10',
@@ -677,7 +706,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 11,
+                        id: 12,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/44018345-3c3e-496c-5c41-e8a549a35800/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_11',
@@ -685,7 +714,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 12,
+                        id: 13,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/762d0a33-dfb2-43c7-5aa6-39a39e111700/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_SS_12',
@@ -695,11 +724,20 @@ const FolderStructure = [
 
                 ]
             },
+            // Sneaks Up Winter 2023
             {
                 title: 'WINTER_2023',
                 images: [
                     {
                         id: 1,
+                        src: "https://player.vimeo.com/video/871436119?h=0fcbbb3720",
+                        alt: 'Sneaks Up',
+                        title: 'SNEAKS UP // WINTER2023',
+                        content: "",
+                        isVideo: true,
+                    },
+                    {
+                        id: 2,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e9281884-ac5c-45c7-4a61-567ad1b0c900/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_01',
@@ -707,7 +745,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 2,
+                        id: 3,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/e76c4a53-0e7a-4392-a178-add595bbc700/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_02',
@@ -715,7 +753,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 3,
+                        id: 4,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/f57b467f-d6ac-4f27-53f0-fc70b903d700/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_03',
@@ -723,7 +761,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 4,
+                        id: 5,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/8db688c6-d067-4b45-cc68-cbcee7eb4c00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_04',
@@ -731,7 +769,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 5,
+                        id: 6,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/4d261068-b528-4d27-7102-dc32398cec00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_05',
@@ -739,7 +777,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 6,
+                        id: 7,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/249356a4-21f2-4591-5056-43f8f7d10c00/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_06',
@@ -747,7 +785,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 7,
+                        id: 8,
                         src: SupWinterPink,
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_07',
@@ -755,7 +793,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 8,
+                        id: 9,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cfacdbf6-576b-42ac-f0cb-f62d2d968400/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_08',
@@ -763,7 +801,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 9,
+                        id: 10,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/022c13a9-5a58-4066-35b5-b56fccfe9900/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_09',
@@ -771,7 +809,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 10,
+                        id: 11,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cc51fea9-5875-4768-515b-e850c04fa200/public",
                         alt: 'Sneaks Up',
                         title: 'SUP_WINTER_10',
@@ -779,7 +817,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 11,
+                        id: 12,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3d37497e-150b-4026-d16e-4c5195171f00/public",
                         alt: 'Sneaks Up',
                         title:'SUP_WINTER_11',
@@ -787,7 +825,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 12,
+                        id: 13,
                         src: SupWinter14,
                         alt: 'Sneaks Up',
                         title:'SUP_WINTER_12',
@@ -795,7 +833,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 13,
+                        id: 14,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/58a73eac-1aae-4bdb-4c95-725d61385500/public",
                         alt: 'Sneaks Up',
                         title:'SUP_WINTER_13',
@@ -803,7 +841,7 @@ const FolderStructure = [
                         isVideo: false,
                     },
                     {
-                        id: 14,
+                        id: 15,
                         src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/87ceb6aa-936b-42a6-e0cf-da200e37d100/public",
                         alt: 'Sneaks Up',
                         title:'SUP_WINTER_14',
@@ -812,24 +850,180 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Nike Air Max
             {
-                title: 'AIRFORCE',
-                images: []
+                title: 'NIKE AIRMAX X SUP',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://player.vimeo.com/video/871548251?h=0fcbbb3720",
+                        alt: 'Sneaks Up',
+                        title: 'SUP X NIKE MAXXED-OUT',
+                        content: "",
+                        isVideo: true,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/cd703d1c-7318-411a-cfb1-8a035470c400/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_BANNER',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/b6309fad-59f6-4be0-b1e0-649dca200200/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_RETAIL',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/4446f4fd-23e1-4cfc-184d-e9fc25547f00/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/af0d9181-3255-420b-26a5-685c932fd300/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/14c2a135-b112-40db-d519-2556bf104100/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/edb83806-665e-4025-8289-3135ea89ff00/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_04',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/600b7851-c293-497a-28ab-0c0212c2ee00/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_05',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 9,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/92068eee-ab0e-4599-5463-4b97c26fa300/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_06',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 10,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6895b70c-6603-4745-7d6c-dfcd8cdaa800/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_07',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 11,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6895b70c-6603-4745-7d6c-dfcd8cdaa800/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_08',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 12,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/6c24f114-37ed-42c8-5d70-54c1ca5af000/public",
+                        alt: 'Sneaks Up',
+                        title: 'AIRMAX_09',
+                        content: "",
+                        isVideo: false,
+                    }
+                ]
             },
+            // Goodbye Summer 2023
             {
-                title: 'AIRMAX',
-                images: []
-            },
-            {
-                title: 'Goodbye Summer 23',
-                images: []
+                title: 'BYE SUMMER',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/76823b0c-e0db-4cf9-98fc-d2e8da8f3d00/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/15f959e0-535c-4b1e-af0b-b773e8671100/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/88fe0663-55cf-4cc1-047d-ec3359b95400/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c87f6b23-7f02-4f39-3728-183038b87800/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_04',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 5,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ead04b16-5359-4f7b-ef21-e585a8f9c500/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_05',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 6,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/68be2ac4-2439-44de-1181-3114ea31db00/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_06',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 7,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/548e8464-b3e5-4088-733b-c085f9be7700/public",
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_07',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 8,
+                        src: ByeSummerGif,
+                        alt: 'Sneaks Up',
+                        title: 'GOODBYESUMMER_08',
+                        content: "",
+                        isVideo: false,
+                    },
+                ]
             },
             {
                 title: 'ELLE W.I.P',
-                images: []
-            },
-            {
-                title: "SUP SS'23",
                 images: []
             }
         ],
@@ -858,6 +1052,7 @@ const FolderStructure = [
         title: 'Design',
         hasSubfolder: true,
         subfolders: [
+            // Petra
             {
                 title: 'Petra',
                 images: [
@@ -1031,6 +1226,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Luna Merdin
             {
                 title: 'Luna Merdin',
                 images: [
@@ -1276,6 +1472,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Pinoli
             {
                 title: 'Pinoli',
                 images: [
@@ -1441,6 +1638,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Mercy Born
             {
                 title: 'Mercy Born',
                 images: [
@@ -1590,6 +1788,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Ankh
             {
                 title: 'Ankh',
                 images: [
@@ -1691,6 +1890,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Spada
             {
                 title: 'Spada',
                 images: [
@@ -1768,7 +1968,7 @@ const FolderStructure = [
                     },
                     {
                         id: 10,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/5eb6f4a3-20e3-4545-724b-8132d9959400/public",
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c32f1321-3b80-48f5-41b8-7be489cfc200/public",
                         alt: 'Spada',
                         title: 'SPADA_10',
                         content: SpadaContent,
@@ -1792,7 +1992,7 @@ const FolderStructure = [
                     },
                     {
                         id: 13,
-                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/fbc78c9b-fe30-4beb-eda0-e2c54e960f00/public",
+                        src: SpadaGif1,
                         alt: 'Spada',
                         title: 'SPADA_13',
                         content: SpadaContent,
@@ -1800,22 +2000,15 @@ const FolderStructure = [
                     },
                     {
                         id: 14,
-                        src: SpadaGif1,
-                        alt: 'Spada',
-                        title: 'SPADA_14',
-                        content: SpadaContent,
-                        isVideo: false,
-                    },
-                    {
-                        id: 15,
                         src: SpadaGif2,
                         alt: 'Spada',
-                        title: 'SPADA_15',
+                        title: 'SPADA_14',
                         content: SpadaContent,
                         isVideo: false,
                     }
                 ]
             },
+            // Sundei
             {
                 title: 'Sundei',
                 images: [
@@ -1861,6 +2054,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Bodhita
             {
                 title: 'Bodhita',
                 images: [
@@ -1938,6 +2132,7 @@ const FolderStructure = [
                     }
                 ]
             },
+            // Fred
             {
                 title: 'Fred',
                 images: [
@@ -2021,6 +2216,120 @@ const FolderStructure = [
                         content: FredContent,
                         isVideo: false,
                     }
+                ]
+            },
+            // Karnas
+            {
+                title: 'Karnas',
+                images: [
+                    {
+                        id: 1, 
+                        src: "https://player.vimeo.com/video/869285190?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
+                        alt: 'Karnas Vineyards',
+                        title: 'KARNAS VINEYARDS',
+                        content: "",
+                        isVideo: true,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/0e6e091b-33fa-4a03-a914-6e53354dd800/public",
+                        alt: 'Karnas Vineyards',
+                        title: 'KARNAS_01',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/c9773651-0666-4743-ae14-1c19feea3900/public",
+                        alt: 'Karnas Vineyards',
+                        title: 'KARNAS_02',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/98b7daef-6fba-41db-a285-495f025ea600/public",
+                        alt: 'Karnas Vineyards',
+                        title: 'KARNAS_03',
+                        content: "",
+                        isVideo: false,
+                    },
+                ]
+            },
+            // Beylerbeyi
+            {
+                title: 'Beylerbeyi',
+                images: [
+                    {
+                        id: 1, 
+                        src: "https://player.vimeo.com/video/871540440?h=0fcbbb3720&portrait=1&playsinline=1&loop=1",
+                        alt: 'Beylerbeyi Raki',
+                        title: 'BEYLERBEYI // MAKE ART NOT WAR',
+                        content: "",
+                        isVideo: true,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/46ddc092-3570-476b-8d64-d459f0698200/public",
+                        alt: 'Beylerbeyi Raki',
+                        title: 'BEYLERBEYI_BOTTLES',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/3ac9bdb8-4674-464b-8879-5b16865e1400/public",
+                        alt: 'Beylerbeyi Raki',
+                        title: 'BEYLERBEYI_MARDINEDITION',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/16c2e7cb-d813-4c1b-6bce-60d545f15d00/public",
+                        alt: 'Beylerbeyi Raki',
+                        title: 'BEYLERBEYI_UKRAIN',
+                        content: "",
+                        isVideo: false,
+                    },
+                ]
+            },
+            // Bang Bang
+            {
+                title: 'Bang Bang',
+                images: [
+                    {
+                        id: 1,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/f1032d62-3f05-4e2e-c491-c65d8c687500/public",
+                        alt: 'Bang Bang Chinese Kitchen',
+                        title: 'BANGBANG_COLORPALETTE',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 2,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/43ef0979-4e95-49e3-f493-2fb94e32bf00/public",
+                        alt: 'Bang Bang Chinese Kitchen',
+                        title: 'BANGBANG_LOGO',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 3,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/a2862f28-aaab-4de8-7627-b18b23f83a00/public",
+                        alt: 'Bang Bang Chinese Kitchen',
+                        title: 'BANGBANG_PACKAGING',
+                        content: "",
+                        isVideo: false,
+                    },
+                    {
+                        id: 4,
+                        src: "https://imagedelivery.net/_5GQGJ9vgiST2e1R0CD7HQ/ffe5c7aa-280f-47a1-b9ca-5b1a6033e100/public",
+                        alt: 'Bang Bang Chinese Kitchen',
+                        title: 'BANGBANG_PACKAGING_02',
+                        content: "",
+                        isVideo: false,
+                    },
                 ]
             }
         ],
